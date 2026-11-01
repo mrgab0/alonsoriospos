@@ -16,7 +16,7 @@ import {
   ArrowRight,
   Heart,
 } from "lucide-react";
-import { useTheme } from "next-themes";
+import { ThemeToggle } from "@/components/shop/ThemeToggle";
 import { LanguageSwitcher } from "@/components/shop/LanguageSwitcher";
 
 const CustomerBiometricModal = dynamic(
@@ -37,7 +37,7 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
 }) => {
   const [isBioModalOpen, setIsBioModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+
 
   const isSpanish = locale === "es";
   const phone = siteConfig?.contactPhone || "(346) 739-2730";
@@ -224,16 +224,8 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
             <Fingerprint className="w-4 h-4" />
           </button>
 
-          {/* Moon / Dark mode toggle icon */}
-          <button
-            type="button"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-9 h-9 rounded-full bg-[#f0ede8] dark:bg-stone-800 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-[#e6e2dc] dark:hover:bg-stone-700 transition-colors shadow-2xs"
-            title={isSpanish ? "Cambiar modo claro / oscuro" : "Toggle light / dark mode"}
-            aria-label={isSpanish ? "Cambiar tema" : "Toggle theme"}
-          >
-            {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
-          </button>
+          {/* Theme mode toggle */}
+          <ThemeToggle />
 
           {/* Language selector badge */}
           <div className="h-9 px-2 rounded-full bg-[#f0ede8] dark:bg-stone-800 flex items-center gap-1 text-[10px] font-bold text-gray-800 dark:text-gray-200 shadow-2xs">
@@ -263,7 +255,7 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
               className="flex items-center justify-between py-2 px-3 rounded-lg text-stone-800 dark:text-gray-100 font-bold text-xs uppercase hover:bg-pink-50 dark:hover:bg-gray-800"
             >
               <span>{link.label}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#1b4332] dark:text-[#5EEAD4]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#1b4332] dark:text-[#E6C98B]" />
             </Link>
           ))}
         </div>

@@ -5,11 +5,13 @@ import * as React from "react";
 interface ThemeContextType {
   theme: string;
   setTheme: (theme: string) => void;
+  toggleTheme: () => void;
 }
 
 const ThemeContext = React.createContext<ThemeContextType>({
   theme: "light",
   setTheme: () => {},
+  toggleTheme: () => {},
 });
 
 export function ThemeProvider({
@@ -22,30 +24,53 @@ export function ThemeProvider({
   enableSystem?: boolean;
   [key: string]: any;
 }) {
-  const [theme, setThemeState] = React.useState<string>(defaultTheme);
+  const [theme, setThemeState] = React.useState<string>("light");
 
   React.useEffect(() => {
-    const saved = localStorage.getItem("theme") || defaultTheme;
-    setThemeState(saved);
-    if (saved === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark" || saved === "light") {
+        setThemeState(saved);
+        if (saved === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      } else {
+        const prefersDark =
+          defaultTheme === "dark" ||
+          (defaultTheme === "system" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        const resolved = prefersDark ? "dark" : "light";
+        setThemeState(resolved);
+        if (resolved === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+    } catch (_) {}
   }, [defaultTheme]);
 
-  const setTheme = (newTheme: string) => {
-    setThemeState(newTheme);
-    localStorage.setItem("theme", newTheme);
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
+  const setTheme = React.useCallback((newTheme: string) => {
+    try {
+      const resolved = newTheme === "dark" ? "dark" : "light";
+      setThemeState(resolved);
+      localStorage.setItem("theme", resolved);
+      if (resolved === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    } catch (_) {}
+  }, []);
+
+  const toggleTheme = React.useCallback(() => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }, [theme, setTheme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
