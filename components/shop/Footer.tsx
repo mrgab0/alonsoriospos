@@ -46,7 +46,7 @@ export function Footer({ siteConfig }: FooterProps) {
               <img
                 src={siteConfig?.logoUrl || "https://bonbonflowershouston.com/logo.png"}
                 alt="Bonbon Flowers Logo"
-                className="w-8 h-8 rounded-full object-cover border border-[#C5A059] dark:border-[#5EEAD4]/40"
+                className="w-8 h-8 rounded-full object-cover border border-[#C5A059] dark:border-[#E6C98B]/40"
               />
               <h3
                 className="font-black text-xs uppercase tracking-wider font-serif"
@@ -76,12 +76,12 @@ export function Footer({ siteConfig }: FooterProps) {
             >
               Subscribe to our emails
             </h3>
-            <p className="text-stone-600 dark:text-[#B9E6D3] text-xs mb-3 font-medium">
+            <p className="text-stone-600 dark:text-stone-300 text-xs mb-3 font-medium">
               Be the first to know about new seasonal floral collections and exclusive promotions.
             </p>
 
             {emailSubscribed ? (
-              <div className="flex items-center gap-2 text-emerald-700 dark:text-[#5EEAD4] bg-emerald-50 dark:bg-emerald-950/40 p-3 rounded-lg text-xs font-bold border border-emerald-200 dark:border-[#5EEAD4]/30">
+              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/40 p-3 rounded-lg text-xs font-bold border border-emerald-200 dark:border-emerald-800/60">
                 <CheckCircle2 size={16} />
                 <span>{isSpanish ? "¡Gracias por suscribirte a Bonbon Flowers!" : "Thank you for subscribing to Bonbon Flowers!"}</span>
               </div>
@@ -97,11 +97,11 @@ export function Footer({ siteConfig }: FooterProps) {
                   onChange={(e) => setEmailInput(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="w-full px-3.5 py-2.5 bg-white dark:bg-[#15161F] border border-stone-400 dark:border-stone-700 text-xs text-stone-900 dark:text-[#E6F7F0] placeholder-stone-500 dark:placeholder-stone-400 focus:outline-none focus:border-stone-900 dark:focus:border-[#5EEAD4] rounded-sm font-medium"
+                  className="w-full px-3.5 py-2.5 bg-white dark:bg-[#141A16] border border-stone-400 dark:border-white/10 text-xs text-stone-900 dark:text-white placeholder-stone-500 dark:placeholder-stone-400 focus:outline-none focus:border-stone-900 dark:focus:border-[#E6C98B] rounded-sm font-medium"
                 />
                 <button
                   type="submit"
-                  className="bg-black hover:bg-stone-800 dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors shrink-0 rounded-sm"
+                  className="bg-black hover:bg-stone-800 dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors shrink-0 rounded-sm"
                 >
                   Subscribe
                 </button>
@@ -109,13 +109,13 @@ export function Footer({ siteConfig }: FooterProps) {
             )}
 
             {/* Redes Sociales Oficiales */}
-            <div className="flex items-center space-x-4 mt-6 text-stone-600 dark:text-[#76C7B2]">
+            <div className="flex items-center space-x-4 mt-6 text-stone-600 dark:text-stone-300">
               <a
                 href={facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook Bonbon Flowers"
-                className="hover:text-[#163422] dark:hover:text-[#5EEAD4] transition-colors p-1"
+                className="hover:text-[#163422] dark:hover:text-[#E6C98B] transition-colors p-1"
               >
                 <Facebook size={18} />
               </a>
@@ -124,7 +124,7 @@ export function Footer({ siteConfig }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram Bonbon Flowers"
-                className="hover:text-[#163422] dark:hover:text-[#5EEAD4] transition-colors p-1"
+                className="hover:text-[#163422] dark:hover:text-[#E6C98B] transition-colors p-1"
               >
                 <Instagram size={18} />
               </a>
@@ -173,25 +173,25 @@ export function Footer({ siteConfig }: FooterProps) {
         </div>
 
         {/* Copyright y Enlaces Legales */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-y-2 text-[11px] text-stone-600 dark:text-[#76C7B2] text-center font-medium">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-y-2 text-[11px] text-stone-600 dark:text-stone-400 text-center font-medium">
           <span>
             © {new Date().getFullYear()}, Bonbon Flowers Houston. All rights reserved.
           </span>
           <span className="hidden sm:inline mx-2 text-stone-400">·</span>
-          <div className="flex flex-wrap justify-center gap-x-2 text-stone-800 dark:text-[#B9E6D3]">
-            <Link className="text-stone-800 dark:text-[#B9E6D3] hover:text-[#163422] dark:hover:text-[#5EEAD4] font-semibold hover:underline" href={`${prefix}/contacto`}>
+          <div className="flex flex-wrap justify-center gap-x-2 text-stone-800 dark:text-stone-300">
+            <Link className="text-stone-800 dark:text-stone-300 hover:text-[#163422] dark:hover:text-[#E6C98B] font-semibold hover:underline" href={`${prefix}/contacto`}>
               {isSpanish ? "Contacto" : "Contact"}
             </Link>
             <span className="text-stone-400">·</span>
-            <Link className="text-stone-800 dark:text-[#B9E6D3] hover:text-[#163422] dark:hover:text-[#5EEAD4] font-semibold hover:underline" href={`${prefix}/nosotros`}>
+            <Link className="text-stone-800 dark:text-stone-300 hover:text-[#163422] dark:hover:text-[#E6C98B] font-semibold hover:underline" href={`${prefix}/nosotros`}>
               {isSpanish ? "Nosotros" : "About Us"}
             </Link>
             <span className="text-stone-400">·</span>
-            <Link className="text-stone-800 dark:text-[#B9E6D3] hover:text-[#163422] dark:hover:text-[#5EEAD4] font-semibold hover:underline" href={`${prefix}/productos`}>
+            <Link className="text-stone-800 dark:text-stone-300 hover:text-[#163422] dark:hover:text-[#E6C98B] font-semibold hover:underline" href={`${prefix}/productos`}>
               {isSpanish ? "Colección" : "All Flowers"}
             </Link>
             <span className="text-stone-400">·</span>
-            <Link className="text-stone-800 dark:text-[#B9E6D3] hover:text-[#163422] dark:hover:text-[#5EEAD4] font-semibold hover:underline" href={`${prefix}/rastreo`}>
+            <Link className="text-stone-800 dark:text-stone-300 hover:text-[#163422] dark:hover:text-[#E6C98B] font-semibold hover:underline" href={`${prefix}/rastreo`}>
               {isSpanish ? "Rastreo" : "Order Tracking"}
             </Link>
           </div>

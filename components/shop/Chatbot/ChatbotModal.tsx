@@ -836,7 +836,7 @@ export const ChatbotModal = () => {
                                   className={`flex-shrink-0 px-2.5 py-1.5 rounded-lg text-[10px] sm:text-[11px] font-bold flex items-center gap-1 transition-all shadow-xs ${
                                     isAdded
                                       ? 'bg-emerald-600 text-white cursor-default'
-                                      : 'bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 hover:scale-102 active:scale-98 cursor-pointer'
+                                      : 'bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 hover:scale-102 active:scale-98 cursor-pointer'
                                   }`}
                                 >
                                   {isAdded ? (

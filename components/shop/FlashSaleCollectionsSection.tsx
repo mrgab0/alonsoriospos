@@ -140,7 +140,7 @@ export function FlashSaleCollectionsSection() {
                   price: 119.99,
                   image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=500&auto=format&fit=crop&q=80"
                 })}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 py-3.5 px-6 rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg active:scale-95"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 py-3.5 px-6 rounded-2xl font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg active:scale-95"
               >
                 <ShoppingBag size={16} />
                 <span>Aprovechar Oferta Flash Ahora</span>

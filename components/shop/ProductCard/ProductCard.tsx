@@ -49,7 +49,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const optimizedSecondaryImage = secondaryImage ? optimizeImageUrl(secondaryImage) : undefined;
 
   return (
-    <div className="group relative bg-white dark:bg-[#12131A] rounded-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-stone-800 hover:border-[#5EEAD4]/30 shadow-[0px_4px_20px_rgba(42,0,2,0.04)] hover:shadow-[0px_16px_36px_rgba(42,0,2,0.12)] hover:-translate-y-1 flex flex-col justify-between select-none">
+    <div className="group relative bg-white dark:bg-[#141A16] rounded-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-stone-800 hover:border-[#FF97A4]/40 shadow-[0px_4px_20px_rgba(42,0,2,0.04)] hover:shadow-[0px_16px_36px_rgba(42,0,2,0.12)] hover:-translate-y-1 flex flex-col justify-between select-none">
       <Link
         href={productHref}
         draggable={false}
@@ -57,7 +57,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         className="block relative select-none"
       >
         {/* Contenedor de Imagen con Zoom suave y preservación completa del arreglo floral */}
-        <div className="relative aspect-square overflow-hidden bg-[#FAFAF9] dark:bg-[#15161E] p-2.5 flex items-center justify-center">
+        <div className="relative aspect-square overflow-hidden bg-[#FAFAF9] dark:bg-[#101512] p-2.5 flex items-center justify-center">
           <img
             src={optimizedMainImage}
             alt={name}
@@ -84,7 +84,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           
           {/* Badge Flotante estilo Categoría */}
           <div className="absolute top-3 left-3 z-10 pointer-events-none">
-            <span className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-xs text-[#163422] dark:text-[#5EEAD4] text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider border border-stone-300 dark:border-[#5EEAD4]/30 shadow-md max-w-[130px] sm:max-w-[150px] truncate block">
+            <span className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-xs text-[#163422] dark:text-[#E6C98B] text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider border border-stone-300 dark:border-[#C5A059]/30 shadow-md max-w-[130px] sm:max-w-[150px] truncate block">
               {category}
             </span>
           </div>
@@ -101,9 +101,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
       </Link>
 
-      <div className="p-4 sm:p-5 flex flex-col justify-between flex-grow bg-white dark:bg-[#12131A]">
+      <div className="p-4 sm:p-5 flex flex-col justify-between flex-grow bg-white dark:bg-[#141A16]">
         <div>
-          <h3 className="font-serif font-bold text-sm sm:text-base text-stone-900 dark:text-[#E6F7F0] group-hover:text-[#163422] dark:group-hover:text-[#5EEAD4] transition-colors mb-1 line-clamp-1">
+          <h3 className="font-serif font-bold text-sm sm:text-base text-stone-900 dark:text-white group-hover:text-[#163422] dark:group-hover:text-[#FF97A4] transition-colors mb-1 line-clamp-1">
             <Link
               href={productHref}
               draggable={false}
@@ -116,19 +116,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {/* Calificación de 5 estrellas estilo flor.zip */}
           <div className="flex items-center text-[11px] text-amber-500 mb-2">
             <span>★★★★★</span>
-            <span className="text-stone-400 dark:text-[#76C7B2] ml-1.5 text-[10px] font-medium">(5.0)</span>
+            <span className="text-stone-400 dark:text-gray-400 ml-1.5 text-[10px] font-medium">(5.0)</span>
           </div>
         </div>
 
         <div className="flex justify-between items-center pt-2.5 border-t border-gray-100 dark:border-gray-800/80 mt-auto">
           <div>
-            <span className="text-[10px] uppercase tracking-wider text-stone-500 dark:text-[#76C7B2] block font-semibold">{isSpanish ? "Desde" : "From"}</span>
-            <span className="text-base sm:text-lg font-bold text-stone-900 dark:text-[#5EEAD4] font-serif">${price.toFixed(2)} USD</span>
+            <span className="text-[10px] uppercase tracking-wider text-stone-500 dark:text-gray-400 block font-semibold">{isSpanish ? "Desde" : "From"}</span>
+            <span className="text-base sm:text-lg font-bold text-stone-900 dark:text-[#E6C98B] font-serif">${price.toFixed(2)} USD</span>
           </div>
 
           <button 
             onClick={() => addToCart({ id, name, price, image })}
-            className="bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 px-3 sm:px-3.5 py-2 rounded-lg active:scale-95 transition-all duration-300 font-bold text-xs shadow-sm flex items-center gap-1.5 hover:scale-105"
+            className="bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1F452E] text-white dark:text-white border border-transparent dark:border-[#C5A059]/40 px-3 sm:px-3.5 py-2 rounded-lg active:scale-95 transition-all duration-300 font-bold text-xs shadow-sm flex items-center gap-1.5 hover:scale-105"
             title={isSpanish ? "Añadir al Carrito" : "Add to Cart"}
           >
             <ShoppingBag size={13} />

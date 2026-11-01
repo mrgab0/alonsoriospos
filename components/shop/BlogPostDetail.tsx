@@ -27,12 +27,12 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#FDFBF9] dark:bg-[#0B0C10] text-stone-900 dark:text-[#E6F7F0] flex flex-col">
+      <div className="min-h-screen bg-[#FDFBF9] dark:bg-[#0D110F] text-stone-900 dark:text-[#FFFFFF] flex flex-col">
         <ShopHeader />
         <main className="nosotros-page-root flex-1 flex items-center justify-center p-6">
           <div className="text-center space-y-4 max-w-md">
-            <h1 className="text-2xl font-serif font-black text-stone-900 dark:text-[#E6F7F0]">Artículo no encontrado</h1>
-            <p className="text-sm text-stone-700 dark:text-[#B9E6D3] font-semibold">El post que buscas no existe o fue movido.</p>
+            <h1 className="text-2xl font-serif font-black text-stone-900 dark:text-[#FFFFFF]">Artículo no encontrado</h1>
+            <p className="text-sm text-stone-700 dark:text-[#CBD5E1] font-semibold">El post que buscas no existe o fue movido.</p>
             <Link
               href="/nosotros"
               className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#163422] text-white rounded-full text-xs font-bold hover:bg-[#1B2E22] transition-colors"
@@ -86,19 +86,19 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
       const token = match[0];
       if (token.startsWith('***') && token.endsWith('***')) {
         parts.push(
-          <strong key={match.index} className="font-extrabold italic text-stone-900 dark:text-[#E6F7F0]">
+          <strong key={match.index} className="font-extrabold italic text-stone-900 dark:text-[#FFFFFF]">
             {token.slice(3, -3).replace(/\*\*/g, '')}
           </strong>
         );
       } else if (token.startsWith('**') && token.endsWith('**')) {
         parts.push(
-          <strong key={match.index} className="font-extrabold text-stone-900 dark:text-[#E6F7F0]">
+          <strong key={match.index} className="font-extrabold text-stone-900 dark:text-[#FFFFFF]">
             {token.slice(2, -2).replace(/\*\*/g, '')}
           </strong>
         );
       } else if (token.startsWith('*') && token.endsWith('*')) {
         parts.push(
-          <em key={match.index} className="italic text-stone-800 dark:text-[#B9E6D3] font-semibold">
+          <em key={match.index} className="italic text-stone-800 dark:text-[#CBD5E1] font-semibold">
             {token.slice(1, -1)}
           </em>
         );
@@ -112,7 +112,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
               <Link
                 key={match.index}
                 href={url}
-                className="text-[#163422] dark:text-[#5EEAD4] font-extrabold underline hover:text-[#0f2417] dark:hover:text-[#2DD4BF] transition-colors"
+                className="text-[#163422] dark:text-[#E6C98B] font-extrabold underline hover:text-[#0f2417] dark:hover:text-[#2DD4BF] transition-colors"
               >
                 {label.replace(/\*\*/g, '')}
               </Link>
@@ -122,7 +122,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#163422] dark:text-[#5EEAD4] font-extrabold underline hover:text-[#0f2417] dark:hover:text-[#2DD4BF] transition-colors"
+                className="text-[#163422] dark:text-[#E6C98B] font-extrabold underline hover:text-[#0f2417] dark:hover:text-[#2DD4BF] transition-colors"
               >
                 {label.replace(/\*\*/g, '')}
               </a>
@@ -154,7 +154,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
     const paragraphs = normalized.split(/\n\n+/);
 
     return (
-      <div className="space-y-6 text-stone-800 dark:text-[#B9E6D3] text-sm sm:text-base leading-relaxed">
+      <div className="space-y-6 text-stone-800 dark:text-[#CBD5E1] text-sm sm:text-base leading-relaxed">
         {paragraphs.map((para, i) => {
           const trimmed = para.trim();
           if (!trimmed) return null;
@@ -177,7 +177,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
             return (
               <h2
                 key={i}
-                className="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-[#E6F7F0] pt-6 pb-2 border-b-2 border-stone-200 dark:border-stone-800 tracking-tight"
+                className="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-[#FFFFFF] pt-6 pb-2 border-b-2 border-stone-200 dark:border-stone-800 tracking-tight"
               >
                 {renderInlineFormattedText(headingText)}
               </h2>
@@ -189,7 +189,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
             return (
               <h3
                 key={i}
-                className="text-lg sm:text-xl font-serif font-black text-stone-900 dark:text-[#E6F7F0] pt-4 pb-1"
+                className="text-lg sm:text-xl font-serif font-black text-stone-900 dark:text-[#FFFFFF] pt-4 pb-1"
               >
                 {renderInlineFormattedText(trimmed.replace(/^###\s*/, ""))}
               </h3>
@@ -201,7 +201,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
             return (
               <blockquote
                 key={i}
-                className="p-4 sm:p-5 my-4 bg-stone-100 dark:bg-stone-900/80 rounded-2xl border-l-4 border-[#163422] dark:border-[#5EEAD4] text-stone-800 dark:text-[#B9E6D3] font-semibold italic shadow-xs"
+                className="p-4 sm:p-5 my-4 bg-stone-100 dark:bg-stone-900/80 rounded-2xl border-l-4 border-[#163422] dark:border-[#E6C98B] text-stone-800 dark:text-[#CBD5E1] font-semibold italic shadow-xs"
               >
                 {renderInlineFormattedText(trimmed.replace(/^>\s*/, ""))}
               </blockquote>
@@ -220,12 +220,12 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
                   return (
                     <div
                       key={idx}
-                      className="flex items-start gap-3.5 p-4 rounded-2xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-xs hover:border-[#5EEAD4]/50 transition-colors"
+                      className="flex items-start gap-3.5 p-4 rounded-2xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 shadow-xs hover:border-[#E6C98B]/50 transition-colors"
                     >
-                      <span className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#163422] dark:bg-[#5EEAD4] text-white dark:text-stone-950 font-black text-xs sm:text-sm flex items-center justify-center shadow-xs">
+                      <span className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#163422] dark:bg-[#E6C98B] text-white dark:text-stone-950 font-black text-xs sm:text-sm flex items-center justify-center shadow-xs">
                         {num}
                       </span>
-                      <div className="flex-1 font-medium text-stone-800 dark:text-[#B9E6D3] text-sm sm:text-base leading-relaxed">
+                      <div className="flex-1 font-medium text-stone-800 dark:text-[#CBD5E1] text-sm sm:text-base leading-relaxed">
                         {renderInlineFormattedText(body)}
                       </div>
                     </div>
@@ -247,10 +247,10 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
                   return (
                     <div
                       key={idx}
-                      className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-stone-50 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 shadow-xs hover:border-[#5EEAD4]/40 transition-colors"
+                      className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-stone-50 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 shadow-xs hover:border-[#E6C98B]/40 transition-colors"
                     >
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#163422] dark:bg-[#5EEAD4] mt-2 shrink-0 shadow-xs" />
-                      <div className="flex-1 font-medium text-stone-800 dark:text-[#B9E6D3] text-sm sm:text-base leading-relaxed">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#163422] dark:bg-[#E6C98B] mt-2 shrink-0 shadow-xs" />
+                      <div className="flex-1 font-medium text-stone-800 dark:text-[#CBD5E1] text-sm sm:text-base leading-relaxed">
                         {renderInlineFormattedText(cleanItem)}
                       </div>
                     </div>
@@ -264,11 +264,11 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
           if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
             const items = trimmed.split(/\n/).filter((l) => l.trim().length > 0);
             return (
-              <ul key={i} className="space-y-2.5 my-3 pl-4 list-disc marker:text-[#163422] dark:marker:text-[#5EEAD4]">
+              <ul key={i} className="space-y-2.5 my-3 pl-4 list-disc marker:text-[#163422] dark:marker:text-[#E6C98B]">
                 {items.map((it, idx) => {
                   const cleanItem = it.replace(/^[-*]\s*/, "");
                   return (
-                    <li key={idx} className="font-semibold text-stone-800 dark:text-[#B9E6D3]">
+                    <li key={idx} className="font-semibold text-stone-800 dark:text-[#CBD5E1]">
                       {renderInlineFormattedText(cleanItem)}
                     </li>
                   );
@@ -290,7 +290,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
                   loading="lazy"
                 />
                 {alt && (
-                  <figcaption className="text-center text-xs text-stone-500 dark:text-[#76C7B2] py-2.5 px-4 bg-stone-50 dark:bg-stone-900/60 border-t border-stone-100 dark:border-stone-800 italic">
+                  <figcaption className="text-center text-xs text-stone-500 dark:text-[#94A3B8] py-2.5 px-4 bg-stone-50 dark:bg-stone-900/60 border-t border-stone-100 dark:border-stone-800 italic">
                     {alt}
                   </figcaption>
                 )}
@@ -312,7 +312,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
                     loading="lazy"
                   />
                   {alt && (
-                    <figcaption className="text-center text-xs text-stone-500 dark:text-[#76C7B2] py-2.5 px-4 bg-stone-50 dark:bg-stone-900/60 border-t border-stone-100 dark:border-stone-800 italic">
+                    <figcaption className="text-center text-xs text-stone-500 dark:text-[#94A3B8] py-2.5 px-4 bg-stone-50 dark:bg-stone-900/60 border-t border-stone-100 dark:border-stone-800 italic">
                       {alt}
                     </figcaption>
                   )}
@@ -325,7 +325,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
           if (trimmed.includes('\n')) {
             const simpleLines = trimmed.split('\n').filter((l) => l.trim().length > 0);
             return (
-              <div key={i} className="space-y-3 font-medium text-stone-800 dark:text-[#B9E6D3] leading-relaxed">
+              <div key={i} className="space-y-3 font-medium text-stone-800 dark:text-[#CBD5E1] leading-relaxed">
                 {simpleLines.map((l, lIdx) => (
                   <p key={lIdx}>
                     {renderInlineFormattedText(l)}
@@ -336,7 +336,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
           }
 
           return (
-            <p key={i} className="font-medium text-stone-800 dark:text-[#B9E6D3] leading-relaxed">
+            <p key={i} className="font-medium text-stone-800 dark:text-[#CBD5E1] leading-relaxed">
               {renderInlineFormattedText(trimmed)}
             </p>
           );
@@ -349,7 +349,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
   const isEn = locale === "en" || post.language === "en";
 
   return (
-    <div className="min-h-screen bg-[#FDFBF9] dark:bg-[#0B0C10] text-stone-900 dark:text-[#E6F7F0] flex flex-col transition-colors duration-300">
+    <div className="min-h-screen bg-[#FDFBF9] dark:bg-[#0D110F] text-stone-900 dark:text-[#FFFFFF] flex flex-col transition-colors duration-300">
       <ShopHeader />
 
       {/* Structured Data JSON-LD para Google SEO */}
@@ -386,7 +386,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
           <div className="flex items-center justify-between gap-3">
             <Link
               href={isEn ? "/nosotros" : "/es/nosotros"}
-              className="inline-flex items-center gap-2 text-xs font-black text-stone-700 dark:text-[#5EEAD4] hover:text-[#163422] dark:hover:text-[#2DD4BF] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-black text-stone-700 dark:text-[#E6C98B] hover:text-[#163422] dark:hover:text-[#2DD4BF] transition-colors"
             >
               <ArrowLeft size={14} />
               <span>{isEn ? "Back to About & Blog" : "Volver a Nosotros & Blog"}</span>
@@ -395,10 +395,10 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCopyLink}
-                className="p-2 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-[#E6F7F0] hover:bg-stone-200 dark:hover:bg-stone-700 transition-all text-xs font-bold flex items-center gap-1.5"
+                className="p-2 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-[#FFFFFF] hover:bg-stone-200 dark:hover:bg-stone-700 transition-all text-xs font-bold flex items-center gap-1.5"
                 title={isEn ? "Copy link" : "Copiar enlace"}
               >
-                {copied ? <Check size={14} className="text-emerald-500 dark:text-[#5EEAD4]" /> : <Share2 size={14} />}
+                {copied ? <Check size={14} className="text-emerald-500 dark:text-[#E6C98B]" /> : <Share2 size={14} />}
                 <span className="hidden sm:inline">{copied ? (isEn ? "Copied!" : "¡Copiado!") : (isEn ? "Share" : "Compartir")}</span>
               </button>
 
@@ -406,7 +406,7 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
                 href={whatsappShareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-[#5EEAD4] hover:bg-emerald-100 transition-all text-xs font-bold flex items-center gap-1.5"
+                className="p-2 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-[#E6C98B] hover:bg-emerald-100 transition-all text-xs font-bold flex items-center gap-1.5"
                 title="WhatsApp"
               >
                 <MessageCircle size={14} />
@@ -417,34 +417,34 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
 
           {/* Encabezado del Post */}
           <header className="space-y-4 text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-stone-100 dark:bg-stone-900/80 border border-stone-200 dark:border-[#5EEAD4]/20 text-[#163422] dark:text-[#5EEAD4] px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider">
-              <Sparkles size={13} className="text-[#163422] dark:text-[#5EEAD4]" />
+            <div className="inline-flex items-center gap-2 bg-stone-100 dark:bg-stone-900/80 border border-stone-200 dark:border-[#E6C98B]/20 text-[#163422] dark:text-[#E6C98B] px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider">
+              <Sparkles size={13} className="text-[#163422] dark:text-[#E6C98B]" />
               <span>{isEn ? "Floral Boutique & Insights" : "Boutique Floral & Consejos"}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-stone-900 dark:text-[#E6F7F0] leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-stone-900 dark:text-[#FFFFFF] leading-tight tracking-tight">
               {post.title}
             </h1>
 
             {post.excerpt && (
-              <p className="text-sm sm:text-base text-stone-700 dark:text-[#B9E6D3] font-semibold leading-relaxed max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-stone-700 dark:text-[#CBD5E1] font-semibold leading-relaxed max-w-2xl mx-auto">
                 {cleanExcerpt(post.excerpt)}
               </p>
             )}
 
-            <div className="flex flex-wrap justify-center items-center gap-4 text-xs font-bold text-stone-500 dark:text-[#76C7B2] pt-1">
+            <div className="flex flex-wrap justify-center items-center gap-4 text-xs font-bold text-stone-500 dark:text-[#94A3B8] pt-1">
               <span className="flex items-center gap-1">
-                <Calendar size={14} className="text-[#163422] dark:text-[#5EEAD4]" />
+                <Calendar size={14} className="text-[#163422] dark:text-[#E6C98B]" />
                 {new Date(post.createdAt || Date.now()).toLocaleDateString(isEn ? "en-US" : "es-ES", { month: "long", day: "numeric", year: "numeric" })}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <Clock size={14} className="text-stone-500 dark:text-[#76C7B2]" />
+                <Clock size={14} className="text-stone-500 dark:text-[#94A3B8]" />
                 {isEn ? "3 min read" : "3 min de lectura"}
               </span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <MapPin size={14} className="text-emerald-600 dark:text-[#5EEAD4]" />
+                <MapPin size={14} className="text-emerald-600 dark:text-[#E6C98B]" />
                 Houston, TX
               </span>
             </div>
@@ -462,19 +462,19 @@ export function BlogPostDetail({ post, locale = "es" }: BlogPostDetailProps) {
           )}
 
           {/* Contenido Completo del Artículo */}
-          <div className="bg-white dark:bg-[#181922] p-6 sm:p-10 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm space-y-6">
+          <div className="bg-white dark:bg-[#141A16] p-6 sm:p-10 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm space-y-6">
             {renderFormattedContent(post.content)}
           </div>
 
           {/* CAJA DE ACCIÓN / COMPRA RELACIONADA */}
-          <div className="bg-stone-50 dark:bg-[#181922] p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-[#5EEAD4]/20 shadow-md space-y-4 text-center">
-            <div className="w-12 h-12 rounded-full bg-[#163422] dark:bg-[#5EEAD4] text-white dark:text-stone-950 flex items-center justify-center mx-auto shadow-md">
+          <div className="bg-stone-50 dark:bg-[#141A16] p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-[#E6C98B]/20 shadow-md space-y-4 text-center">
+            <div className="w-12 h-12 rounded-full bg-[#163422] dark:bg-[#E6C98B] text-white dark:text-stone-950 flex items-center justify-center mx-auto shadow-md">
               <Gift size={22} />
             </div>
-            <h3 className="text-2xl font-serif font-black text-stone-900 dark:text-[#E6F7F0]">
+            <h3 className="text-2xl font-serif font-black text-stone-900 dark:text-[#FFFFFF]">
               {isEn ? "Ready to Order Luxury Flowers in Houston?" : "¿Listo para Enviar Flores de Lujo en Houston?"}
             </h3>
-            <p className="text-xs sm:text-sm text-stone-600 dark:text-[#B9E6D3] max-w-lg mx-auto font-medium">
+            <p className="text-xs sm:text-sm text-stone-600 dark:text-[#CBD5E1] max-w-lg mx-auto font-medium">
               {isEn 
                 ? "Explore our exclusive collection of luxury rose bouquets, signature hatboxes, and custom designs with prompt same-day delivery."
                 : "Explora nuestra exclusiva colección de ramos buchones, rosas de exportación y cajas personalizadas con entrega el mismo día."

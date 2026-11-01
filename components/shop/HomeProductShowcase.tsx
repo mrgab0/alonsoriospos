@@ -84,8 +84,8 @@ export function HomeProductShowcase({ products }: HomeProductShowcaseProps) {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 active:scale-95 shadow-sm ${
                   isActive
-                    ? "bg-[#163422] text-white dark:bg-[#C5A059] dark:text-stone-950 shadow-md scale-105"
-                    : "bg-stone-100 hover:bg-stone-200 text-stone-700 dark:bg-[#15161F] dark:text-gray-300 dark:hover:bg-gray-800 border border-stone-200/80 dark:border-gray-800"
+                    ? "bg-[#163422] text-white dark:bg-[#163422] dark:text-[#E6C98B] dark:border dark:border-[#E6C98B]/60 shadow-md scale-105"
+                    : "bg-stone-100 hover:bg-stone-200 text-stone-700 dark:bg-[#141A16] dark:text-stone-300 dark:hover:bg-[#1E2620] border border-stone-200/80 dark:border-white/10"
                 }`}
               >
                 {cat}
@@ -112,7 +112,7 @@ export function HomeProductShowcase({ products }: HomeProductShowcaseProps) {
             />
           ))
         ) : (
-          <div className="col-span-full text-center py-16 bg-stone-50 dark:bg-[#12131A] rounded-3xl border border-stone-200/60 dark:border-gray-800 p-8">
+          <div className="col-span-full text-center py-16 bg-stone-50 dark:bg-[#141A16] rounded-3xl border border-stone-200/60 dark:border-white/10 p-8">
             <Sparkles className="w-10 h-10 text-stone-300 dark:text-gray-600 mx-auto mb-3" />
             <p className="text-stone-600 dark:text-gray-400 font-semibold text-sm">
               {isSpanish ? "No hay arreglos en esta categoría por el momento." : "No arrangements in this category at the moment."}
@@ -131,7 +131,7 @@ export function HomeProductShowcase({ products }: HomeProductShowcaseProps) {
       <div className="mt-14 text-center">
         <Link
           href={isSpanish ? "/es/productos" : "/productos"}
-          className="inline-flex items-center gap-2 bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#C5A059] dark:hover:bg-[#d8b56f] text-white dark:text-stone-950 text-xs font-bold tracking-widest uppercase px-10 py-4 transition-all duration-300 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 group"
+          className="inline-flex items-center gap-2 bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 text-xs font-bold tracking-widest uppercase px-10 py-4 transition-all duration-300 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 group"
         >
           <span>
             {isSpanish

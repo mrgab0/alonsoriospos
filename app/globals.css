@@ -17,39 +17,43 @@
 }
 
 .dark {
-  /* TEMA OSCURO BOTÁNICO MENTA & TEAL DE ALTA COSTURA */
-  --foreground-rgb: 230, 247, 240;
-  --background-start-rgb: 11, 12, 16;
-  --background-end-rgb: 11, 12, 16;
+  /* TEMA OSCURO BOTÁNICO DE ALTA COSTURA (ESENCIA BONBON FLOWERS) */
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 13, 17, 15;
+  --background-end-rgb: 13, 17, 15;
 
-  --bg-main: #0B0C10;
-  --bg-card: #12131A;
-  --bg-card-hover: #181922;
+  --bg-main: #0D110F;
+  --bg-card: #141A16;
+  --bg-card-hover: #1A221D;
 
-  /* Tipografía Menta-Teal con Contraste WCAG AAA */
-  --text-main: #E6F7F0;        /* Ethereal Mint (Títulos y textos primarios, contraste 17.6:1) */
-  --text-body: #B9E6D3;        /* Soft Sage-Mint (Párrafos y lectura, contraste 14.2:1) */
-  --text-muted: #76C7B2;       /* Muted Mint-Teal (Subtítulos, fechas, notas, contraste 9.8:1) */
-  --text-accent: #5EEAD4;      /* Luminous Teal-Mint (Destacados, cursivas, enlaces, contraste 13.2:1) */
-  --text-accent-secondary: #2DD4BF; /* Deep Luminous Teal */
-  --border-mint: rgba(94, 234, 212, 0.18);
-  --border-mint-glow: rgba(94, 234, 212, 0.35);
+  /* Tipografía de Alto Contraste WCAG AAA */
+  --text-main: #FFFFFF;        /* Blanco Puro (Títulos y textos primarios, contraste > 18:1) */
+  --text-body: #E2E8F0;        /* Perla Suave (Párrafos y lectura, contraste > 14:1) */
+  --text-muted: #94A3B8;       /* Gris Platino (Subtítulos, fechas, notas, contraste > 7:1) */
+  --text-accent: #E6C98B;      /* Oro Champagne (Acentos de lujo, contraste > 12:1) */
+  --text-accent-secondary: #FF97A4; /* Rosa Característico Bonbon (contraste > 8.5:1) */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(230, 201, 139, 0.35);
 
   /* Sobrescrituras para variables del Theme Editor en Modo Oscuro */
-  --theme-page-bg: #0B0C10;
-  --theme-card-bg: #12131A;
-  --theme-card-border: #262833;
-  --theme-header-bg: #12131A;
-  --theme-header-text: #E6F7F0;
-  --theme-heading: #E6F7F0;
-  --theme-body: #B9E6D3;
-  --theme-script: #5EEAD4;
-  --theme-footer-bg: #0B0C10;
-  --theme-footer-text: #E6F7F0;
-  --theme-footer-accent: #5EEAD4;
-  --theme-price-color: #5EEAD4;
-  --theme-announcement-bg: #12131A;
-  --theme-announcement-text: #5EEAD4;
+  --theme-page-bg: #0D110F;
+  --theme-card-bg: #141A16;
+  --theme-card-border: rgba(255, 255, 255, 0.08);
+  --theme-header-bg: rgba(14, 20, 16, 0.95);
+  --theme-header-text: #FFFFFF;
+  --theme-heading: #FFFFFF;
+  --theme-body: #E2E8F0;
+  --theme-script: #E6C98B;
+  --theme-footer-bg: #0A0D0B;
+  --theme-footer-text: #E2E8F0;
+  --theme-footer-accent: #E6C98B;
+  --theme-price-color: #E6C98B;
+  --theme-announcement-bg: #141E17;
+  --theme-announcement-text: #FFFFFF;
+  --theme-btn-primary-bg: #163422;
+  --theme-btn-primary-text: #FFFFFF;
+  --theme-btn-secondary-bg: #FF97A4;
+  --theme-btn-secondary-text: #FFFFFF;
 }
 
 /* Base Body Typography */
@@ -260,13 +264,13 @@ html.dark footer p {
   color: #B9E6D3 !important;
 }
 html.dark footer a {
-  color: #B9E6D3 !important;
+  color: #E2E8F0 !important;
 }
 html.dark footer a:hover {
-  color: #5EEAD4 !important;
+  color: #E6C98B !important;
 }
 
-/* --- REGLAS MAESTRAS DE TIPOGRAFÍA MENTA & TEAL EN MODO OSCURO (WCAG AAA) --- */
+/* --- REGLAS MAESTRAS DE TIPOGRAFÍA Y CONTRASTE EN MODO OSCURO (WCAG AAA) --- */
 
 html.dark h1:not(.preserve-color),
 html.dark h2:not(.preserve-color),
@@ -274,111 +278,138 @@ html.dark h3:not(.preserve-color),
 html.dark h4:not(.preserve-color),
 html.dark h5:not(.preserve-color),
 html.dark h6:not(.preserve-color) {
-  color: #E6F7F0 !important;
+  color: #FFFFFF !important;
 }
 
 /* Tipografía script cursiva ("feel loved ♡") */
 html.dark .font-script-custom:not(.preserve-color) {
-  color: #5EEAD4 !important;
-  text-shadow: 0 0 24px rgba(94, 234, 212, 0.4);
+  color: #E6C98B !important;
+  text-shadow: 0 0 20px rgba(230, 201, 139, 0.35);
 }
 
-/* Transformación de textos oscuros o #163422 a Menta / Teal Luminoso */
+/* Transformación de textos oscuros o de acento a Oro Champagne (#E6C98B) */
 html.dark .text-\[\#163422\],
 html.dark .text-\[\#1B2E22\],
 html.dark .text-\[\#2a0002\],
 html.dark .text-\[\#2B0002\],
 html.dark .text-\[\#0f2417\] {
-  color: #5EEAD4 !important;
+  color: #E6C98B !important;
 }
 
+/* CERO TEXTO OSCURO: Todo texto neutro oscuro se convierte en Blanco Puro (#FFFFFF) */
 html.dark .text-stone-900,
 html.dark .text-stone-800,
 html.dark .text-stone-700,
 html.dark .text-gray-900,
 html.dark .text-gray-800,
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700,
+html.dark .text-zinc-900,
+html.dark .text-zinc-800,
 html.dark .text-neutral-900,
 html.dark .text-black,
 html.dark .text-\[\#1A1C1C\],
-html.dark .text-\[\#1A1A1A\] {
-  color: #E6F7F0 !important;
+html.dark .text-\[\#1A1A1A\],
+html.dark .text-\[\#1c1917\],
+html.dark .text-\[\#0f172a\],
+html.dark .text-\[\#1e293b\] {
+  color: #FFFFFF !important;
 }
 
+/* Párrafos y subtítulos en Perla Claro (#E2E8F0) */
 html.dark .text-stone-600,
 html.dark .text-stone-500,
 html.dark .text-gray-600,
-html.dark .text-gray-500 {
-  color: #B9E6D3 !important;
+html.dark .text-gray-500,
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-zinc-600,
+html.dark .text-zinc-500,
+html.dark .text-\[\#4A5568\],
+html.dark .text-\[\#44403C\],
+html.dark .text-\[\#475569\],
+html.dark .text-\[\#334155\] {
+  color: #E2E8F0 !important;
 }
 
+/* Textos secundarios y notas en Platino (#94A3B8) */
 html.dark .text-stone-400,
-html.dark .text-gray-400 {
-  color: #76C7B2 !important;
+html.dark .text-gray-400,
+html.dark .text-slate-400,
+html.dark .text-\[\#78716C\],
+html.dark .text-\[\#64748b\] {
+  color: #94A3B8 !important;
 }
 
 /* Enlaces y Navegación en Modo Oscuro */
 html.dark nav a,
 html.dark header a:not(.preserve-color) {
-  color: #E6F7F0 !important;
+  color: #FFFFFF !important;
 }
 html.dark nav a:hover,
 html.dark header a:hover:not(.preserve-color) {
-  color: #5EEAD4 !important;
-  border-color: rgba(94, 234, 212, 0.4) !important;
+  color: #FF97A4 !important;
+  border-color: rgba(255, 151, 164, 0.4) !important;
 }
 
-/* Botones #163422 sin variante oscura explícita: Mantener bosque con realce de borde menta/teal */
+/* Botones #163422 sin variante oscura explícita: Mantener bosque con borde dorado */
 html.dark .bg-\[\#163422\]:not([class*="dark:bg-"]) {
   background-color: #163422 !important;
-  border: 1px solid rgba(94, 234, 212, 0.35) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(230, 201, 139, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 html.dark .bg-\[\#163422\]:not([class*="dark:bg-"]):hover {
-  background-color: #1B2E22 !important;
-  border-color: #5EEAD4 !important;
-  box-shadow: 0 0 18px rgba(94, 234, 212, 0.3) !important;
+  background-color: #1F452E !important;
+  border-color: #E6C98B !important;
+  box-shadow: 0 0 18px rgba(230, 201, 139, 0.25) !important;
 }
 
 /* Badges e Insignias */
 html.dark .bg-stone-100,
 html.dark .bg-gray-100 {
-  background-color: #161822 !important;
-  color: #E6F7F0 !important;
-  border-color: rgba(94, 234, 212, 0.18) !important;
+  background-color: #1A221D !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Cobertura de Fondos en Modo Oscuro */
 .dark main,
 .dark .bg-gray-100,
 .dark .bg-gray-200 {
-  background-color: #0F1015 !important;
-  color: #E6F7F0 !important;
+  background-color: #0D110F !important;
+  color: #FFFFFF !important;
 }
 
 .dark .bg-white {
-  background-color: #181922 !important;
-  color: #E6F7F0 !important;
-  border-color: rgba(94, 234, 212, 0.2) !important;
+  background-color: #141A16 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 .dark .bg-\[\#F9F9F9\],
 .dark .bg-\[\#FDFBF9\],
-.dark .bg-\[\#FAFAF9\] {
-  background-color: #0F1015 !important;
+.dark .bg-\[\#FAFAF9\],
+.dark .bg-\[\#FAF7F5\],
+.dark .bg-\[\#FDFBF7\] {
+  background-color: #0D110F !important;
+  color: #FFFFFF !important;
 }
 
 .dark .bg-gray-50,
 .dark .bg-gray-50\/50,
-.dark .bg-gray-50\/80 {
-  background-color: #12131A !important;
-  border-color: rgba(94, 234, 212, 0.15) !important;
+.dark .bg-gray-50\/80,
+.dark .bg-stone-50 {
+  background-color: #141A16 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Bordes en Modo Oscuro con Tono Menta/Teal sutil */
+/* Bordes en Modo Oscuro con Tono sutil */
 .dark .border-gray-100,
 .dark .border-gray-200,
 .dark .border-gray-300 {
-  border-color: rgba(94, 234, 212, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Formularios en Modo Oscuro con foco Menta */

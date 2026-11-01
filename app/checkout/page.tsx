@@ -385,7 +385,7 @@ function CheckoutContent() {
                     <button
                       type="button"
                       onClick={() => setIsBioModalOpen(true)}
-                      className="bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 hover:scale-105 active:scale-95"
+                      className="bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 hover:scale-105 active:scale-95"
                     >
                       <Fingerprint size={14} />
                       <span>Ingresar con Huella 👆</span>
@@ -602,7 +602,7 @@ function CheckoutContent() {
                                   href={cfg.linkUrl}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 bg-[#1A1C1C] dark:bg-[#5EEAD4] text-white dark:text-stone-950 px-5 py-2.5 rounded-full text-xs font-bold hover:bg-[#FF97A4] dark:hover:bg-[#2DD4BF] transition-colors shadow-sm"
+                                  className="inline-flex items-center gap-2 bg-[#1A1C1C] dark:bg-[#163422] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 px-5 py-2.5 rounded-full text-xs font-bold hover:bg-[#FF97A4] dark:hover:bg-[#1E432C] transition-colors shadow-sm"
                                 >
                                   <span>Pagar vía {cfg.title}</span>
                                   <ExternalLink size={14} />
@@ -646,7 +646,7 @@ function CheckoutContent() {
                 <button 
                   type="submit" 
                   disabled={loading || cartItems.length === 0} 
-                  className="w-full bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 py-4 rounded-full font-bold transition-all shadow-lg shadow-[#163422]/20 dark:shadow-[#5EEAD4]/20 disabled:bg-gray-300 dark:disabled:bg-gray-800 disabled:text-gray-500 text-base flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99]"
+                  className="w-full bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 py-4 rounded-full font-bold transition-all shadow-lg shadow-[#163422]/20 dark:shadow-[0px_4px_25px_rgba(0,0,0,0.6)] disabled:bg-gray-300 dark:disabled:bg-gray-800 disabled:text-gray-500 text-base flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99]"
                 >
                   {loading ? "Procesando Orden..." : `Confirmar Pedido - $${finalTotal.toFixed(2)} USD`}
                 </button>
@@ -654,7 +654,7 @@ function CheckoutContent() {
             </div>
 
             {/* RESUMEN DE COMPRA CON DESGLOSE DINÁMICO */}
-            <div className="md:col-span-5 bg-white dark:bg-[#12131A] p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-stone-800 h-fit space-y-6">
+            <div className="md:col-span-5 bg-white dark:bg-[#141A16] p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-white/10 h-fit space-y-6">
               <h2 className="text-xl font-serif font-black text-[#1A1C1C] dark:text-white border-b border-gray-100 dark:border-stone-800 pb-3">Resumen de Tu Pedido</h2>
               
               <div className="space-y-4 max-h-[320px] overflow-y-auto pr-1">

@@ -167,10 +167,10 @@ export const AddonSelection = React.memo(({ addons, onSelectionChange }: AddonSe
             toggleAddon(addon);
           }
         }}
-        className={`relative bg-white dark:bg-[#181922] rounded-2xl border transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer group shadow-xs ${
+        className={`relative bg-white dark:bg-[#141A16] rounded-2xl border transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer group shadow-xs ${
           isSelected
-            ? "border-[#163422] dark:border-[#5EEAD4] ring-2 ring-[#5EEAD4]/30 shadow-md"
-            : "border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700"
+            ? "border-[#163422] dark:border-[#E6C98B] ring-2 ring-[#E6C98B]/40 shadow-md"
+            : "border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20"
         }`}
       >
         {/* Foto del Adicional con Zoom Suave */}
@@ -183,7 +183,7 @@ export const AddonSelection = React.memo(({ addons, onSelectionChange }: AddonSe
 
           {/* Badge de Selección / Check */}
           <div className={`absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center transition-all ${
-            isSelected ? "bg-[#163422] text-[#5EEAD4] shadow-md scale-105" : "bg-white/80 dark:bg-black/60 text-gray-400 border border-gray-200 dark:border-gray-700"
+            isSelected ? "bg-[#163422] text-[#E6C98B] border border-[#E6C98B]/50 shadow-md scale-105" : "bg-white/80 dark:bg-black/60 text-gray-400 border border-gray-200 dark:border-white/20"
           }`}>
             {isSelected ? <Check size={14} strokeWidth={3} /> : <Plus size={14} />}
           </div>
@@ -221,7 +221,7 @@ export const AddonSelection = React.memo(({ addons, onSelectionChange }: AddonSe
                     className={`px-2 py-1 rounded-lg text-[10px] font-bold border transition-all ${
                       selectedObj?.value === opt
                         ? "bg-[#163422] text-white border-[#163422]"
-                        : "bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700"
+                        : "bg-gray-50 dark:bg-[#1E2620] text-gray-600 dark:text-stone-300 border-gray-200 dark:border-white/10"
                     }`}
                   >
                     {opt}
@@ -243,14 +243,14 @@ export const AddonSelection = React.memo(({ addons, onSelectionChange }: AddonSe
                 value={selectedObj?.customText || ""}
                 onChange={(e) => handleCustomTextChange(addonIdStr, e.target.value)}
                 placeholder={isSpanish ? "Ej: Feliz Cumpleaños..." : "e.g. Happy Birthday..."}
-                className="w-full p-1.5 border border-pink-200 dark:border-gray-700 rounded-lg text-[11px] dark:bg-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-[#FF97A4]"
+                className="w-full p-1.5 border border-pink-200 dark:border-white/20 rounded-lg text-[11px] dark:bg-[#0D110F] dark:text-white focus:outline-none focus:ring-1 focus:ring-[#FF97A4]"
               />
             </div>
           )}
 
           {/* Estado visual Stitch */}
           <div className="pt-1 flex items-center justify-between text-[10px] font-semibold">
-            <span className={isSelected ? "text-emerald-600 dark:text-[#5EEAD4] flex items-center gap-0.5" : "text-gray-400"}>
+            <span className={isSelected ? "text-emerald-600 dark:text-[#E6C98B] flex items-center gap-0.5" : "text-gray-400"}>
               {isSelected ? (isSpanish ? "✓ Equipado" : "✓ Added") : (isSpanish ? "Click para equipar" : "Click to add")}
             </span>
           </div>
@@ -270,10 +270,10 @@ export const AddonSelection = React.memo(({ addons, onSelectionChange }: AddonSe
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1.5 border ${
               activeCategory === "all"
                 ? "bg-[#163422] text-white border-[#163422] shadow-sm"
-                : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:border-gray-400"
+                : "bg-white dark:bg-[#141A16] text-gray-700 dark:text-stone-300 border-gray-200 dark:border-white/10 hover:border-gray-400"
             }`}
           >
-            <Sparkles size={13} className={activeCategory === "all" ? "text-[#5EEAD4]" : "text-gray-400"} />
+            <Sparkles size={13} className={activeCategory === "all" ? "text-[#E6C98B]" : "text-gray-400"} />
             <span>{isSpanish ? "Todos" : "All"} ({normalizedAddons.length})</span>
           </button>
 
@@ -290,10 +290,10 @@ export const AddonSelection = React.memo(({ addons, onSelectionChange }: AddonSe
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1.5 border ${
                   isCatActive
                     ? "bg-[#163422] text-white border-[#163422] shadow-sm"
-                    : "bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:border-gray-400"
+                    : "bg-white dark:bg-[#141A16] text-gray-700 dark:text-stone-300 border-gray-200 dark:border-white/10 hover:border-gray-400"
                 }`}
               >
-                <IconComponent size={13} className={isCatActive ? "text-[#5EEAD4]" : "text-gray-400"} />
+                <IconComponent size={13} className={isCatActive ? "text-[#E6C98B]" : "text-gray-400"} />
                 <span>{translateAddonCategory(cat, !!isSpanish)} ({count})</span>
               </button>
             );

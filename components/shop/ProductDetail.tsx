@@ -180,7 +180,7 @@ export const ProductDetail = ({ product }: { product: any }) => {
   const totalRosesDisplay = baseFlowerCount + extraRoses;
 
   return (
-    <div className="min-h-screen bg-[#F9F9F9] dark:bg-[#0F1015] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#F9F9F9] dark:bg-[#0D110F] flex flex-col font-sans">
       {/* Header Visible con Logo al Home y Carrito */}
       <ShopHeader />
 
@@ -189,11 +189,11 @@ export const ProductDetail = ({ product }: { product: any }) => {
         <div className="container mx-auto px-4 md:px-6 max-w-6xl space-y-10">
           
           {/* Tarjeta Principal de Producto */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white dark:bg-[#181922] p-6 md:p-10 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white dark:bg-[#141A16] p-6 md:p-10 rounded-3xl shadow-sm border border-gray-100 dark:border-white/10">
             
             {/* COLUMNA IZQUIERDA: Galería de Imágenes + Adicionales Concierge */}
             <div className="space-y-6">
-              <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-50 dark:bg-[#12131A] border border-gray-100 dark:border-gray-800 shadow-sm group">
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-50 dark:bg-[#0F1411] border border-gray-100 dark:border-white/10 shadow-sm group">
                 <img
                   src={activeImage}
                   alt={product.name}
@@ -249,16 +249,16 @@ export const ProductDetail = ({ product }: { product: any }) => {
               
               {/* Titular y Precio Dinámico */}
               <div>
-                <span className="text-[#163422] dark:text-[#5EEAD4] text-xs font-black uppercase tracking-[0.2em] block mb-1">
+                <span className="text-[#163422] dark:text-[#E6C98B] text-xs font-black uppercase tracking-[0.2em] block mb-1">
                   Atelier Floral Houston • Handcrafted
                 </span>
-                <h1 className="text-3xl md:text-4xl font-serif font-black text-[#1A1C1C] dark:text-[#E6F7F0] leading-tight mb-3">
+                <h1 className="text-3xl md:text-4xl font-serif font-black text-[#1A1C1C] dark:text-white leading-tight mb-3">
                   {product.name}
                 </h1>
 
                 <div className="flex flex-wrap items-baseline gap-3">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-3xl md:text-4xl font-black text-black dark:text-[#5EEAD4] transition-all">
+                    <span className="text-3xl md:text-4xl font-black text-black dark:text-[#E6C98B] transition-all">
                       ${combinedTotalPrice.toFixed(2)} USD
                     </span>
                     {addonsTotalPrice > 0 && (
@@ -269,20 +269,20 @@ export const ProductDetail = ({ product }: { product: any }) => {
                   </div>
 
                   {addonsTotalPrice > 0 && (
-                    <span className="bg-stone-100 dark:bg-stone-800 text-[#163422] dark:text-[#5EEAD4] text-xs font-black px-3 py-1 rounded-full border border-[#163422]/20 dark:border-[#5EEAD4]/30 flex items-center gap-1 shadow-sm">
-                      <Sparkles size={13} className="text-[#5EEAD4]" /> +${addonsTotalPrice.toFixed(2)} {isSpanish ? "en extras y personalización" : "in extras & customization"}
+                    <span className="bg-stone-100 dark:bg-[#1E2620] text-[#163422] dark:text-[#E6C98B] text-xs font-black px-3 py-1 rounded-full border border-[#163422]/20 dark:border-[#E6C98B]/30 flex items-center gap-1 shadow-sm">
+                      <Sparkles size={13} className="text-[#E6C98B]" /> +${addonsTotalPrice.toFixed(2)} {isSpanish ? "en extras y personalización" : "in extras & customization"}
                     </span>
                   )}
                 </div>
               </div>
 
               {/* CONFIGURADOR 1: SELECTOR DE COLOR DE ROSAS */}
-              <div className="bg-gray-50/80 dark:bg-[#12131A] p-4 sm:p-5 rounded-2xl border border-gray-100 dark:border-gray-800 space-y-3">
+              <div className="bg-gray-50/80 dark:bg-[#141A16] p-4 sm:p-5 rounded-2xl border border-gray-100 dark:border-white/10 space-y-3">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-[#76C7B2] flex items-center gap-1.5">
+                  <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-stone-300 flex items-center gap-1.5">
                     <Palette size={14} className="text-[#FF97A4]" /> {isSpanish ? "Color de Rosas" : "Rose Color"}
                   </span>
-                  <span className="font-bold text-gray-900 dark:text-white bg-white dark:bg-gray-900 px-2.5 py-0.5 rounded-full border border-gray-200 dark:border-gray-700">
+                  <span className="font-bold text-gray-900 dark:text-white bg-white dark:bg-[#1E2620] px-2.5 py-0.5 rounded-full border border-gray-200 dark:border-white/20">
                     {selectedColor}
                   </span>
                 </div>
@@ -299,8 +299,8 @@ export const ProductDetail = ({ product }: { product: any }) => {
                         onClick={() => setSelectedColor(colorName)}
                         className={`px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 border select-none ${
                           isSelected
-                            ? "bg-[#163422] text-white border-[#163422] shadow-sm ring-2 ring-[#5EEAD4]/50 scale-102"
-                            : "bg-white dark:bg-[#181922] text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-800 hover:border-gray-300"
+                            ? "bg-[#163422] text-white border-[#163422] shadow-sm ring-2 ring-[#E6C98B]/50 scale-102"
+                            : "bg-white dark:bg-[#1A221D] text-gray-700 dark:text-stone-200 border-gray-200 dark:border-white/10 hover:border-gray-300"
                         }`}
                       >
                         <span
@@ -311,7 +311,7 @@ export const ProductDetail = ({ product }: { product: any }) => {
                           }}
                         />
                         <span>{colorName}</span>
-                        {isSelected && <Check size={13} className="text-[#5EEAD4]" />}
+                        {isSelected && <Check size={13} className="text-[#E6C98B]" />}
                       </button>
                     );
                   })}
@@ -319,7 +319,7 @@ export const ProductDetail = ({ product }: { product: any }) => {
               </div>
 
               {/* CONFIGURADOR: AUMENTA LA CANTIDAD DE ROSAS EN TU BOUQUET */}
-              <div className="bg-gray-50/80 dark:bg-[#12131A] p-4 sm:p-5 rounded-2xl border border-gray-100 dark:border-gray-800 space-y-3">
+              <div className="bg-gray-50/80 dark:bg-[#141A16] p-4 sm:p-5 rounded-2xl border border-gray-100 dark:border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-gray-800 dark:text-white flex items-center gap-1.5">
@@ -353,14 +353,14 @@ export const ProductDetail = ({ product }: { product: any }) => {
                         onClick={() => setExtraRoses((prev) => (prev === amount ? 0 : amount))}
                         className={`p-2.5 rounded-xl border text-center transition-all flex flex-col items-center justify-center select-none ${
                           isSelected
-                            ? "bg-[#163422] text-white border-[#163422] shadow-sm ring-2 ring-[#5EEAD4]/50 scale-102"
-                            : "bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 border-gray-200 dark:border-gray-700 hover:border-[#FF97A4]/60"
+                            ? "bg-[#163422] text-white border-[#163422] shadow-sm ring-2 ring-[#E6C98B]/50 scale-102"
+                            : "bg-white dark:bg-[#1A221D] text-gray-800 dark:text-stone-200 border-gray-200 dark:border-white/10 hover:border-[#FF97A4]/60"
                         }`}
                       >
                         <span className={`text-xs font-black ${isSelected ? "text-white" : "text-gray-900 dark:text-white"}`}>
                           +{amount} {isSpanish ? "Rosas" : "Roses"}
                         </span>
-                        <span className={`text-[10px] font-bold ${isSelected ? "text-[#5EEAD4]" : "text-gray-500 dark:text-gray-400"}`}>
+                        <span className={`text-[10px] font-bold ${isSelected ? "text-[#E6C98B]" : "text-gray-500 dark:text-gray-400"}`}>
                           +${addedCost.toFixed(2)}
                         </span>
                       </button>
@@ -399,49 +399,49 @@ export const ProductDetail = ({ product }: { product: any }) => {
               </div>
 
               {/* CAJA VISUAL DE ESPECIFICACIONES DINÁMICAS */}
-              <div className="bg-gray-50/80 dark:bg-[#12131A] rounded-2xl p-5 border border-gray-100 dark:border-gray-800 space-y-3">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-[#76C7B2] flex items-center gap-2">
-                  <Sparkles size={14} className="text-[#5EEAD4]" /> {isSpanish ? "Especificaciones del Diseño" : "Design Specifications"}
+              <div className="bg-gray-50/80 dark:bg-[#141A16] rounded-2xl p-5 border border-gray-100 dark:border-white/10 space-y-3">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-stone-300 flex items-center gap-2">
+                  <Sparkles size={14} className="text-[#E6C98B]" /> {isSpanish ? "Especificaciones del Diseño" : "Design Specifications"}
                 </h3>
 
                 <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="bg-white dark:bg-[#181922] p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex items-center gap-2.5">
+                  <div className="bg-white dark:bg-[#1A221D] p-3 rounded-xl border border-gray-100 dark:border-white/10 flex items-center gap-2.5">
                     <div className="p-2 bg-[#FF97A4]/10 text-[#FF97A4] rounded-lg">
                       <Flower2 size={16} />
                     </div>
                     <div>
-                      <span className="text-gray-400 dark:text-[#76C7B2] block text-[10px] uppercase font-bold">{isSpanish ? "Flores en Total" : "Total Flowers"}</span>
-                      <span className="font-bold text-gray-800 dark:text-[#B9E6D3]">{totalRosesDisplay} {isSpanish ? "Rosas Frescas" : "Fresh Roses"}</span>
+                      <span className="text-gray-400 block text-[10px] uppercase font-bold">{isSpanish ? "Flores en Total" : "Total Flowers"}</span>
+                      <span className="font-bold text-gray-800 dark:text-white">{totalRosesDisplay} {isSpanish ? "Rosas Frescas" : "Fresh Roses"}</span>
                     </div>
                   </div>
 
-                  <div className="bg-white dark:bg-[#181922] p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex items-center gap-2.5">
+                  <div className="bg-white dark:bg-[#1A221D] p-3 rounded-xl border border-gray-100 dark:border-white/10 flex items-center gap-2.5">
                     <div className="p-2 bg-[#FF97A4]/10 text-[#FF97A4] rounded-lg">
                       <Package size={16} />
                     </div>
                     <div>
-                      <span className="text-gray-400 dark:text-[#76C7B2] block text-[10px] uppercase font-bold">{isSpanish ? "Presentación" : "Presentation"}</span>
-                      <span className="font-bold text-gray-800 dark:text-[#B9E6D3] capitalize">{product.bouquetType ? (isSpanish ? product.bouquetType : translateFeatureLabel(product.bouquetType)) : (isSpanish ? "Ramo de Alta Costura" : "Haute Couture Bouquet")}</span>
+                      <span className="text-gray-400 block text-[10px] uppercase font-bold">{isSpanish ? "Presentación" : "Presentation"}</span>
+                      <span className="font-bold text-gray-800 dark:text-white capitalize">{product.bouquetType ? (isSpanish ? product.bouquetType : translateFeatureLabel(product.bouquetType)) : (isSpanish ? "Ramo de Alta Costura" : "Haute Couture Bouquet")}</span>
                     </div>
                   </div>
 
-                  <div className="bg-white dark:bg-[#181922] p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex items-center gap-2.5">
+                  <div className="bg-white dark:bg-[#1A221D] p-3 rounded-xl border border-gray-100 dark:border-white/10 flex items-center gap-2.5">
                     <div className="p-2 bg-[#FF97A4]/10 text-[#FF97A4] rounded-lg">
                       <Truck size={16} />
                     </div>
                     <div>
-                      <span className="text-gray-400 dark:text-[#76C7B2] block text-[10px] uppercase font-bold">{isSpanish ? "Entrega" : "Delivery"}</span>
-                      <span className="font-bold text-gray-800 dark:text-[#B9E6D3]">{isSpanish ? "Mismo Día en Houston" : "Same Day in Houston"}</span>
+                      <span className="text-gray-400 block text-[10px] uppercase font-bold">{isSpanish ? "Entrega" : "Delivery"}</span>
+                      <span className="font-bold text-gray-800 dark:text-white">{isSpanish ? "Mismo Día en Houston" : "Same Day in Houston"}</span>
                     </div>
                   </div>
 
-                  <div className="bg-white dark:bg-[#181922] p-3 rounded-xl border border-gray-100 dark:border-gray-800 flex items-center gap-2.5">
+                  <div className="bg-white dark:bg-[#1A221D] p-3 rounded-xl border border-gray-100 dark:border-white/10 flex items-center gap-2.5">
                     <div className="p-2 bg-[#FF97A4]/10 text-[#FF97A4] rounded-lg">
                       <ShieldCheck size={16} />
                     </div>
                     <div>
-                      <span className="text-gray-400 dark:text-[#76C7B2] block text-[10px] uppercase font-bold">{isSpanish ? "Garantía" : "Guarantee"}</span>
-                      <span className="font-bold text-gray-800 dark:text-[#B9E6D3]">{isSpanish ? "Flores 100% Frescas" : "100% Fresh Flowers"}</span>
+                      <span className="text-gray-400 block text-[10px] uppercase font-bold">{isSpanish ? "Garantía" : "Guarantee"}</span>
+                      <span className="font-bold text-gray-800 dark:text-white">{isSpanish ? "Flores 100% Frescas" : "100% Fresh Flowers"}</span>
                     </div>
                   </div>
                 </div>
@@ -450,13 +450,13 @@ export const ProductDetail = ({ product }: { product: any }) => {
               {/* VIÑETAS / CARACTERÍSTICAS DINÁMICAS (Features) */}
               {product.features && product.features.length > 0 && (
                 <div className="space-y-2">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-[#76C7B2]">{t('includesTitle')}</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-stone-300">{t('includesTitle')}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {product.features.map((feature: any, index: number) => (
-                      <div key={index} className="flex items-center gap-2 text-xs bg-white dark:bg-[#181922] p-2.5 rounded-xl border border-gray-100 dark:border-gray-800">
-                        <CheckCircle2 size={16} className="text-[#5EEAD4] flex-shrink-0" />
-                        <span className="font-medium text-gray-700 dark:text-[#B9E6D3]">
-                          <strong className="text-gray-900 dark:text-[#E6F7F0]">{isSpanish ? feature.label : translateFeatureLabel(feature.label)}:</strong> {isSpanish ? feature.value : translateFloralSentence(feature.value)}
+                      <div key={index} className="flex items-center gap-2 text-xs bg-white dark:bg-[#1A221D] p-2.5 rounded-xl border border-gray-100 dark:border-white/10">
+                        <CheckCircle2 size={16} className="text-[#E6C98B] flex-shrink-0" />
+                        <span className="font-medium text-gray-700 dark:text-stone-200">
+                          <strong className="text-gray-900 dark:text-white">{isSpanish ? feature.label : translateFeatureLabel(feature.label)}:</strong> {isSpanish ? feature.value : translateFloralSentence(feature.value)}
                         </span>
                       </div>
                     ))}
@@ -467,11 +467,11 @@ export const ProductDetail = ({ product }: { product: any }) => {
 
               {/* DESCRIPCIÓN SECTORIZADA EN VIÑETAS LIMPIAS */}
               <div className="space-y-3 pt-2 border-t border-gray-100 dark:border-gray-800">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-[#76C7B2]">{t('descriptionTitle')}</h3>
-                <div className="bg-white dark:bg-[#181922] p-5 rounded-2xl border border-gray-100 dark:border-gray-800 space-y-2 text-sm text-gray-600 dark:text-[#B9E6D3] font-light leading-relaxed">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-stone-300">{t('descriptionTitle')}</h3>
+                <div className="bg-white dark:bg-[#141A16] p-5 rounded-2xl border border-gray-100 dark:border-white/10 space-y-2 text-sm text-gray-600 dark:text-stone-200 font-light leading-relaxed">
                   {descriptionBullets.map((paragraph: string, i: number) => (
                     <div key={i} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#5EEAD4] mt-2 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E6C98B] mt-2 flex-shrink-0" />
                       <p>{paragraph}</p>
                     </div>
                   ))}

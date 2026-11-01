@@ -24,11 +24,11 @@ export const ShoppingCartComponent = () => {
       <button 
         onClick={() => setIsOpen(true)}
         aria-label={isSpanish ? "Ver Carrito de Compras" : "View Shopping Cart"}
-        className="fixed bottom-28 sm:bottom-32 right-5 sm:right-6 z-40 p-3.5 sm:p-4 bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 rounded-full shadow-[0px_8px_25px_rgba(22,52,34,0.35)] dark:shadow-[0px_8px_25px_rgba(94,234,212,0.35)] border-2 border-white/90 dark:border-stone-900 hover:scale-105 transition-all duration-300 active:scale-95 group"
+        className="fixed bottom-28 sm:bottom-32 right-5 sm:right-6 z-40 p-3.5 sm:p-4 bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white rounded-full shadow-[0px_8px_25px_rgba(22,52,34,0.35)] dark:shadow-[0px_8px_25px_rgba(0,0,0,0.6)] border-2 border-white/90 dark:border-[#E6C98B]/50 hover:scale-105 transition-all duration-300 active:scale-95 group"
       >
         <ShoppingCart size={22} className="group-hover:scale-110 transition-transform" />
         {cartItems.length > 0 && (
-          <span className="absolute -top-1 -right-1 bg-[#D4AF37] dark:bg-stone-900 text-stone-950 dark:text-[#5EEAD4] text-[10px] font-black h-5 w-5 flex items-center justify-center rounded-full border-2 border-white dark:border-stone-900 shadow-sm">
+          <span className="absolute -top-1 -right-1 bg-[#D4AF37] dark:bg-[#E6C98B] text-stone-950 dark:text-[#0D110F] text-[10px] font-black h-5 w-5 flex items-center justify-center rounded-full border-2 border-white dark:border-stone-900 shadow-sm">
             {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
           </span>
         )}
@@ -39,8 +39,8 @@ export const ShoppingCartComponent = () => {
         <div className="fixed inset-0 z-[60] flex justify-end">
           <div className="absolute inset-0 bg-[#1A1C1C]/40 backdrop-blur-sm transition-opacity" onClick={() => setIsOpen(false)} />
           
-          <div className="relative w-full max-w-md bg-[#F9F9F9] dark:bg-[#12131A] h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-500">
-            <div className="p-8 flex justify-between items-center border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-[#181922]">
+          <div className="relative w-full max-w-md bg-[#F9F9F9] dark:bg-[#0D110F] h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-500">
+            <div className="p-8 flex justify-between items-center border-b border-gray-200 dark:border-white/10 bg-white dark:bg-[#141A16]">
               <h2 className="text-2xl font-extrabold text-[#1A1C1C] dark:text-white tracking-tight">{isSpanish ? "Tu Carrito" : "Your Cart"}</h2>
               <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors text-gray-400 hover:text-black dark:hover:text-white">
                 <X size={24} />
@@ -55,7 +55,7 @@ export const ShoppingCartComponent = () => {
                 </div>
               ) : (
                 cartItems.map((item) => (
-                  <div key={`${item.id}-${JSON.stringify(item.addons)}`} className="relative flex gap-4 p-4 bg-white dark:bg-[#181922] rounded-xl shadow-[0px_4px_15px_rgba(0,0,0,0.03)] border border-gray-100 dark:border-gray-800 items-center">
+                  <div key={`${item.id}-${JSON.stringify(item.addons)}`} className="relative flex gap-4 p-4 bg-white dark:bg-[#141A16] rounded-xl shadow-[0px_4px_15px_rgba(0,0,0,0.03)] border border-gray-100 dark:border-white/10 items-center">
                     {/* Botón X para eliminar producto */}
                     <button 
                       onClick={() => removeFromCart(item.id)}
@@ -87,7 +87,7 @@ export const ShoppingCartComponent = () => {
 
                       <p className="text-[#FF97A4] font-extrabold mt-1.5">${item.price.toFixed(2)}</p>
                     </div>
-                    <div className="flex items-center gap-3 bg-gray-50 dark:bg-gray-900 p-1.5 rounded-lg border border-gray-100 dark:border-gray-800">
+                    <div className="flex items-center gap-3 bg-gray-50 dark:bg-[#1E2620] p-1.5 rounded-lg border border-gray-100 dark:border-white/10">
                       <button 
                         onClick={() => decreaseFromCart(item.id)}
                         className="p-1 hover:bg-white dark:hover:bg-gray-800 rounded transition-colors text-gray-500"
@@ -107,7 +107,7 @@ export const ShoppingCartComponent = () => {
               )}
             </div>
 
-            <div className="p-8 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-[#181922]">
+            <div className="p-8 border-t border-gray-200 dark:border-white/10 bg-white dark:bg-[#141A16]">
               <div className="flex justify-between items-center mb-6">
                 <span className="text-gray-400 font-bold uppercase text-xs tracking-widest">{isSpanish ? "Total Estimado" : "Estimated Total"}</span>
                 <span className="text-3xl font-extrabold text-[#1A1C1C] dark:text-white">${total.toFixed(2)}</span>
@@ -115,7 +115,7 @@ export const ShoppingCartComponent = () => {
               <Link 
                 href={isSpanish ? "/es/checkout" : "/checkout"} 
                 onClick={() => setIsOpen(false)}
-                className={`w-full bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 py-5 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-[#163422]/20 dark:shadow-[#5EEAD4]/20 flex justify-center items-center gap-2 group ${cartItems.length === 0 ? 'pointer-events-none bg-gray-200 dark:bg-gray-800 text-gray-400 dark:text-gray-600' : ''}`}
+                className={`w-full bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 py-5 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-[#163422]/20 dark:shadow-[0px_4px_25px_rgba(0,0,0,0.6)] flex justify-center items-center gap-2 group ${cartItems.length === 0 ? 'pointer-events-none bg-gray-200 dark:bg-gray-800 text-gray-400 dark:text-gray-600' : ''}`}
               >
                 {isSpanish ? "Tramitar Pedido" : "Proceed to Checkout"}
                 <span className="transform group-hover:translate-x-1 transition-transform">→</span>

@@ -102,7 +102,7 @@ export default async function RootLayout({
           id="dynamic-theme-vars"
           dangerouslySetInnerHTML={{
             __html: `
-              :root {
+              :root, html:not(.dark) {
                 --theme-announcement-bg: ${theme.announcementBg || "#33cccc"};
                 --theme-announcement-text: ${theme.announcementText || "#1c1917"};
                 --theme-header-bg: ${theme.headerBg || "#ffffff"};
@@ -127,9 +127,39 @@ export default async function RootLayout({
                 --theme-badge-text: ${theme.badgeText || "#ffffff"};
               }
 
-              /* Tipografía Cursiva en Home y Hero */
-              .font-script-custom:not(.preserve-color) {
+              /* MODO OSCURO: Paleta Nocturna de Alta Costura Floral & Contraste WCAG AAA */
+              html.dark {
+                --theme-announcement-bg: #141E17;
+                --theme-announcement-text: #FFFFFF;
+                --theme-header-bg: rgba(14, 20, 16, 0.95);
+                --theme-header-text: #FFFFFF;
+                --theme-btn-primary-bg: #163422;
+                --theme-btn-primary-text: #FFFFFF;
+                --theme-btn-primary-hover: #1F452E;
+                --theme-btn-secondary-bg: #FF97A4;
+                --theme-btn-secondary-text: #FFFFFF;
+                --theme-accent: #E6C98B;
+                --theme-heading: #FFFFFF;
+                --theme-body: #E2E8F0;
+                --theme-script: #E6C98B;
+                --theme-footer-bg: #0A0D0B;
+                --theme-footer-text: #E2E8F0;
+                --theme-footer-accent: #E6C98B;
+                --theme-page-bg: #0D110F;
+                --theme-card-bg: #141A16;
+                --theme-card-border: rgba(255, 255, 255, 0.08);
+                --theme-price-color: #E6C98B;
+                --theme-badge-bg: #FF97A4;
+                --theme-badge-text: #FFFFFF;
+              }
+
+              /* Tipografía Cursiva en Home y Hero: Modo Claro (#163422) vs Modo Oscuro (#E6C98B Champagne) */
+              html:not(.dark) .font-script-custom:not(.preserve-color) {
                 color: var(--theme-script, #163422) !important;
+              }
+              html.dark .font-script-custom:not(.preserve-color) {
+                color: #E6C98B !important;
+                text-shadow: 0 0 20px rgba(230, 201, 139, 0.35);
               }
 
               /* Botones Primarios de Conversión en modo claro */
@@ -144,7 +174,14 @@ export default async function RootLayout({
                 background-color: var(--theme-btn-primary-hover, #1F452E) !important;
               }
 
-              /* Botones e Insignias Secundarias en modo claro */
+              /* Botones Primarios en modo oscuro */
+              html.dark .theme-btn-primary {
+                background-color: #163422 !important;
+                color: #FFFFFF !important;
+                border: 1px solid rgba(230, 201, 139, 0.3) !important;
+              }
+
+              /* Botones e Insignias Secundarias */
               html:not(.dark) .theme-btn-secondary,
               html:not(.dark) button.bg-\\[\\#FF97A4\\],
               html:not(.dark) a.bg-\\[\\#FF97A4\\],

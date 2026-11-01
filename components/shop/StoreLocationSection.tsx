@@ -35,10 +35,10 @@ export const StoreLocationSection: React.FC<StoreLocationSectionProps> = ({
 
         {/* Pin animado en Houston, TX */}
         <div className="absolute left-[50%] md:left-[55%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none">
-          <div className="text-[#163422] dark:text-[#5EEAD4] animate-bounce drop-shadow-lg">
+          <div className="text-[#163422] dark:text-[#E6C98B] animate-bounce drop-shadow-lg">
             <MapPin size={38} fill="currentColor" className="text-white dark:text-stone-950" />
           </div>
-          <span className="bg-white dark:bg-stone-900 text-black dark:text-white text-[10px] sm:text-[11px] font-black px-3 py-0.5 rounded-full shadow-md border-2 border-[#163422] dark:border-[#5EEAD4] uppercase tracking-wider -mt-1 whitespace-nowrap">
+          <span className="bg-white dark:bg-stone-900 text-black dark:text-white text-[10px] sm:text-[11px] font-black px-3 py-0.5 rounded-full shadow-md border-2 border-[#163422] dark:border-[#E6C98B] uppercase tracking-wider -mt-1 whitespace-nowrap">
             Bonbon Flowers Houston
           </span>
         </div>
@@ -51,20 +51,20 @@ export const StoreLocationSection: React.FC<StoreLocationSectionProps> = ({
       </div>
 
       {/* 2. Tarjeta con información del estudio: en móvil se ubica abajo del mapa sin taparlo; en desktop flota en la esquina izquierda */}
-      <div className="relative z-20 w-full p-5 sm:p-6 md:p-7 md:absolute md:top-8 md:left-12 md:max-w-sm md:w-full bg-white dark:bg-[#12131A] md:bg-white/95 md:dark:bg-[#12131A]/95 md:backdrop-blur-md md:rounded-2xl border-t md:border border-stone-200 dark:border-stone-800 md:shadow-2xl text-stone-900 dark:text-[#E6F7F0]">
-        <div className="inline-flex items-center gap-1.5 bg-stone-100 dark:bg-stone-900/80 text-[#163422] dark:text-[#5EEAD4] text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#163422]/20 dark:border-[#5EEAD4]/30">
+      <div className="relative z-20 w-full p-5 sm:p-6 md:p-7 md:absolute md:top-8 md:left-12 md:max-w-sm md:w-full bg-white dark:bg-[#141A16] md:bg-white/95 md:dark:bg-[#141A16]/95 md:backdrop-blur-md md:rounded-2xl border-t md:border border-stone-200 dark:border-white/10 md:shadow-2xl text-stone-900 dark:text-white">
+        <div className="inline-flex items-center gap-1.5 bg-stone-100 dark:bg-stone-900/80 text-[#163422] dark:text-[#E6C98B] text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#163422]/20 dark:border-[#E6C98B]/30">
           <MapPin size={11} />
           <span>Houston Floral Studio</span>
         </div>
 
-        <h3 className="text-base font-black text-stone-900 dark:text-[#E6F7F0] uppercase tracking-wider mb-1 font-serif">
+        <h3 className="text-base font-black text-stone-900 dark:text-white uppercase tracking-wider mb-1 font-serif">
           Pick-Up &amp; Delivery Hub
         </h3>
-        <p className="text-stone-800 dark:text-[#B9E6D3] text-xs sm:text-sm leading-relaxed mb-4 font-medium">
+        <p className="text-stone-800 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-4 font-medium">
           <strong className="text-stone-950 dark:text-white font-bold block text-sm">
             9546 Hammerly Boulevard, Houston, TX 77080
           </strong>
-          <span className="text-[11.5px] text-stone-600 dark:text-[#76C7B2] font-semibold block mt-1">
+          <span className="text-[11.5px] text-stone-600 dark:text-stone-400 font-semibold block mt-1">
             {isSpanish
               ? "Spring Branch West • Retiro en taller y entregas a domicilio el mismo día en todo Houston."
               : "Spring Branch West • Studio pickup & same-day delivery throughout Houston."}
@@ -73,26 +73,26 @@ export const StoreLocationSection: React.FC<StoreLocationSectionProps> = ({
 
         <div className="space-y-3 pt-3 border-t border-stone-200 dark:border-stone-800">
           <div>
-            <h4 className="text-[11px] font-black text-stone-900 dark:text-[#E6F7F0] uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
-              <Phone size={12} className="text-[#163422] dark:text-[#5EEAD4]" />
+            <h4 className="text-[11px] font-black text-stone-900 dark:text-white uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
+              <Phone size={12} className="text-[#163422] dark:text-[#E6C98B]" />
               <span>{isSpanish ? "Teléfono / Pedidos" : "Phone / Orders"}</span>
             </h4>
             <a
               href={`tel:${cleanPhone || "+13467392730"}`}
-              className="text-xs sm:text-sm text-stone-800 dark:text-[#B9E6D3] hover:text-[#163422] dark:hover:text-[#5EEAD4] transition-colors font-bold"
+              className="text-xs sm:text-sm text-stone-800 dark:text-stone-300 hover:text-[#163422] dark:hover:text-[#E6C98B] transition-colors font-bold"
             >
               {phone}
             </a>
           </div>
 
           <div>
-            <h4 className="text-[11px] font-black text-stone-900 dark:text-[#E6F7F0] uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
-              <Mail size={12} className="text-[#163422] dark:text-[#5EEAD4]" />
+            <h4 className="text-[11px] font-black text-stone-900 dark:text-white uppercase tracking-wider mb-0.5 flex items-center gap-1.5">
+              <Mail size={12} className="text-[#163422] dark:text-[#E6C98B]" />
               <span>{isSpanish ? "Correo Electrónico" : "Email Address"}</span>
             </h4>
             <a
               href={`mailto:${email}`}
-              className="text-xs sm:text-sm text-stone-800 dark:text-[#B9E6D3] hover:text-[#163422] dark:hover:text-[#5EEAD4] transition-colors font-semibold break-all"
+              className="text-xs sm:text-sm text-stone-800 dark:text-stone-300 hover:text-[#163422] dark:hover:text-[#E6C98B] transition-colors font-semibold break-all"
             >
               {email}
             </a>
@@ -114,7 +114,7 @@ export const StoreLocationSection: React.FC<StoreLocationSectionProps> = ({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-95"
+            className="w-full bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1E432C] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 py-2.5 px-4 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-95"
           >
             <MessageCircle size={15} />
             <span>{isSpanish ? "Consultar por WhatsApp" : "Inquire on WhatsApp"}</span>

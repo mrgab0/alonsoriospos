@@ -48,7 +48,7 @@ export function ContactFormClient() {
   )}`;
 
   return (
-    <div className="min-h-screen bg-[#F9F9F9] dark:bg-[#0B0C10] text-stone-900 dark:text-[#E6F7F0] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#F9F9F9] dark:bg-[#0D110F] text-stone-900 dark:text-white flex flex-col font-sans">
       <ShopHeader />
 
       <main className="flex-1 py-12 md:py-20">
@@ -56,7 +56,7 @@ export function ContactFormClient() {
           
           {/* Header de la Página */}
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-[#163422] dark:text-[#5EEAD4] text-xs font-black uppercase tracking-[0.25em] bg-stone-100 dark:bg-stone-900 px-4 py-1.5 rounded-full border border-[#163422]/20 dark:border-[#5EEAD4]/20 inline-block shadow-sm">
+            <span className="text-[#163422] dark:text-[#E6C98B] text-xs font-black uppercase tracking-[0.25em] bg-stone-100 dark:bg-stone-900 px-4 py-1.5 rounded-full border border-[#163422]/20 dark:border-[#E6C98B]/30 inline-block shadow-sm">
               🌸 Atención & Asesoría Personalizada
             </span>
             <h1 className="text-4xl md:text-5xl font-serif font-black text-[#1A1C1C] dark:text-white tracking-tight">
@@ -70,7 +70,7 @@ export function ContactFormClient() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             {/* Tarjeta Izquierda: Información de Contacto Directo */}
-            <div className="bg-[#1A1C1C] dark:bg-[#12131A] dark:border dark:border-stone-800 text-white p-8 rounded-3xl shadow-xl space-y-8 flex flex-col justify-between relative overflow-hidden">
+            <div className="bg-[#1A1C1C] dark:bg-[#141A16] dark:border dark:border-white/10 text-white p-8 rounded-3xl shadow-xl space-y-8 flex flex-col justify-between relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF97A4]/10 rounded-full blur-2xl pointer-events-none" />
               
               <div className="space-y-6">
@@ -140,7 +140,7 @@ export function ContactFormClient() {
             </div>
 
             {/* Tarjeta Derecha: Formulario de Contacto Directo */}
-            <div className="lg:col-span-2 bg-white dark:bg-[#12131A] p-8 md:p-10 rounded-3xl border border-gray-100 dark:border-stone-800 shadow-sm relative">
+            <div className="lg:col-span-2 bg-white dark:bg-[#141A16] p-8 md:p-10 rounded-3xl border border-gray-100 dark:border-white/10 shadow-sm relative">
               
               {/* Tooltip Verde de Confirmación */}
               {showTooltip && (

@@ -66,19 +66,19 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
 
             {/* Kicker y Título Principal */}
             <div className="space-y-1.5">
-              <span className="text-xs font-serif uppercase tracking-[0.25em] text-[#C5A059] dark:text-[#5EEAD4] font-semibold block">
+              <span className="text-xs font-serif uppercase tracking-[0.25em] text-[#C5A059] dark:text-[#E6C98B] font-semibold block">
                 Art Floral • Houston
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-luxury-serif text-stone-900 dark:text-[#E6F7F0] tracking-tight leading-[1.08] font-normal">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-luxury-serif text-stone-900 dark:text-white tracking-tight leading-[1.08] font-normal">
                 Flowers that make them{" "}
-                <span className="font-script-custom text-[#163422] dark:text-[#5EEAD4] text-6xl sm:text-7xl lg:text-8xl italic block mt-1">
+                <span className="font-script-custom text-[#163422] dark:text-[#E6C98B] text-6xl sm:text-7xl lg:text-8xl italic block mt-1">
                   feel loved ♡
                 </span>
               </h1>
             </div>
 
             {/* Descripción Editorial */}
-            <p className="text-sm sm:text-base text-stone-600 dark:text-[#B9E6D3] max-w-xl leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-stone-600 dark:text-gray-300 max-w-xl leading-relaxed font-medium">
               Entrega de flores de alta costura el mismo día en Houston, TX y área metropolitana. Composiciones de autor confeccionadas a mano con rosas ecuatorianas selectas para momentos inolvidables.
             </p>
 
@@ -86,7 +86,7 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto">
               <Link
                 href="#catalogo"
-                className="px-8 py-3.5 rounded-xl bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 text-xs font-extrabold uppercase tracking-widest text-center shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+                className="px-8 py-3.5 rounded-xl bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1F452E] text-white dark:text-white border border-transparent dark:border-[#C5A059]/40 text-xs font-extrabold uppercase tracking-widest text-center shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 EXPLORAR COLECCIÓN
               </Link>
@@ -95,15 +95,15 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 rounded-xl bg-[#FAF7F5] dark:bg-[#181922] hover:bg-pink-50 dark:hover:bg-[#12131A] text-stone-800 dark:text-[#E6F7F0] border border-stone-200 dark:border-stone-800 text-xs font-bold uppercase tracking-wider text-center shadow-sm hover:border-[#5EEAD4]/50 hover:text-[#163422] dark:hover:text-[#5EEAD4] transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-8 py-3.5 rounded-xl bg-[#FAF7F5] dark:bg-[#141A16] hover:bg-pink-50 dark:hover:bg-[#1A221D] text-stone-800 dark:text-white border border-stone-200 dark:border-stone-800 text-xs font-bold uppercase tracking-wider text-center shadow-sm hover:border-[#FF97A4]/50 hover:text-[#163422] dark:hover:text-[#FF97A4] transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <MessageCircle size={16} className="text-emerald-500 dark:text-[#5EEAD4]" />
+                <MessageCircle size={16} className="text-emerald-500 dark:text-[#FF97A4]" />
                 <span>PEDIR POR WHATSAPP</span>
               </a>
             </div>
 
             {/* Fila de Insignias de Confianza en Vivo */}
-            <div className="pt-4 flex flex-wrap items-center gap-y-2.5 gap-x-5 text-xs text-stone-500 dark:text-[#76C7B2] font-semibold uppercase tracking-wider border-t border-stone-100 dark:border-gray-800/80 w-full">
+            <div className="pt-4 flex flex-wrap items-center gap-y-2.5 gap-x-5 text-xs text-stone-500 dark:text-gray-400 font-semibold uppercase tracking-wider border-t border-stone-100 dark:border-gray-800/80 w-full">
               <div className="flex items-center gap-1.5">
                 <div className="flex text-amber-500 text-sm">
                   <Star size={14} fill="currentColor" />
@@ -112,12 +112,12 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
                   <Star size={14} fill="currentColor" />
                   <Star size={14} fill="currentColor" />
                 </div>
-                <span className="font-extrabold text-stone-900 dark:text-[#E6F7F0]">4.9/5</span>
+                <span className="font-extrabold text-stone-900 dark:text-white">4.9/5</span>
                 <span className="text-[11px]">• 500+ CLIENTES FELICES</span>
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#5EEAD4]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF97A4]" />
                 <span className="text-[11px]">CORTE HOY: 1:00 PM CST</span>
               </div>
 

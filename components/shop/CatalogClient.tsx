@@ -198,7 +198,7 @@ export function CatalogClient({
               onClick={() => { setActiveTab("all"); setSelectedCategory("all"); }}
               className={`flex-1 py-2.5 px-4 rounded-full text-xs font-extrabold transition-all text-center cursor-pointer ${
                 activeTab === "all"
-                  ? "bg-black dark:bg-[#5EEAD4] text-white dark:text-stone-950 shadow-md"
+                  ? "bg-black dark:bg-[#163422] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 shadow-md"
                   : "text-gray-600 dark:text-stone-300 hover:text-gray-900 dark:hover:text-white"
               }`}
             >
@@ -208,7 +208,7 @@ export function CatalogClient({
               onClick={() => { setActiveTab("products"); setSelectedCategory("all"); }}
               className={`flex-1 py-2.5 px-4 rounded-full text-xs font-extrabold transition-all text-center cursor-pointer ${
                 activeTab === "products"
-                  ? "bg-[#163422] dark:bg-[#5EEAD4] text-white dark:text-stone-950 shadow-md"
+                  ? "bg-[#163422] dark:bg-[#163422] text-white dark:text-white dark:border dark:border-[#E6C98B]/50 shadow-md"
                   : "text-gray-600 dark:text-stone-300 hover:text-gray-900 dark:hover:text-white"
               }`}
             >
@@ -227,7 +227,7 @@ export function CatalogClient({
           </div>
 
           {/* PANEL DE BÚSQUEDA Y FILTROS */}
-          <div className="bg-white dark:bg-[#12131A] p-5 md:p-6 rounded-3xl border border-gray-100 dark:border-stone-800 shadow-sm space-y-5">
+          <div className="bg-white dark:bg-[#141A16] p-5 md:p-6 rounded-3xl border border-gray-100 dark:border-white/10 shadow-sm space-y-5">
             <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
               
               {/* Campo de Búsqueda Sencillo */}

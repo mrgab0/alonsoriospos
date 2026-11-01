@@ -32,14 +32,14 @@ export function HoustonDeliveryBanner({
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 select-none">
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#122419] via-[#163422] to-[#0c1811] dark:from-[#0d1711] dark:via-[#111915] dark:to-[#090e0b] border-2 border-[#2b593b]/70 dark:border-emerald-900/60 text-white p-6 sm:p-10 shadow-2xl">
         {/* Glow decorativo de fondo */}
-        <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[#5EEAD4]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[#E6C98B]/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -left-20 -top-20 w-80 h-80 bg-[#FF97A4]/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="space-y-4 max-w-2xl">
             {/* Tag destacado con contraste */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5EEAD4]/20 border border-[#5EEAD4]/60 text-[#5EEAD4] text-xs font-black uppercase tracking-wider shadow-sm">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#5EEAD4] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E6C98B]/20 border border-[#E6C98B]/60 text-[#E6C98B] text-xs font-black uppercase tracking-wider shadow-sm">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#E6C98B] animate-pulse" />
               <span>{isSpanish ? "Entregas Rápidas y Garantizadas en Houston" : "Fast & Guaranteed Delivery Across Houston"}</span>
             </div>
 

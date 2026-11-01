@@ -100,8 +100,8 @@ export function FeaturedProductsSlider({ products }: FeaturedProductsSliderProps
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 pb-4 border-b border-[#D4AF37]/20">
           <div>
             <div className="flex items-center gap-2 mb-1 justify-center md:justify-start">
-              <Sparkles size={14} className="text-[#D4AF37]" />
-              <span className="text-[#163422] dark:text-[#C5A059] text-xs font-black uppercase tracking-[0.2em]">
+              <Sparkles size={14} className="text-[#C5A059] dark:text-[#E6C98B]" />
+              <span className="text-[#163422] dark:text-[#E6C98B] text-xs font-black uppercase tracking-[0.2em]">
                 Selección de Temporada
               </span>
             </div>
@@ -119,7 +119,7 @@ export function FeaturedProductsSlider({ products }: FeaturedProductsSliderProps
                 className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                   activeTab === tab.id
                     ? "bg-[#163422] text-white shadow-md scale-105"
-                    : "bg-white/70 dark:bg-gray-800/60 text-slate-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700 border border-gray-200/60 dark:border-gray-700"
+                    : "bg-white/70 dark:bg-stone-900/80 text-slate-700 dark:text-gray-300 hover:bg-white dark:hover:bg-stone-800 border border-gray-200/60 dark:border-stone-700"
                 }`}
               >
                 {tab.label}
@@ -131,14 +131,14 @@ export function FeaturedProductsSlider({ products }: FeaturedProductsSliderProps
           <div className="hidden lg:flex items-center gap-2">
             <button
               onClick={() => handleScroll("left")}
-              className="p-2.5 rounded-full bg-white dark:bg-gray-800 text-stone-900 dark:text-white hover:bg-[#163422] hover:text-white dark:hover:bg-[#163422] shadow-md border border-gray-100 dark:border-gray-700 transition-all active:scale-95"
+              className="p-2.5 rounded-full bg-white dark:bg-stone-900 text-stone-900 dark:text-white hover:bg-[#163422] hover:text-white dark:hover:bg-[#163422] shadow-md border border-gray-100 dark:border-stone-700 transition-all active:scale-95"
               aria-label="Anterior"
             >
               <ChevronLeft size={18} />
             </button>
             <button
               onClick={() => handleScroll("right")}
-              className="p-2.5 rounded-full bg-white dark:bg-gray-800 text-stone-900 dark:text-white hover:bg-[#163422] hover:text-white dark:hover:bg-[#163422] shadow-md border border-gray-100 dark:border-gray-700 transition-all active:scale-95"
+              className="p-2.5 rounded-full bg-white dark:bg-stone-900 text-stone-900 dark:text-white hover:bg-[#163422] hover:text-white dark:hover:bg-[#163422] shadow-md border border-gray-100 dark:border-stone-700 transition-all active:scale-95"
               aria-label="Siguiente"
             >
               <ChevronRight size={18} />
@@ -166,14 +166,14 @@ export function FeaturedProductsSlider({ products }: FeaturedProductsSliderProps
             return (
               <div
                 key={product._id.toString()}
-                className="w-[280px] sm:w-[320px] flex-shrink-0 snap-start group relative bg-white dark:bg-[#12131A] rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-[0_6px_20px_rgba(42,0,2,0.06)] dark:shadow-[0_6px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_36px_rgba(42,0,2,0.15)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between"
+                className="w-[280px] sm:w-[320px] flex-shrink-0 snap-start group relative bg-white dark:bg-[#141A16] rounded-2xl overflow-hidden border border-gray-100 dark:border-stone-800 shadow-[0_6px_20px_rgba(42,0,2,0.04)] dark:shadow-[0_6px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_36px_rgba(42,0,2,0.15)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between"
               >
                 {/* Imagen del Producto */}
                 <Link
                   href={`/productos/${product.slug}`}
                   draggable={false}
                   onDragStart={(e) => e.preventDefault()}
-                  className="block relative aspect-square overflow-hidden bg-gray-50 dark:bg-gray-900 select-none"
+                  className="block relative aspect-square overflow-hidden bg-gray-50 dark:bg-[#101512] select-none"
                 >
                   <img
                     src={image}
@@ -201,7 +201,7 @@ export function FeaturedProductsSlider({ products }: FeaturedProductsSliderProps
                   
                   {/* Badge de Categoría */}
                   <div className="absolute top-3 left-3 z-10 pointer-events-none">
-                    <span className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-xs text-[#163422] dark:text-emerald-300 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md border border-stone-300 dark:border-gray-700 max-w-[130px] sm:max-w-[150px] truncate block">
+                    <span className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-xs text-[#163422] dark:text-[#E6C98B] text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md border border-stone-300 dark:border-stone-700 max-w-[130px] sm:max-w-[150px] truncate block">
                       {product.category || "Boutique"}
                     </span>
                   </div>
@@ -232,17 +232,17 @@ export function FeaturedProductsSlider({ products }: FeaturedProductsSliderProps
                       draggable={false}
                       onDragStart={(e) => e.preventDefault()}
                     >
-                      <h3 className="font-serif font-bold text-base text-stone-900 dark:text-white line-clamp-1 group-hover:text-[#163422] dark:group-hover:text-[#C5A059] transition-colors select-none">
+                      <h3 className="font-serif font-bold text-base text-stone-900 dark:text-white line-clamp-1 group-hover:text-[#163422] dark:group-hover:text-[#E6C98B] transition-colors select-none">
                         {product.name}
                       </h3>
                     </Link>
                   </div>
 
                   {/* Precio y Botón de Carrito */}
-                  <div className="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-gray-800/80">
+                  <div className="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-stone-800">
                     <div>
-                      <span className="text-[10px] text-gray-600 dark:text-gray-300 block font-bold uppercase tracking-wider">Precio</span>
-                      <span className="text-lg font-black text-stone-900 dark:text-white">
+                      <span className="text-[10px] text-gray-600 dark:text-gray-400 block font-bold uppercase tracking-wider">Precio</span>
+                      <span className="text-lg font-black text-stone-900 dark:text-[#E6C98B]">
                         ${product.price ? product.price.toFixed(2) : "0.00"}
                       </span>
                     </div>
@@ -254,7 +254,7 @@ export function FeaturedProductsSlider({ products }: FeaturedProductsSliderProps
                         price: product.price,
                         image: image
                       })}
-                      className="inline-flex items-center gap-1.5 bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#5EEAD4] dark:hover:bg-[#2DD4BF] text-white dark:text-stone-950 px-3.5 py-2 rounded-xl text-xs font-bold shadow-md hover:shadow-lg active:scale-95 transition-all"
+                      className="inline-flex items-center gap-1.5 bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1F452E] text-white dark:text-white border border-transparent dark:border-[#C5A059]/40 px-3.5 py-2 rounded-xl text-xs font-bold shadow-md hover:shadow-lg active:scale-95 transition-all"
                     >
                       <ShoppingBag size={14} />
                       <span>{t("addToCart") || "Agregar"}</span>

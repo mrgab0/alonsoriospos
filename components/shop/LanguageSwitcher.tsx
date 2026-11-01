@@ -37,14 +37,14 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center bg-stone-100 dark:bg-stone-900/90 p-1 rounded-full border border-stone-200 dark:border-stone-800 text-[11px] font-extrabold text-stone-700 dark:text-[#B9E6D3] shadow-inner">
+    <div className="flex items-center bg-stone-100 dark:bg-stone-900/90 p-1 rounded-full border border-stone-200 dark:border-stone-800 text-[11px] font-extrabold text-stone-700 dark:text-stone-300 shadow-inner">
       <button
         type="button"
         onClick={() => toggleLanguage("es")}
         className={`px-2.5 py-1 rounded-full transition-all flex items-center gap-1 ${
           !isEnglish
-            ? "bg-white dark:bg-[#181922] text-stone-900 dark:text-[#5EEAD4] shadow-sm font-black border border-transparent dark:border-[#5EEAD4]/30"
-            : "text-stone-700 dark:text-[#76C7B2] hover:text-[#163422] dark:hover:text-[#5EEAD4] font-bold"
+            ? "bg-white dark:bg-[#163422] text-stone-900 dark:text-[#E6C98B] shadow-sm font-black border border-transparent dark:border-[#E6C98B]/50"
+            : "text-stone-700 dark:text-stone-400 hover:text-[#163422] dark:hover:text-[#E6C98B] font-bold"
         }`}
         title="Cambiar a Español"
       >
@@ -56,8 +56,8 @@ export function LanguageSwitcher() {
         onClick={() => toggleLanguage("en")}
         className={`px-2.5 py-1 rounded-full transition-all flex items-center gap-1 ${
           isEnglish
-            ? "bg-white dark:bg-[#181922] text-stone-900 dark:text-[#5EEAD4] shadow-sm font-black border border-transparent dark:border-[#5EEAD4]/30"
-            : "text-stone-700 dark:text-[#76C7B2] hover:text-[#163422] dark:hover:text-[#5EEAD4] font-bold"
+            ? "bg-white dark:bg-[#163422] text-stone-900 dark:text-[#E6C98B] shadow-sm font-black border border-transparent dark:border-[#E6C98B]/50"
+            : "text-stone-700 dark:text-stone-400 hover:text-[#163422] dark:hover:text-[#E6C98B] font-bold"
         }`}
         title="Switch to English"
       >
