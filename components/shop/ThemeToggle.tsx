@@ -14,7 +14,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-400">
+      <div className="w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-900/80 flex items-center justify-center text-gray-400">
         <Sun size={16} />
       </div>
     );
@@ -26,14 +26,14 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-slate-900 dark:text-gray-200 hover:text-[#163422] dark:hover:text-[#C5A059] transition-all shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center cursor-pointer"
+      className="p-2.5 rounded-full bg-stone-100 dark:bg-stone-900/80 text-stone-800 dark:text-stone-200 hover:text-[#163422] dark:hover:text-[#E6C98B] transition-all shadow-sm border border-stone-200 dark:border-stone-800 flex items-center justify-center cursor-pointer"
       title={isDark ? "Cambiar a Modo Claro ☀️" : "Cambiar a Modo Oscuro 🌙"}
       aria-label="Alternar tema claro/oscuro"
     >
       {isDark ? (
-        <Sun size={17} className="text-amber-500 animate-in spin-in-90 duration-300" />
+        <Sun size={17} className="text-[#E6C98B] animate-in spin-in-90 duration-300" />
       ) : (
-        <Moon size={17} className="text-slate-900 dark:text-slate-200 animate-in spin-in-90 duration-300" />
+        <Moon size={17} className="text-stone-800 animate-in spin-in-90 duration-300" />
       )}
     </button>
   );
