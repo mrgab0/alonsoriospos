@@ -43,8 +43,14 @@ module.exports = {
           high: '#f5e5e3',
         },
         carbon: '#221a19',
+        brand: {
+          magenta: '#E6007F',
+          green: '#92C21E',
+          DEFAULT: '#E6007F',
+        },
       },
       fontFamily: {
+        brand: ['var(--font-playfair)', 'Didot', 'Bodoni MT', 'Cinzel', 'Playfair Display', 'serif'],
         sans: ['var(--font-montserrat)', 'var(--font-plus-jakarta)', 'Montserrat', 'Plus Jakarta Sans', 'sans-serif'],
         serif: ['var(--font-playfair)', 'var(--font-manrope)', 'Playfair Display', 'Manrope', 'serif'],
         display: ['var(--font-playfair)', 'Playfair Display', 'serif'],

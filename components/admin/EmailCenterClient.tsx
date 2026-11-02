@@ -725,7 +725,7 @@ IMPORTANTE: Responde ÚNICAMENTE con un objeto JSON sin texto introductorio ni e
               <h1 className="text-2xl sm:text-3xl font-serif font-black tracking-tight text-[#163422] dark:text-[#E6F7F0]">
                 Centro de Correos & Webmail
               </h1>
-              <p style={{ margin: 0 }} className="text-xs text-stone-500 dark:text-[#76C7B2] font-semibold">
+              <p style={{ margin: 0 }} className="text-xs text-[#92C21E] font-bold tracking-wider uppercase">
                 Art Floral • Houston, Texas
               </p>
             </div>

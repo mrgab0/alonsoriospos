@@ -43,17 +43,23 @@ export function Footer({ siteConfig }: FooterProps) {
           {/* Horarios de Operación */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <img
-                src={siteConfig?.logoUrl || "https://bonbonflowershouston.com/logo.png"}
-                alt="Bonbon Flowers Logo"
-                className="w-8 h-8 rounded-full object-cover border border-[#C5A059] dark:border-[#E6C98B]/40"
-              />
-              <h3
-                className="font-black text-xs uppercase tracking-wider font-serif"
-                style={{ color: "var(--theme-footer-accent, var(--theme-heading, #163422))" }}
-              >
-                Hours of operation
-              </h3>
+              <div className="w-9 h-9 rounded-full overflow-hidden bg-white border border-[#92C21E]/40 p-0.5 flex items-center justify-center flex-shrink-0">
+                <img
+                  src={siteConfig?.logoUrl || "/logo.png"}
+                  alt="Bonbon Flowers Logo"
+                  className="w-full h-full object-contain rounded-full"
+                />
+              </div>
+              <div>
+                <h3
+                  className="font-brand font-black text-xs uppercase tracking-wider text-[#E6007F] leading-none"
+                >
+                  Bonbon Flowers
+                </h3>
+                <span className="text-[9px] uppercase tracking-[0.2em] font-extrabold text-[#92C21E] block mt-1">
+                  Art Floral • Houston
+                </span>
+              </div>
             </div>
             <p className="opacity-80 leading-relaxed text-xs font-medium">
               Monday to Friday: 9 AM - 6 PM<br />

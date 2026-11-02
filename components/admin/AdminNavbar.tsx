@@ -132,15 +132,15 @@ export function AdminNavbar({ logoutAction }: AdminNavbarProps) {
           
           <div className="flex items-center gap-2.5">
             <Link href="/admin" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-[#FF97A4] overflow-hidden flex items-center justify-center bg-pink-50 dark:bg-pink-950/40 shadow-sm group-hover:scale-105 transition-transform flex-shrink-0">
-                <img src="https://bonbonflowershouston.com/logo.png" alt="Bonbon Flowers Logo" className="w-full h-full object-cover" />
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-[#92C21E]/50 overflow-hidden flex items-center justify-center bg-white shadow-sm group-hover:scale-105 transition-transform flex-shrink-0 p-0.5">
+                <img src="/logo.png" alt="Bonbon Flowers Logo" className="w-full h-full object-contain rounded-full" />
               </div>
               <div>
-                <span className="font-serif font-black text-sm sm:text-base text-[#1A1C1C] dark:!text-white block leading-tight group-hover:text-[#FF97A4] transition-colors">
+                <span className="font-serif font-black text-sm sm:text-base text-[#1A1C1C] dark:!text-white block leading-tight group-hover:text-[#E6007F] transition-colors">
                   Bonbon Flowers
                 </span>
-                <span className="text-[9px] font-bold text-gray-500 dark:!text-white/80 uppercase tracking-widest block">
-                  Panel de Administración
+                <span className="text-[9px] font-bold text-[#92C21E] uppercase tracking-widest block">
+                  Art Floral • Panel Admin
                 </span>
               </div>
             </Link>

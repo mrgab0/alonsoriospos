@@ -169,31 +169,24 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
 
       {/* 3. MAIN HEADER / NAVBAR */}
       <header className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3 relative">
-        {/* Brand Logo Circle con Borde Dorado */}
+        {/* Brand Logo Circle Oficial */}
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center group">
-            <div className="w-14 h-14 rounded-full border border-[#d4af37] bg-white dark:bg-stone-900 flex flex-col items-center justify-center p-1 shadow-sm text-center group-hover:scale-105 transition-transform">
-              <span className="text-[19px] font-serif text-[#b8335b] dark:text-[#ff8fa3] font-bold leading-none -mb-0.5">
-                B
-              </span>
-              <span className="text-[6.5px] font-bold tracking-[0.14em] text-[#333] dark:text-gray-200 uppercase leading-none mt-0.5">
-                BONBON
-              </span>
-              <span className="text-[4.8px] font-medium tracking-[0.08em] text-[#777] dark:text-gray-400 uppercase leading-none mt-0.5">
-                FLOWERS
-              </span>
-              <span className="text-[4px] font-medium tracking-[0.05em] text-[#999] dark:text-gray-500 uppercase leading-none">
-                HOUSTON
-              </span>
+          <Link href={prefix || "/"} className="flex items-center group">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#92C21E]/40 bg-white flex items-center justify-center p-0.5 shadow-sm group-hover:scale-105 transition-transform overflow-hidden">
+              <img
+                src={siteConfig?.logoUrl || "/logo.png"}
+                alt="Bonbon Flowers Logo"
+                className="w-full h-full object-contain rounded-full"
+              />
             </div>
           </Link>
 
           <div className="hidden sm:flex flex-col text-left">
-            <span className="font-serif font-black text-xl text-stone-900 dark:text-white leading-tight">
-              Bonbon <span className="text-[#163422] dark:text-[#d4af37]">Flowers</span>
+            <span className="font-brand font-black text-xl text-[#E6007F] tracking-[0.06em] uppercase leading-none">
+              BONBON FLOWERS
             </span>
-            <span className="text-[9.5px] tracking-[0.22em] uppercase font-bold text-[#b8335b] dark:text-[#ff8fa3]">
-              Art Floral
+            <span className="text-[9.5px] tracking-[0.24em] uppercase font-extrabold text-[#92C21E] mt-1">
+              Art Floral • Houston
             </span>
           </div>
         </div>
@@ -279,7 +272,7 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
           {/* Left Editorial Column */}
           <div className="w-[58%] sm:w-[60%] pt-2 z-10">
             {/* Eyebrow */}
-            <p className="text-[8.5px] sm:text-[10px] font-bold tracking-[0.18em] text-[#786c5e] dark:text-[#d4af37] uppercase mb-1.5 flex items-center gap-1">
+            <p className="text-[8.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#92C21E] uppercase mb-1.5 flex items-center gap-1">
               <span>ART FLORAL • HOUSTON</span>
             </p>
 

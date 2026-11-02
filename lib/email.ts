@@ -149,12 +149,12 @@ export function wrapInBonbonEmailTemplate({
               <tr>
                 <td style="text-align: center;">
                   <a href="${siteUrl}" target="_blank" style="text-decoration: none; display: inline-block;">
-                    <img src="${logoUrl}" alt="Bonbon Flowers Logo" width="56" height="56" style="width: 56px; height: 56px; border-radius: 50%; border: 2px solid #D4AF37; display: block; margin: 0 auto 10px auto; object-fit: cover;" />
+                    <img src="${logoUrl}" alt="Bonbon Flowers Logo" width="56" height="56" style="width: 56px; height: 56px; border-radius: 50%; border: 2px solid #92C21E; display: block; margin: 0 auto 10px auto; object-fit: contain; background: #ffffff;" />
                   </a>
                   <h1 style="color: #FFFFFF; margin: 0; font-family: Georgia, 'Playfair Display', serif; font-size: 23px; font-weight: 800; letter-spacing: 0.05em;">
                     Bonbon Flowers
                   </h1>
-                  <p style="color: #E6C98B; margin: 4px 0 0 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: bold;">
+                  <p style="color: #92C21E; margin: 4px 0 0 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.22em; font-weight: bold;">
                     Art Floral • Houston
                   </p>
                 </td>

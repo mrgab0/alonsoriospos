@@ -61,23 +61,23 @@ export function StickyNav({ siteConfig }: StickyNavProps) {
       >
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 xl:gap-6 relative">
           
-          {/* LADO IZQUIERDO: Logo de Bonbon Flowers 2 VECES MÁS GRANDE */}
+          {/* LADO IZQUIERDO: Logo de Bonbon Flowers */}
           <div className="flex items-center gap-4 py-2 flex-shrink-0 relative z-10">
             <Link href="/" className="flex items-center gap-3.5 group flex-shrink-0">
-              {/* Contenedor del Logo duplicado en tamaño (w-20 sm:w-24 = 80px a 96px) */}
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 sm:border-4 border-[#D4AF37]/70 shadow-xl group-hover:scale-105 group-active:scale-95 transition-transform bg-white flex-shrink-0">
+              {/* Contenedor del Logo */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 sm:border-3 border-[#92C21E]/40 shadow-xl group-hover:scale-105 group-active:scale-95 transition-transform bg-white flex-shrink-0 flex items-center justify-center p-0.5">
                 <img
-                  src={siteConfig?.logoUrl || "https://bonbonflowershouston.com/logo.png"}
+                  src={siteConfig?.logoUrl || "/logo.png"}
                   alt="Bonbon Flowers Logo"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain rounded-full"
                 />
               </div>
               <div className="hidden sm:flex flex-col">
-                <span className="font-serif font-black text-xl sm:text-2xl text-stone-900 dark:text-white tracking-tight flex-shrink-0 leading-tight">
-                  Bonbon <span className="text-[#163422] dark:text-[#C5A059]">Flowers</span>
+                <span className="font-brand font-black text-xl sm:text-2xl text-[#E6007F] tracking-[0.06em] uppercase flex-shrink-0 leading-tight">
+                  BONBON FLOWERS
                 </span>
-                <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#C5A059] dark:text-[#E6C98B]">
-                  Houston, Texas
+                <span className="text-[10px] tracking-[0.25em] uppercase font-extrabold text-[#92C21E]">
+                  Art Floral • Houston, Texas
                 </span>
               </div>
             </Link>
