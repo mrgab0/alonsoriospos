@@ -66,7 +66,7 @@ export function HomeProductShowcase({ products }: HomeProductShowcaseProps) {
         {/* Chip de Disponibilidad en Línea */}
         <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 text-xs font-bold shrink-0 self-start md:self-auto">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-          <span className="font-mono">{filteredProducts.length}/{products.length} {isSpanish ? "EN LÍNEA" : "ONLINE"}</span>
+          <span className="font-mono">24/7 {isSpanish ? "EN LÍNEA" : "ONLINE"}</span>
           <span className="text-stone-400 dark:text-gray-500">•</span>
           <span className="hidden sm:inline">{isSpanish ? "Disponibilidad Inmediata" : "Immediate Availability"}</span>
         </div>
