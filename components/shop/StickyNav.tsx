@@ -61,22 +61,22 @@ export function StickyNav({ siteConfig }: StickyNavProps) {
       >
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 xl:gap-6 relative">
           
-          {/* LADO IZQUIERDO: Logo de Bonbon Flowers */}
-          <div className="flex items-center gap-4 py-2 flex-shrink-0 relative z-10">
-            <Link href="/" className="flex items-center gap-3.5 group flex-shrink-0">
+          {/* LADO IZQUIERDO: Logo de Bonbon Flowers con Letras Responsivas */}
+          <div className="flex items-center gap-2 sm:gap-4 py-2 flex-shrink-0 relative z-10 min-w-0">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3.5 group flex-shrink-0 min-w-0">
               {/* Contenedor del Logo */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 sm:border-3 border-[#92C21E]/40 shadow-xl group-hover:scale-105 group-active:scale-95 transition-transform bg-white flex-shrink-0 flex items-center justify-center p-0.5">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 lg:w-18 lg:h-18 rounded-full overflow-hidden border-2 sm:border-3 border-[#92C21E]/40 shadow-xl group-hover:scale-105 group-active:scale-95 transition-transform bg-white flex-shrink-0 flex items-center justify-center p-0.5">
                 <img
                   src={siteConfig?.logoUrl || "/logo.png"}
                   alt="Bonbon Flowers Logo"
                   className="w-full h-full object-contain rounded-full"
                 />
               </div>
-              <div className="hidden sm:flex flex-col">
-                <span className="font-brand font-black text-xl sm:text-2xl text-[#E6007F] tracking-[0.06em] uppercase flex-shrink-0 leading-tight">
+              <div className="flex flex-col text-left">
+                <span className="font-brand font-black text-[12.5px] min-[380px]:text-[14px] sm:text-lg lg:text-2xl text-[#E6007F] tracking-[0.04em] sm:tracking-[0.06em] uppercase flex-shrink-0 leading-tight whitespace-nowrap">
                   BONBON FLOWERS
                 </span>
-                <span className="text-[10px] tracking-[0.25em] uppercase font-extrabold text-[#92C21E]">
+                <span className="text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.25em] uppercase font-extrabold text-[#92C21E] whitespace-nowrap">
                   Art Floral • Houston, Texas
                 </span>
               </div>

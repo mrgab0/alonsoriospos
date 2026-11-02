@@ -169,27 +169,25 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
 
       {/* 3. MAIN HEADER / NAVBAR */}
       <header className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3 relative">
-        {/* Brand Logo Circle Oficial */}
-        <div className="flex items-center gap-3">
-          <Link href={prefix || "/"} className="flex items-center group">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-[#92C21E]/40 bg-white flex items-center justify-center p-0.5 shadow-sm group-hover:scale-105 transition-transform overflow-hidden">
-              <img
-                src={siteConfig?.logoUrl || "/logo.png"}
-                alt="Bonbon Flowers Logo"
-                className="w-full h-full object-contain rounded-full"
-              />
-            </div>
-          </Link>
+        {/* Brand Logo Circle Oficial y Letras Responsivas */}
+        <Link href={prefix || "/"} className="flex items-center gap-2 sm:gap-3 group flex-shrink-0 min-w-0">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border-2 border-[#92C21E]/40 bg-white flex items-center justify-center p-0.5 shadow-sm group-hover:scale-105 transition-transform overflow-hidden flex-shrink-0">
+            <img
+              src={siteConfig?.logoUrl || "/logo.png"}
+              alt="Bonbon Flowers Logo"
+              className="w-full h-full object-contain rounded-full"
+            />
+          </div>
 
-          <div className="hidden sm:flex flex-col text-left">
-            <span className="font-brand font-black text-xl text-[#E6007F] tracking-[0.06em] uppercase leading-none">
+          <div className="flex flex-col text-left">
+            <span className="font-brand font-black text-[12.5px] min-[380px]:text-[14px] sm:text-lg md:text-xl text-[#E6007F] tracking-[0.04em] sm:tracking-[0.06em] uppercase leading-tight whitespace-nowrap">
               BONBON FLOWERS
             </span>
-            <span className="text-[9.5px] tracking-[0.24em] uppercase font-extrabold text-[#92C21E] mt-1">
+            <span className="text-[7.5px] min-[380px]:text-[8.5px] sm:text-[9.5px] tracking-[0.16em] sm:tracking-[0.24em] uppercase font-extrabold text-[#92C21E] mt-0.5 sm:mt-1 whitespace-nowrap">
               Art Floral • Houston
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Links para Pantallas Medianas / Grandes */}
         <nav className="hidden md:flex items-center gap-6 font-bold uppercase tracking-wider text-xs text-stone-700 dark:text-gray-200">
@@ -205,23 +203,23 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
         </nav>
 
         {/* Actions / Toggles en Píldoras Suaves #f0ede8 */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 flex-shrink-0">
           {/* Fingerprint / Huella icon */}
           <button
             type="button"
             onClick={() => setIsBioModalOpen(true)}
-            className="w-9 h-9 rounded-full bg-[#f0ede8] dark:bg-stone-800 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-[#e6e2dc] dark:hover:bg-stone-700 transition-colors shadow-2xs"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#f0ede8] dark:bg-stone-800 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-[#e6e2dc] dark:hover:bg-stone-700 transition-colors shadow-2xs"
             title={isSpanish ? "Acceso biométrico / Registro seguro" : "Biometric access / Secure login"}
             aria-label={isSpanish ? "Acceso biométrico" : "Biometric access"}
           >
-            <Fingerprint className="w-4 h-4" />
+            <Fingerprint className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
 
           {/* Theme mode toggle */}
           <ThemeToggle />
 
           {/* Language selector badge */}
-          <div className="h-9 px-2 rounded-full bg-[#f0ede8] dark:bg-stone-800 flex items-center gap-1 text-[10px] font-bold text-gray-800 dark:text-gray-200 shadow-2xs">
+          <div className="h-8 sm:h-9 px-1.5 sm:px-2 rounded-full bg-[#f0ede8] dark:bg-stone-800 flex items-center gap-1 text-[10px] font-bold text-gray-800 dark:text-gray-200 shadow-2xs">
             <LanguageSwitcher />
           </div>
 
@@ -229,10 +227,10 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="w-9 h-9 rounded-xl bg-[#f0ede8] dark:bg-stone-800 flex items-center justify-center text-gray-800 dark:text-gray-200 hover:bg-[#e6e2dc] dark:hover:bg-stone-700 transition-colors shadow-2xs md:hidden"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#f0ede8] dark:bg-stone-800 flex items-center justify-center text-gray-800 dark:text-gray-200 hover:bg-[#e6e2dc] dark:hover:bg-stone-700 transition-colors shadow-2xs md:hidden"
             aria-label={isSpanish ? "Menú móvil" : "Mobile menu"}
           >
-            {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            {isMobileMenuOpen ? <X className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Menu className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
           </button>
         </div>
       </header>
