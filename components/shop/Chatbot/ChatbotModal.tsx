@@ -172,6 +172,7 @@ export const ChatbotModal = () => {
   // Estados del Motor Draggable (Móvil y Escritorio)
   const [position, setPosition] = useState<{ x: number; y: number } | null>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [isInteractivityEnabled, setIsInteractivityEnabled] = useState<boolean>(false);
   const bubbleRef = useRef<HTMLDivElement>(null);
   const dragDataRef = useRef<{
     startX: number;
@@ -236,6 +237,16 @@ export const ChatbotModal = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Prevenir clics fantasma durante la animación de apertura de la ventana
+  useEffect(() => {
+    if (isOpen) {
+      const timer = setTimeout(() => setIsInteractivityEnabled(true), 300);
+      return () => clearTimeout(timer);
+    } else {
+      setIsInteractivityEnabled(false);
+    }
+  }, [isOpen]);
+
   // Handlers de Arrastre Táctil y Ratón
   const startDrag = (clientX: number, clientY: number) => {
     const el = bubbleRef.current;
@@ -282,7 +293,7 @@ export const ChatbotModal = () => {
       }
     };
 
-    const onEnd = () => {
+    const onEnd = (endEvt?: MouseEvent | TouchEvent) => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseup", onEnd);
       window.removeEventListener("touchmove", onMove);
@@ -299,8 +310,16 @@ export const ChatbotModal = () => {
           return currentPos;
         });
       } else {
-        // Tap / Click directo sin arrastre -> Abrir modal
-        setIsOpen(true);
+        // Tap / Click directo sin arrastre -> Prevenir click fantasma y abrir modal tras micro-retraso
+        if (endEvt && endEvt.cancelable) {
+          try {
+            endEvt.preventDefault();
+            endEvt.stopPropagation();
+          } catch (_) {}
+        }
+        setTimeout(() => {
+          setIsOpen(true);
+        }, 60);
       }
     };
 
@@ -592,6 +611,13 @@ export const ChatbotModal = () => {
           ref={bubbleRef}
           onMouseDown={handleMouseDown}
           onTouchStart={handleTouchStart}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!dragDataRef.current.hasMoved) {
+              setIsOpen(true);
+            }
+          }}
           role="button"
           tabIndex={0}
           onKeyDown={(e) => e.key === 'Enter' && setIsOpen(true)}
@@ -708,7 +734,7 @@ export const ChatbotModal = () => {
 
       {/* Ventana Modal del Chatbot */}
       {isOpen && (
-        <div className="fixed bottom-4 sm:bottom-6 right-3 sm:right-6 z-[60] w-[94vw] sm:w-[410px] h-[560px] max-h-[85vh] bg-white dark:bg-[#12131a] rounded-3xl shadow-[0px_20px_50px_rgba(0,0,0,0.35)] border-2 border-[#D4AF37]/50 flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        <div className={`fixed bottom-4 sm:bottom-6 right-3 sm:right-6 z-[60] w-[94vw] sm:w-[410px] h-[560px] max-h-[85vh] bg-white dark:bg-[#12131a] rounded-3xl shadow-[0px_20px_50px_rgba(0,0,0,0.35)] border-2 border-[#D4AF37]/50 flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200 ${!isInteractivityEnabled ? "pointer-events-none" : "pointer-events-auto"}`}>
           
           {/* Header del Chatbot */}
           <div className="bg-gradient-to-r from-[#163422] via-[#1B2E22] to-[#163422] text-white px-4 py-3.5 flex items-center justify-between border-b border-[#D4AF37]/40 shadow-md">
@@ -933,7 +959,7 @@ export const ChatbotModal = () => {
                 href="https://wa.me/13467392730"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#25D366] hover:underline flex items-center gap-1 font-semibold"
+                className={`text-[#25D366] hover:underline flex items-center gap-1 font-semibold ${!isInteractivityEnabled ? "pointer-events-none select-none opacity-80" : ""}`}
               >
                 <PhoneCall size={11} /> WhatsApp
               </a>
