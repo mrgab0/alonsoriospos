@@ -10,6 +10,7 @@ import {
 } from "@/lib/email";
 import { revalidatePath } from "next/cache";
 import crypto from "crypto";
+import { escapeRegex } from "@/lib/utils/sanitize";
 
 export async function saveAbandonedCartAction(data: {
   customerEmail: string;
@@ -89,7 +90,7 @@ export async function getAbandonedCartsAction(params?: {
     }
 
     if (params?.search?.trim()) {
-      const regex = new RegExp(params.search.trim(), "i");
+      const regex = new RegExp(escapeRegex(params.search.trim()), "i");
       query.$or = [
         { customerEmail: regex },
         { customerName: regex },

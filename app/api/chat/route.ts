@@ -3,8 +3,28 @@ import dbConnect from '@/lib/db';
 import { Product } from '@/lib/models/Product';
 import { getSiteConfig } from '@/lib/actions/siteConfig';
 import { getDeliveryOptions } from '@/lib/actions/delivery';
+import { verifyAdminSession } from '@/lib/adminAuth';
 
 export const runtime = 'nodejs';
+
+// Limitador de tasa por IP: máximo 25 mensajes por minuto para blindar cuota de Gemini
+const chatRateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const CHAT_MAX_PER_MINUTE = 25;
+const CHAT_WINDOW_MS = 60 * 1000;
+
+function checkChatRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = chatRateLimitMap.get(ip);
+  if (!entry || entry.resetAt < now) {
+    chatRateLimitMap.set(ip, { count: 1, resetAt: now + CHAT_WINDOW_MS });
+    return true;
+  }
+  if (entry.count >= CHAT_MAX_PER_MINUTE) {
+    return false;
+  }
+  entry.count += 1;
+  return true;
+}
 
 export async function POST(req: Request) {
   let clientContext: any = null;
@@ -13,11 +33,36 @@ export async function POST(req: Request) {
     clientContext = body?.clientContext;
     const { messages, locale = 'es' } = body;
     const isEn = locale === 'en';
-    const isAdmin = Boolean(clientContext?.isAdmin);
+
+    // Protección de tasa (Rate Limiting)
+    const clientIp =
+      req.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+      req.headers.get('x-real-ip') ||
+      '127.0.0.1';
+
+    if (!checkChatRateLimit(clientIp)) {
+      return NextResponse.json(
+        {
+          error: isEn
+            ? "Too many chat messages. Please wait a moment."
+            : "Has enviado demasiados mensajes seguidos. Por favor espera un momento.",
+        },
+        { status: 429 }
+      );
+    }
+
+    // Privilegios de administrador verificados criptográficamente
+    const isAdmin = Boolean(clientContext?.isAdmin) && (await verifyAdminSession());
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ 
         error: isEn ? "No valid messages provided." : "No se proporcionaron mensajes válidos." 
+      }, { status: 400 });
+    }
+
+    if (messages.length > 25) {
+      return NextResponse.json({
+        error: isEn ? "Message history too long." : "Historial de conversación demasiado extenso."
       }, { status: 400 });
     }
 
@@ -188,11 +233,13 @@ Reglas estrictas de conversación humana y corta:
       });
     }
 
-    // 3. Formatear historial de conversación para Gemini API
-    const formattedContents = messages.map((m: { role: string; text: string }) => ({
-      role: m.role === 'user' ? 'user' : 'model',
-      parts: [{ text: m.text }]
-    }));
+    // 3. Formatear historial de conversación para Gemini API con sanitización de longitud
+    const formattedContents = messages
+      .filter((m: any) => m && typeof m.text === 'string' && m.text.trim())
+      .map((m: { role: string; text: string }) => ({
+        role: m.role === 'user' ? 'user' : 'model',
+        parts: [{ text: m.text.slice(0, 1500) }]
+      }));
 
     // 4. Llamar a la API de Gemini con modelos oficiales de alta velocidad y Free Tier
     const modelsToTry = [

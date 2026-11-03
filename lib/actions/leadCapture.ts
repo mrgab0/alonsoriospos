@@ -10,6 +10,7 @@ import {
   wrapInBonbonEmailTemplate,
 } from "@/lib/email";
 import { revalidatePath } from "next/cache";
+import { escapeRegex } from "@/lib/utils/sanitize";
 
 export async function captureLeadAction(data: {
   email: string;
@@ -141,7 +142,7 @@ export async function getNewsletterLeadsAction(params?: {
     const query: any = {};
 
     if (params?.search?.trim()) {
-      const regex = new RegExp(params.search.trim(), "i");
+      const regex = new RegExp(escapeRegex(params.search.trim()), "i");
       query.$or = [{ email: regex }, { name: regex }, { phone: regex }];
     }
 

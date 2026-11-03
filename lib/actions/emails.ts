@@ -9,6 +9,7 @@ import {
   wrapInBonbonEmailTemplate,
 } from "@/lib/email";
 import { revalidatePath } from "next/cache";
+import { escapeRegex } from "@/lib/utils/sanitize";
 
 const DEFAULT_CORPORATE_ACCOUNTS: ICorporateAccount[] = [
   {
@@ -69,7 +70,7 @@ export async function getEmailsAction(params?: {
     }
 
     if (accountEmail && accountEmail !== "all") {
-      const emailRegex = new RegExp(accountEmail, "i");
+      const emailRegex = new RegExp(escapeRegex(accountEmail), "i");
       andConditions.push({
         $or: [
           { mailboxEmail: emailRegex },
@@ -80,7 +81,7 @@ export async function getEmailsAction(params?: {
     }
 
     if (search) {
-      const regex = new RegExp(search, "i");
+      const regex = new RegExp(escapeRegex(search), "i");
       andConditions.push({
         $or: [
           { subject: regex },
@@ -100,7 +101,7 @@ export async function getEmailsAction(params?: {
 
     let unreadQuery: any = { direction: "inbound", isRead: false, isDeleted: { $ne: true } };
     if (accountEmail && accountEmail !== "all") {
-      const emailRegex = new RegExp(accountEmail, "i");
+      const emailRegex = new RegExp(escapeRegex(accountEmail), "i");
       unreadQuery.$or = [
         { mailboxEmail: emailRegex },
         { to: emailRegex },
@@ -410,7 +411,7 @@ export async function getCorporateAccountsAction(): Promise<{
 
     // Calcular no leídos por cada cuenta
     for (const acc of accounts) {
-      const emailRegex = new RegExp(acc.email, "i");
+      const emailRegex = new RegExp(escapeRegex(acc.email), "i");
       acc.unreadCount = await EmailMessage.countDocuments({
         direction: "inbound",
         isRead: false,

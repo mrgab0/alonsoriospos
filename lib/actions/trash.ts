@@ -5,6 +5,7 @@ import { Product } from "@/lib/models/Product";
 import { Addon } from "@/lib/models/Addon";
 import { EmailMessage } from "@/lib/models/EmailMessage";
 import { revalidatePath } from "next/cache";
+import { escapeRegex } from "@/lib/utils/sanitize";
 
 export type TrashItemType = "product" | "addon" | "email";
 
@@ -86,7 +87,7 @@ export async function getTrashItemsAction(params?: {
     if (filterType === "all" || filterType === "products") {
       const prodQuery: any = { isDeleted: true };
       if (search) {
-        const regex = new RegExp(search, "i");
+        const regex = new RegExp(escapeRegex(search), "i");
         prodQuery.$or = [
           { name: regex },
           { category: regex },
@@ -119,7 +120,7 @@ export async function getTrashItemsAction(params?: {
     if (filterType === "all" || filterType === "addons") {
       const addonQuery: any = { isDeleted: true };
       if (search) {
-        const regex = new RegExp(search, "i");
+        const regex = new RegExp(escapeRegex(search), "i");
         addonQuery.$or = [
           { name: regex },
           { category: regex },
@@ -151,7 +152,7 @@ export async function getTrashItemsAction(params?: {
     if (filterType === "all" || filterType === "emails") {
       const emailQuery: any = { isDeleted: true };
       if (search) {
-        const regex = new RegExp(search, "i");
+        const regex = new RegExp(escapeRegex(search), "i");
         emailQuery.$or = [
           { subject: regex },
           { customerName: regex },
