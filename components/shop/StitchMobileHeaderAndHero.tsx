@@ -84,7 +84,7 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
       name: "BIRTHDAY",
       ringGradient: "from-[#fde68a] to-[#fef3c7]",
       image: "https://ik.imagekit.io/4ub2sqhjx/products/Screenshot_330_o3LDIGwS_.png",
-      href: `${prefix}/productos?search=cumpleaños`,
+      href: `${prefix}/productos?search=${isSpanish ? "cumpleaños" : "birthday"}`,
       twoLines: ["BIRTHDAY"],
     },
     {
@@ -92,7 +92,7 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
       name: "GRADUATION",
       ringGradient: "from-[#fbc2cb] to-[#fce7f3]",
       image: "https://ik.imagekit.io/4ub2sqhjx/products/Screenshot_348_LvvLdITtU.png",
-      href: `${prefix}/productos?search=graduacion`,
+      href: `${prefix}/productos?search=${isSpanish ? "graduacion" : "graduation"}`,
       twoLines: ["GRADUATION"],
     },
     {

@@ -10,6 +10,7 @@ import { useCart } from "@/components/shop/Cart/CartContext";
 import { useTranslations } from "next-intl";
 import { WhatsAppButton } from "@/components/shop/WhatsAppButton";
 import { normalizeAddon } from "@/lib/utils/addonCategories";
+import { matchesCatalogSearch } from "@/lib/utils/searchHelper";
 
 interface CatalogClientProps {
   initialProducts: any[];
@@ -111,12 +112,8 @@ export function CatalogClient({
         if (activeTab === "products" && item.itemType !== "product") return false;
         if (activeTab === "addons" && item.itemType !== "addon") return false;
 
-        // Filtro por Búsqueda
-        const matchSearch =
-          searchTerm === "" ||
-          item.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.displayCategory?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.flowerType?.toLowerCase().includes(searchTerm.toLowerCase());
+        // Filtro Semántico & Bilingüe por Búsqueda (evalúa nombre, descripción, ocasiones y flores)
+        const matchSearch = matchesCatalogSearch(item, searchTerm);
 
         // Filtro Inteligente por Categoría
         const selLower = selectedCategory.toLowerCase();
