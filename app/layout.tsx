@@ -16,7 +16,6 @@ const PedidoFlotante = dynamic(() => import("@/components/shop/PedidoFlotante").
 const ShoppingCartComponent = dynamic(() => import("@/components/shop/Cart/ShoppingCart").then((m) => m.ShoppingCartComponent));
 const ChatbotModal = dynamic(() => import("@/components/shop/Chatbot/ChatbotModal").then((m) => m.ChatbotModal));
 const LeadCaptureFloatingWidget = dynamic(() => import("@/components/shop/LeadCaptureFloatingWidget").then((m) => m.LeadCaptureFloatingWidget));
-const WebsiteLaunchCelebration = dynamic(() => import("@/components/shop/WebsiteLaunchCelebration").then((m) => m.WebsiteLaunchCelebration));
 
 import { Playfair_Display, Montserrat, Plus_Jakarta_Sans, Manrope, Great_Vibes } from "next/font/google";
 
@@ -219,7 +218,6 @@ export default async function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider locale="en" messages={enMessages}>
             <CartProvider>
-              <WebsiteLaunchCelebration />
               <PedidoFlotante />
               <ShoppingCartComponent />
               <LeadCaptureFloatingWidget />
