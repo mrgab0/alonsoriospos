@@ -35,6 +35,11 @@ export const ADMIN_NAV_ITEMS = [
     icon: "🏢",
   },
   {
+    href: "/admin/cuentas-por-pagar",
+    label: "Cuentas por Pagar",
+    icon: "💳",
+  },
+  {
     href: "/admin/ordenes",
     label: "Órdenes & Despacho",
     icon: "🛍️",
