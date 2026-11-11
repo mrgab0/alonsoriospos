@@ -42,6 +42,12 @@ const NAV_ITEMS = [
     badgeColor: "bg-amber-100 dark:bg-amber-950/80 text-amber-950 dark:text-amber-200 border-amber-300 dark:border-amber-800/80 hover:bg-amber-200"
   },
   {
+    href: "/admin/cuentas-por-cobrar",
+    label: "Por Cobrar (Fiado)",
+    icon: "👥",
+    badgeColor: "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-950 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800/80 hover:bg-emerald-200"
+  },
+  {
     href: "/admin/ordenes",
     label: "Órdenes & Despacho",
     icon: "🛍️",

@@ -5,6 +5,7 @@ import { Product } from '@/lib/models/Product';
 import { Order } from '@/lib/models/Order';
 import { StockMovement } from '@/lib/models/StockMovement';
 import { Customer } from '@/lib/models/Customer';
+import { CustomerCredit } from '@/lib/models/CustomerCredit';
 import { revalidatePath } from 'next/cache';
 
 export async function searchPOSProducts(query: string) {
@@ -145,6 +146,23 @@ export async function processPOSSale(payload: POSSalePayload) {
       printedAtPOS: new Date(),
       createdAt: new Date(),
     });
+
+    // 2.1 Si fue a crédito / fiado, registrar movimiento de cargo en el Ledger
+    if (isCredit && customerDoc) {
+      await CustomerCredit.create({
+        customerId: customerDoc._id,
+        customerName,
+        customerPhone,
+        type: 'charge',
+        amount: payload.total,
+        previousBalance: (customerDoc.creditBalance || 0) - payload.total,
+        newBalance: customerDoc.creditBalance || 0,
+        orderId,
+        paymentMethod: 'credito_fiado',
+        notes: `Venta Fiada POS #${orderId}`,
+        createdBy: payload.cashierName || 'cajero',
+      });
+    }
 
     // 3. Descontar stock y registrar en Kardex para cada producto
     for (const item of payload.items) {

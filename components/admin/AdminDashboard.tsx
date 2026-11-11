@@ -20,6 +20,7 @@ import {
   Building2,
   PackagePlus,
   Zap,
+  Users,
 } from "lucide-react";
 
 interface AdminModule {
@@ -93,6 +94,20 @@ const ADMIN_MODULES: AdminModule[] = [
     borderColor: "border-amber-500/20",
     hoverBorder: "hover:border-amber-500/60",
     icon: CreditCard,
+  },
+  {
+    id: "cuentas-por-cobrar",
+    title: "Cuentas por Cobrar (Fiado)",
+    description: "Clientes deudores, registro de abonos en caja y límites de crédito.",
+    href: "/admin/cuentas-por-cobrar",
+    badge: "Crédito 👥",
+    badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+    actionText: "Ver cartera deudora",
+    iconGradient: "from-emerald-600 to-teal-700",
+    iconShadow: "shadow-emerald-600/25",
+    borderColor: "border-emerald-500/20",
+    hoverBorder: "hover:border-emerald-500/60",
+    icon: Users,
   },
   {
     id: "ordenes",
