@@ -5,11 +5,15 @@ export interface IProduct extends Document {
   name: string;
   slug: string;
   sku?: string;
+  barcode?: string;
   description: string;
   description_en?: string;
   price: number;
+  costPrice?: number;
   images: string[];
   stock: number;
+  minStock?: number;
+  unit?: string;
   category: string;
   flowerType?: string;
   dimensions?: string;
@@ -37,11 +41,15 @@ const ProductSchema: Schema = new Schema({
   name: { type: String, required: true },
   slug: { type: String, required: true, unique: true },
   sku: { type: String, default: "" },
+  barcode: { type: String, default: "", index: true },
   description: { type: String, required: true },
   description_en: { type: String, default: "" },
   price: { type: Number, required: true },
+  costPrice: { type: Number, default: 0 },
   images: [{ type: String }],
   stock: { type: Number, default: 0 },
+  minStock: { type: Number, default: 0 },
+  unit: { type: String, default: "unidad" },
   category: { type: String, required: true },
   flowerType: { type: String, default: "" },
   dimensions: { type: String, default: "" },

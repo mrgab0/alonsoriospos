@@ -46,7 +46,7 @@ export function Footer({ siteConfig }: FooterProps) {
               <div className="w-9 h-9 rounded-full overflow-hidden bg-white border border-[#92C21E]/40 p-0.5 flex items-center justify-center flex-shrink-0">
                 <img
                   src={siteConfig?.logoUrl || "/logo.png"}
-                  alt="Bonbon Flowers Logo"
+                  alt="VKA POS Logo"
                   className="w-full h-full object-contain rounded-full"
                 />
               </div>
@@ -54,10 +54,10 @@ export function Footer({ siteConfig }: FooterProps) {
                 <h3
                   className="font-brand font-black text-xs uppercase tracking-wider text-[#E6007F] leading-none"
                 >
-                  Bonbon Flowers
+                  VKA POS
                 </h3>
                 <span className="text-[9px] uppercase tracking-[0.2em] font-extrabold text-[#92C21E] block mt-1">
-                  Art Floral • Houston
+                  Point of Sale & Retail
                 </span>
               </div>
             </div>
@@ -89,7 +89,7 @@ export function Footer({ siteConfig }: FooterProps) {
             {emailSubscribed ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/40 p-3 rounded-lg text-xs font-bold border border-emerald-200 dark:border-emerald-800/60">
                 <CheckCircle2 size={16} />
-                <span>{isSpanish ? "¡Gracias por suscribirte a Bonbon Flowers!" : "Thank you for subscribing to Bonbon Flowers!"}</span>
+                <span>{isSpanish ? "¡Gracias por suscribirte a VKA POS!" : "Thank you for subscribing to VKA POS!"}</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md">

@@ -72,44 +72,44 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
   // 5 Categorías circulares con gradientes e imágenes permanentes optimizadas desde ImageKit
   const categories = [
     {
-      id: "love-romance",
-      name: "LOVE & ROMANCE",
+      id: "retail",
+      name: "RETAIL",
       ringGradient: "from-[#fbc2cb] to-[#f9e2e6]",
-      image: "https://ik.imagekit.io/4ub2sqhjx/products/Screenshot_280_2OeW7r1QZa.png",
-      href: `${prefix}/productos?search=romance`,
-      twoLines: ["LOVE &", "ROMANCE"],
+      image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=300&q=80&auto=format",
+      href: `${prefix}/productos`,
+      twoLines: ["VENTA", "RETAIL"],
     },
     {
-      id: "birthday",
-      name: "BIRTHDAY",
+      id: "destacados",
+      name: "DESTACADOS",
       ringGradient: "from-[#fde68a] to-[#fef3c7]",
-      image: "https://ik.imagekit.io/4ub2sqhjx/products/Screenshot_330_o3LDIGwS_.png",
-      href: `${prefix}/productos?search=${isSpanish ? "cumpleaños" : "birthday"}`,
-      twoLines: ["BIRTHDAY"],
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=300&q=80&auto=format",
+      href: `${prefix}/productos?featured=true`,
+      twoLines: ["PRODUCTOS", "TOP"],
     },
     {
-      id: "graduation",
-      name: "GRADUATION",
-      ringGradient: "from-[#fbc2cb] to-[#fce7f3]",
-      image: "https://ik.imagekit.io/4ub2sqhjx/products/Screenshot_348_LvvLdITtU.png",
-      href: `${prefix}/productos?search=${isSpanish ? "graduacion" : "graduation"}`,
-      twoLines: ["GRADUATION"],
+      id: "inventario",
+      name: "INVENTARIO",
+      ringGradient: "from-[#bbf7d0] to-[#dcfce7]",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=300&q=80&auto=format",
+      href: `${prefix}/productos`,
+      twoLines: ["STOCK", "GENERAL"],
     },
     {
-      id: "flowers-gifts",
-      name: "FLOWERS + GIFTS",
+      id: "complementos",
+      name: "COMPLEMENTOS",
       ringGradient: "from-[#fed7aa] to-[#ffedd5]",
-      image: "https://ik.imagekit.io/4ub2sqhjx/products/Screenshot_282_cUXpPUEqd.png",
+      image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300&q=80&auto=format",
       href: `${prefix}/productos?cat=adicionales`,
-      twoLines: ["FLOWERS", "+ GIFTS"],
+      twoLines: ["EXTRAS &", "ACCESORIOS"],
     },
     {
-      id: "balloons-helium",
-      name: "BALLOONS WITH HELIUM",
-      ringGradient: "from-[#fbc2cb] to-[#fde2e4]",
-      image: "https://ik.imagekit.io/4ub2sqhjx/products/Screenshot_375_-BXrInYiq.png",
-      href: `${prefix}/productos?cat=globos`,
-      twoLines: ["BALLOONS", "WITH HELIUM"],
+      id: "fletes",
+      name: "DESPACHO",
+      ringGradient: "from-[#bae6fd] to-[#e0f2fe]",
+      image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=300&q=80&auto=format",
+      href: `${prefix}/rastreo`,
+      twoLines: ["DELIVERY &", "FLETES"],
     },
   ];
 
@@ -174,17 +174,17 @@ export const StitchMobileHeaderAndHero: React.FC<StitchMobileHeaderAndHeroProps>
           <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border-2 border-[#92C21E]/40 bg-white flex items-center justify-center p-0.5 shadow-sm group-hover:scale-105 transition-transform overflow-hidden flex-shrink-0">
             <img
               src={siteConfig?.logoUrl || "/logo.png"}
-              alt="Bonbon Flowers Logo"
+              alt="VKA POS Logo"
               className="w-full h-full object-contain rounded-full"
             />
           </div>
 
           <div className="flex flex-col text-left">
             <span className="font-brand font-black text-[12.5px] min-[380px]:text-[14px] sm:text-lg md:text-xl text-[#E6007F] tracking-[0.04em] sm:tracking-[0.06em] uppercase leading-tight whitespace-nowrap">
-              BONBON FLOWERS
+              VKA POS
             </span>
             <span className="text-[7.5px] min-[380px]:text-[8.5px] sm:text-[9.5px] tracking-[0.16em] sm:tracking-[0.24em] uppercase font-extrabold text-[#92C21E] mt-0.5 sm:mt-1 whitespace-nowrap">
-              Art Floral • Houston
+              Point of Sale & Retail
             </span>
           </div>
         </Link>

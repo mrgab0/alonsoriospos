@@ -17,11 +17,11 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
   const whatsappUrl = "https://wa.me/13467392730?text=Hola!%20Quisiera%20pedir%20flores%20en%20Houston.";
 
   const fallbackProduct = {
-    name: "Anniversary Romance Haute Floral Collection Houston",
+    name: "Terminal de Punto de Venta VKA POS",
     slug: "",
-    price: 99.99,
-    badge: "Haute Handcrafted",
-    images: ["https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&q=80&auto=format"]
+    price: 49.99,
+    badge: "Hardware & Software",
+    images: ["https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=600&q=80&auto=format"]
   };
 
   const [currentProduct, setCurrentProduct] = useState<any>(
@@ -56,30 +56,30 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
           
           {/* Columna Izquierda: Tipografía Editorial y CTAs de Conversión */}
           <div className="lg:col-span-7 flex flex-col items-start space-y-5 text-left">
-            {/* Badge de Taller Couture */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-50 dark:bg-pink-950/40 border border-[#FF97A4]/30 text-[#B0004A] dark:text-[#FF97A4] shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#FF97A4] animate-pulse" />
+            {/* Badge de Sistema */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-[11px] font-bold uppercase tracking-widest font-mono">
-                Houston Couture Boutique
+                Punto de Venta & Facturación
               </span>
             </div>
 
             {/* Kicker y Título Principal */}
             <div className="space-y-1.5">
               <span className="text-xs font-serif uppercase tracking-[0.25em] text-[#92C21E] font-bold block">
-                Art Floral • Houston
+                VKA POS • Retail & Despachos
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-luxury-serif text-stone-900 dark:text-white tracking-tight leading-[1.08] font-normal">
-                Flowers that make them{" "}
+                Facturación ágil y control total{" "}
                 <span className="font-script-custom text-[#163422] dark:text-[#E6C98B] text-6xl sm:text-7xl lg:text-8xl italic block mt-1">
-                  feel loved ♡
+                  para tu negocio ✓
                 </span>
               </h1>
             </div>
 
             {/* Descripción Editorial */}
             <p className="text-sm sm:text-base text-stone-600 dark:text-gray-300 max-w-xl leading-relaxed font-medium">
-              Entrega de flores de alta costura el mismo día en Houston, TX y área metropolitana. Composiciones de autor confeccionadas a mano con rosas ecuatorianas selectas para momentos inolvidables.
+              Gestión centralizada de ventas en mostrador, escaneo de códigos de barra por cámara o lector USB, control de inventario, cuentas por cobrar (fiado) y despacho local.
             </p>
 
             {/* Botones de Acción */}
@@ -88,7 +88,7 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
                 href="#catalogo"
                 className="px-8 py-3.5 rounded-xl bg-[#163422] hover:bg-[#1B2E22] dark:bg-[#163422] dark:hover:bg-[#1F452E] text-white dark:text-white border border-transparent dark:border-[#C5A059]/40 text-xs font-extrabold uppercase tracking-widest text-center shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
               >
-                EXPLORAR COLECCIÓN
+                VER PRODUCTOS
               </Link>
 
               <a
@@ -98,7 +98,7 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
                 className="px-8 py-3.5 rounded-xl bg-[#FAF7F5] dark:bg-[#141A16] hover:bg-pink-50 dark:hover:bg-[#1A221D] text-stone-800 dark:text-white border border-stone-200 dark:border-stone-800 text-xs font-bold uppercase tracking-wider text-center shadow-sm hover:border-[#FF97A4]/50 hover:text-[#163422] dark:hover:text-[#FF97A4] transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <MessageCircle size={16} className="text-emerald-500 dark:text-[#FF97A4]" />
-                <span>PEDIR POR WHATSAPP</span>
+                <span>CONTACTAR SOPORTE</span>
               </a>
             </div>
 
@@ -113,17 +113,17 @@ export const LuxuryHeroSection: React.FC<LuxuryHeroSectionProps> = ({ siteConfig
                   <Star size={14} fill="currentColor" />
                 </div>
                 <span className="font-extrabold text-stone-900 dark:text-white">4.9/5</span>
-                <span className="text-[11px]">• 500+ CLIENTES FELICES</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF97A4]" />
-                <span className="text-[11px]">CORTE HOY: 1:00 PM CST</span>
+                <span className="text-[11px]">• FACTURACIÓN RÁPIDA</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span className="text-[11px]">ROSAS 100% FRESCAS</span>
+                <span className="text-[11px]">INVENTARIO EN TIEMPO REAL</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                <span className="text-[11px]">DELIVERY MULTIVEHÍCULO</span>
               </div>
             </div>
           </div>

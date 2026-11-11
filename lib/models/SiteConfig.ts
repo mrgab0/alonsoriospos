@@ -164,12 +164,12 @@ export interface ISiteConfig extends Document {
 
 const SiteConfigSchema: Schema = new Schema({
   key: { type: String, required: true, unique: true, default: "global" },
-  heroTitle: { type: String, default: "Bonbon Flowers Houston" },
-  heroSlogan: { type: String, default: "Arreglos florales exclusivos y detalles de lujo diseñados para sorprender a quien más amas." },
-  heroButtonText: { type: String, default: "Explorar Colección" },
-  footerTitle: { type: String, default: "Bonbon Flowers Houston" },
-  footerSlogan: { type: String, default: "Boutique Digital de Alta Floristería • Houston, Texas" },
-  footerCopyright: { type: String, default: "© 2026 Bonbon Flowers Houston. Todos los derechos reservados." },
+  heroTitle: { type: String, default: "VKA POS" },
+  heroSlogan: { type: String, default: "Sistema integral de punto de venta, facturación rápida, inventario y retail omnicanal con despacho local." },
+  heroButtonText: { type: String, default: "Explorar Productos" },
+  footerTitle: { type: String, default: "VKA POS" },
+  footerSlogan: { type: String, default: "Punto de Venta, Facturación & Retail Omnicanal" },
+  footerCopyright: { type: String, default: "© 2026 VKA POS. Todos los derechos reservados." },
 
   // Personalización del Home & Cuadrícula (Por defecto 3 columnas en escritorio = Preservación 100%)
   productColumnsDesktop: { type: Number, default: 3 },
@@ -182,10 +182,10 @@ const SiteConfigSchema: Schema = new Schema({
   heroCustomProductIds: { type: [String], default: [] },
 
   // Identidad de Marca y Menú
-  logoUrl: { type: String, default: "https://bonbonflowershouston.com/logo.png" },
-  brandSlogan: { type: String, default: "Boutique Floral Digital • Houston, Texas" },
+  logoUrl: { type: String, default: "/logo.png" },
+  brandSlogan: { type: String, default: "Punto de Venta & Retail Omnicanal" },
   menuHomeLabel: { type: String, default: "Inicio" },
-  menuCatalogLabel: { type: String, default: "Colección" },
+  menuCatalogLabel: { type: String, default: "Catálogo" },
   menuTrackingLabel: { type: String, default: "📦 Rastreo" },
   menuAboutLabel: { type: String, default: "Nosotros" },
   menuContactLabel: { type: String, default: "Contacto" },
@@ -224,7 +224,7 @@ const SiteConfigSchema: Schema = new Schema({
   dialogflowProjectId: { type: String, default: "" },
   dialogflowLocation: { type: String, default: "us-central1" },
   dialogflowLanguageCode: { type: String, default: "es" },
-  dialogflowChatTitle: { type: String, default: "Flor • Bonbon Flowers 🌸" },
+  dialogflowChatTitle: { type: String, default: "Asistente Virtual • VKA POS 💼" },
 
   twoFactorMode: { type: String, default: "none" },
   twoFactorPin: { type: String, default: "" },
@@ -234,23 +234,23 @@ const SiteConfigSchema: Schema = new Schema({
   rescueOtpExpiresAt: { type: Date, default: null },
 
   // Campos SEO por defecto
-  seoTitle: { type: String, default: "Bonbon Flowers Houston | Boutique Digital de Alta Floristería" },
-  seoDescription: { type: String, default: "Floristería exclusiva con arreglos florales de lujo, rosas y detalles personalizados a domicilio con entrega express en Houston, TX." },
-  seoKeywords: { type: String, default: "floristeria, flores a domicilio, arreglos florales, rosas, ramos de flores, regalos, houston tx, bonbon flowers" },
-  ogImage: { type: String, default: "https://bonbonflowershouston.com/logo.png" },
+  seoTitle: { type: String, default: "VKA POS | Punto de Venta, Facturación & Control de Inventario" },
+  seoDescription: { type: String, default: "Software integral de facturación, punto de venta (POS), control de proveedores, cuentas por cobrar y retail con despacho local." },
+  seoKeywords: { type: String, default: "punto de venta, pos, facturacion, inventario, retail, proveedores, cuentas por cobrar, fiado, vka pos" },
+  ogImage: { type: String, default: "/logo.png" },
   googleSiteVerification: { type: String, default: "" },
   bingSiteVerification: { type: String, default: "" },
   googleAnalyticsId: { type: String, default: "" },
-  businessName: { type: String, default: "Bonbon Flowers" },
+  businessName: { type: String, default: "VKA POS" },
   businessPhone: { type: String, default: "+1 (346) 739-2730" },
   businessAddress: { type: String, default: "Houston, TX" },
   businessCity: { type: String, default: "Houston, TX" },
   mapboxToken: { type: String, default: "" },
 
   // Configuración de Correo Corporativo & Resend
-  corporateSenderEmail: { type: String, default: "orders@bonbonflowerhouston.com" },
-  corporateSenderName: { type: String, default: "Bonbon Flowers Houston" },
-  corporateReplyToEmail: { type: String, default: "contact@bonbonflowerhouston.com" },
+  corporateSenderEmail: { type: String, default: "orders@vkapos.com" },
+  corporateSenderName: { type: String, default: "VKA POS" },
+  corporateReplyToEmail: { type: String, default: "contact@vkapos.com" },
   resendApiKey: { type: String, default: "" },
   adminNotifyEmails: { type: [String], default: ["orders@bonbonflowerhouston.com", "iirockalonso@gmail.com"] },
   corporateAccounts: {

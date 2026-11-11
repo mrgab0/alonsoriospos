@@ -174,7 +174,7 @@ export function AdminShell({ children, logoutAction }: AdminShellProps) {
             <div className="w-10 h-10 rounded-full border-2 border-[#92C21E]/50 overflow-hidden bg-white flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform p-0.5">
               <img
                 src="/logo.png"
-                alt="Bonbon Flowers Logo"
+                alt="VKA POS Logo"
                 className="w-full h-full object-contain rounded-full"
               />
             </div>
@@ -182,10 +182,10 @@ export function AdminShell({ children, logoutAction }: AdminShellProps) {
             {(!isCollapsed || isOverlayMode || isMobileOpen) && (
               <div className="truncate">
                 <span className="font-serif font-black text-sm text-gray-900 dark:text-white block leading-tight truncate group-hover:text-[#E6007F] transition-colors">
-                  Bonbon Flowers
+                  VKA POS
                 </span>
                 <span className="text-[10px] font-bold text-[#92C21E] uppercase tracking-widest block truncate">
-                  Art Floral • Admin
+                  POS & Facturación
                 </span>
               </div>
             )}

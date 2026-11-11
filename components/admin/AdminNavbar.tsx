@@ -133,14 +133,14 @@ export function AdminNavbar({ logoutAction }: AdminNavbarProps) {
           <div className="flex items-center gap-2.5">
             <Link href="/admin" className="flex items-center gap-2.5 group">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-[#92C21E]/50 overflow-hidden flex items-center justify-center bg-white shadow-sm group-hover:scale-105 transition-transform flex-shrink-0 p-0.5">
-                <img src="/logo.png" alt="Bonbon Flowers Logo" className="w-full h-full object-contain rounded-full" />
+                <img src="/logo.png" alt="VKA POS Logo" className="w-full h-full object-contain rounded-full" />
               </div>
               <div>
                 <span className="font-serif font-black text-sm sm:text-base text-[#1A1C1C] dark:!text-white block leading-tight group-hover:text-[#E6007F] transition-colors">
-                  Bonbon Flowers
+                  VKA POS
                 </span>
                 <span className="text-[9px] font-bold text-[#92C21E] uppercase tracking-widest block">
-                  Art Floral • Panel Admin
+                  Punto de Venta & Facturación
                 </span>
               </div>
             </Link>
