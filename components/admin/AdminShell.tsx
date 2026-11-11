@@ -25,6 +25,11 @@ interface AdminShellProps {
 
 export const ADMIN_NAV_ITEMS = [
   {
+    href: "/admin/pos",
+    label: "Punto de Venta (POS)",
+    icon: "⚡",
+  },
+  {
     href: "/admin/compras",
     label: "Compras & Stock",
     icon: "📥",

@@ -18,6 +18,12 @@ interface AdminNavbarProps {
 
 const NAV_ITEMS = [
   {
+    href: "/admin/pos",
+    label: "Caja POS",
+    icon: "⚡",
+    badgeColor: "bg-emerald-500 text-white border-emerald-600 hover:bg-emerald-600"
+  },
+  {
     href: "/admin/compras",
     label: "Compras & Stock",
     icon: "📥",

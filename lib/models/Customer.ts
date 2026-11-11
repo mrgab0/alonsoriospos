@@ -15,6 +15,9 @@ export interface ICustomer extends Document {
   name?: string;
   phone?: string;
   address?: string;
+  creditLimit?: number;
+  creditBalance?: number;
+  creditStatus?: 'active' | 'blocked';
   passkeys: IPasskey[];
   currentChallenge?: string;
   createdAt: Date;
@@ -25,6 +28,9 @@ const CustomerSchema: Schema = new Schema({
   name: { type: String, default: "" },
   phone: { type: String, default: "" },
   address: { type: String, default: "" },
+  creditLimit: { type: Number, default: 0 },
+  creditBalance: { type: Number, default: 0 },
+  creditStatus: { type: String, enum: ['active', 'blocked'], default: 'active' },
   passkeys: [
     {
       credentialID: { type: String, required: true },

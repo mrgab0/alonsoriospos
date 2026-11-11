@@ -19,6 +19,7 @@ import {
   CheckCircle2,
   Building2,
   PackagePlus,
+  Zap,
 } from "lucide-react";
 
 interface AdminModule {
@@ -37,6 +38,20 @@ interface AdminModule {
 }
 
 const ADMIN_MODULES: AdminModule[] = [
+  {
+    id: "pos",
+    title: "Terminal Punto de Venta (POS)",
+    description: "Caja rápida, escáner por cámara y lector USB, cobro multimétodo y tickets térmicos.",
+    href: "/admin/pos",
+    badge: "Mostrador ⚡",
+    badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+    actionText: "Abrir caja POS",
+    iconGradient: "from-emerald-500 to-teal-500",
+    iconShadow: "shadow-emerald-500/30",
+    borderColor: "border-emerald-500/30",
+    hoverBorder: "hover:border-emerald-400",
+    icon: Zap,
+  },
   {
     id: "compras",
     title: "Compras & Recepción",
