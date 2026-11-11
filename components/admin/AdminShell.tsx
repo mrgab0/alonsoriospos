@@ -50,6 +50,11 @@ export const ADMIN_NAV_ITEMS = [
     icon: "👥",
   },
   {
+    href: "/admin/conductores",
+    label: "Flota & Envíos",
+    icon: "🛵",
+  },
+  {
     href: "/admin/ordenes",
     label: "Órdenes & Despacho",
     icon: "🛍️",

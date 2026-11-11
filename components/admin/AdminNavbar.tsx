@@ -48,6 +48,12 @@ const NAV_ITEMS = [
     badgeColor: "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-950 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800/80 hover:bg-emerald-200"
   },
   {
+    href: "/admin/conductores",
+    label: "Flota & Envíos",
+    icon: "🛵",
+    badgeColor: "bg-cyan-100 dark:bg-cyan-950/80 text-cyan-950 dark:text-cyan-200 border-cyan-300 dark:border-cyan-800/80 hover:bg-cyan-200"
+  },
+  {
     href: "/admin/ordenes",
     label: "Órdenes & Despacho",
     icon: "🛍️",
