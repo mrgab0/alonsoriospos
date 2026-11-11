@@ -38,7 +38,7 @@ const ADMIN_MODULES: AdminModule[] = [
   {
     id: "ordenes",
     title: "Gestor de Órdenes & Despacho",
-    description: "Monitoreo de pedidos, empaque floral y asignación de ruta.",
+    description: "Monitoreo de facturas, preparación de pedidos y asignación de ruta.",
     href: "/admin/ordenes",
     badge: "14 nuevos",
     badgeColor: "bg-pink-500/20 text-pink-300 border-pink-500/30",
@@ -52,11 +52,11 @@ const ADMIN_MODULES: AdminModule[] = [
   {
     id: "productos",
     title: "Gestionar Productos",
-    description: "Bouquets de rosas, cajas sombrereras y flores de temporada.",
+    description: "Catálogo de artículos, control de precios, código de barras y stock.",
     href: "/admin/productos",
     badge: "24 activos",
     badgeColor: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-    actionText: "Añadir o editar arreglos",
+    actionText: "Añadir o editar productos",
     iconGradient: "from-blue-500 to-indigo-600",
     iconShadow: "shadow-blue-500/25",
     borderColor: "border-blue-500/20",
@@ -226,7 +226,7 @@ export function AdminDashboard() {
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-bold uppercase tracking-widest text-[#FF97A4]">
-                Bonbon Flowers • Houston
+                VKA POS • Centro de Gestión
               </span>
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -239,7 +239,7 @@ export function AdminDashboard() {
             </h1>
 
             <p className="text-xs sm:text-sm text-gray-300 dark:text-gray-400 max-w-2xl leading-relaxed">
-              Selecciona un módulo directo para gestionar tus pedidos, catálogo floral boutique, pasarelas de pago y entregas en Houston.
+              Selecciona un módulo para gestionar facturación, inventario, punto de venta, compras a proveedores y despachos.
             </p>
           </div>
 
@@ -285,18 +285,18 @@ export function AdminDashboard() {
               <span className="hidden sm:inline">Simular Carga (useEffect)</span>
             </button>
 
-            {/* Botón Flor Co-Pilot Asistente */}
+            {/* Botón VKA Co-Pilot Asistente */}
             <button
               onClick={() => {
                 if (typeof window !== "undefined") {
                   window.dispatchEvent(new CustomEvent("open-bonbon-chat"));
                 }
               }}
-              className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-gradient-to-r from-pink-500/20 to-purple-500/20 hover:from-pink-500/30 hover:to-purple-500/30 active:scale-95 border border-[#FF97A4]/40 text-xs font-bold text-white transition-all shadow-sm group"
-              title="Abrir Flor Co-Pilot Asistente de Gestión"
+              className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-gradient-to-r from-emerald-500/20 to-blue-500/20 hover:from-emerald-500/30 hover:to-blue-500/30 active:scale-95 border border-emerald-500/40 text-xs font-bold text-white transition-all shadow-sm group"
+              title="Abrir VKA Co-Pilot Asistente de Gestión"
             >
-              <span className="text-base group-hover:scale-110 transition-transform">🌸</span>
-              <span>Flor Co-Pilot ⚡</span>
+              <span className="text-base group-hover:scale-110 transition-transform">⚡</span>
+              <span>VKA Co-Pilot</span>
             </button>
           </div>
         </div>
@@ -393,7 +393,7 @@ export function AdminDashboard() {
       <div className="pt-6 border-t border-gray-200 dark:border-gray-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
         <div className="flex items-center gap-2">
           <ShieldCheck size={16} className="text-emerald-500" />
-          <span>Bonbon Flowers LLC • Houston, Texas</span>
+          <span>VKA POS • Sistema de Facturación & Inventario</span>
           <span className="hidden sm:inline">•</span>
           <span className="font-mono text-[11px] text-emerald-500 font-medium flex items-center gap-1">
             <CheckCircle2 size={12} />

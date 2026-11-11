@@ -1,8 +1,8 @@
 import { ContactFormClient } from "@/components/shop/ContactFormClient";
 
 export const metadata = {
-  title: "Contacto | Bonbon Flowers Houston",
-  description: "Ponte en contacto con nuestro equipo de boutique floral para consultas o asesoría personalizada en Houston, TX.",
+  title: "Contacto | VKA POS",
+  description: "Ponte en contacto con nuestro equipo comercial para soporte, facturación o pedidos especiales.",
 };
 
 export default function LocalizedContactoPage() {

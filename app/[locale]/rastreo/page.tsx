@@ -11,11 +11,11 @@ export async function generateMetadata({
 
   return {
     title: isEn
-      ? "Track My Order | Bonbon Flowers Houston"
-      : "Rastrear Mi Envío | Bonbon Flowers Houston",
+      ? "Track My Order | VKA POS"
+      : "Rastrear Mi Factura y Envío | VKA POS",
     description: isEn
-      ? "Check the live preparation and delivery status of your luxury floral bouquet in Houston, TX."
-      : "Consulta el estado en vivo de tu arreglo floral con tu ID de orden o teléfono.",
+      ? "Check the live preparation and delivery dispatch status of your order."
+      : "Consulta el estado en vivo de tu pedido o despacho con tu ID de orden o teléfono.",
   };
 }
 

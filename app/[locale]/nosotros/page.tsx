@@ -10,17 +10,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     title: isEn
-      ? "About Us & Floral Blog | Bonbon Flowers Houston"
-      : "Nosotros & Blog Floral | Bonbon Flowers Houston",
+      ? "About Us | VKA POS"
+      : "Nosotros | VKA POS",
     description: isEn
-      ? "Discover the story of Bonbon Flowers in Houston, TX. Luxury rose bouquets, flower care guides, and romantic anniversary arrangements."
-      : "Conoce la historia de Bonbon Flowers en Houston, TX. Arreglos florales de lujo, guías de cuidado de rosas y ramos para aniversarios.",
+      ? "Learn about VKA POS, modern point of sale, invoicing, inventory, and local dispatch software."
+      : "Conoce más sobre VKA POS, solución integral para punto de venta, facturación, inventario y despachos locales.",
     openGraph: {
-      title: isEn ? "About Us | Bonbon Flowers" : "Nosotros & Blog Floral | Bonbon Flowers",
+      title: isEn ? "About Us | VKA POS" : "Nosotros | VKA POS",
       description: isEn
-        ? "Luxury floral boutique in Houston, Texas. Discover our story and floral blog."
-        : "Boutique floral de lujo en Houston, Texas. Descubre nuestra historia y blog floral.",
-      images: ["https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=1200"]
+        ? "Point of Sale, Invoicing and Retail Management System."
+        : "Sistema de Punto de Venta, Facturación y Gestión Retail.",
+      images: ["/logo.png"]
     }
   };
 }

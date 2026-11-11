@@ -37,7 +37,7 @@ export default function AdminCatalogoPage() {
   // Opciones del Catálogo PDF
   const [includeAddons, setIncludeAddons] = useState(true);
   const [selectedAddonIds, setSelectedAddonIds] = useState<Set<string>>(new Set());
-  const [catalogTitle, setCatalogTitle] = useState("Bonbon Flowers Houston — Luxury Floral Collection");
+  const [catalogTitle, setCatalogTitle] = useState("VKA POS — Catálogo General de Productos");
   const [catalogSubtitle, setCatalogSubtitle] = useState("Handcrafted Couture Arrangements & Concierge Gifts in Houston, TX");
   const [contactPhone, setContactPhone] = useState("(346) 739-2730");
   const [language, setLanguage] = useState<"en" | "es">("en");

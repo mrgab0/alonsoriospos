@@ -88,17 +88,17 @@ export default async function LocalizedHome({ params }: { params: Promise<{ loca
       {/* Vitrina "Composiciones Esculturales / Most Loved" con Filtros Interactivos */}
       <HomeProductShowcase products={products} />
 
-      {/* Banner de Entregas y Zonas de Cobertura en Houston (River Oaks, Galleria, Katy, Woodlands) */}
+      {/* Banner de Entregas y Zonas de Cobertura */}
       <HoustonDeliveryBanner
         phone="(346) 739-2730"
-        whatsappUrl="https://wa.me/13467392730?text=Hola!%20Quisiera%20pedir%20flores%20en%20Houston."
+        whatsappUrl="https://wa.me/13467392730?text=Hola!%20Quisiera%20informacion%20de%20pedidos."
       />
 
-      {/* Sección de Ubicación y Cobertura en Houston (Mapa estilizado y tarjeta flotante) */}
+      {/* Sección de Ubicación y Cobertura */}
       <StoreLocationSection
         phone="(346) 739-2730"
-        email="contacto@bonbonflowershouston.com"
-        whatsappUrl="https://wa.me/13467392730?text=Hola!%20Quisiera%20pedir%20flores%20en%20Houston."
+        email="contacto@vkapos.com"
+        whatsappUrl="https://wa.me/13467392730?text=Hola!%20Quisiera%20informacion%20de%20pedidos."
       />
 
       {/* Secciones de Reseñas y Feed de Instagram */}

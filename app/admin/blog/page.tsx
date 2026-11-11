@@ -330,7 +330,7 @@ export default function AdminBlogPage() {
             Blogger & Redacción de Artículos
           </h1>
           <p className="text-sm text-gray-600 dark:text-gray-400 max-w-2xl mt-1 font-medium">
-            Crea y administra publicaciones para la sección <span className="font-bold text-[#8B0024] dark:text-pink-300">/nosotros</span>. Estos artículos impulsan el posicionamiento de Bonbon Flowers Houston en Google.
+            Crea y administra publicaciones para la sección <span className="font-bold text-[#8B0024] dark:text-pink-300">/nosotros</span>. Estos artículos impulsan el posicionamiento de VKA POS en Google.
           </p>
         </div>
 
@@ -341,7 +341,7 @@ export default function AdminBlogPage() {
             className="flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 hover:opacity-95 text-white px-4 py-2.5 rounded-xl font-black text-xs shadow-md transition-all active:scale-95"
           >
             <Sparkles size={16} />
-            <span>Asistente IA Bonbon ✨</span>
+            <span>Asistente IA VKA ✨</span>
           </button>
 
           <button
@@ -705,7 +705,7 @@ export default function AdminBlogPage() {
         </div>
       )}
 
-      {/* MODAL DEL ASISTENTE IA BONBON */}
+      {/* MODAL DEL ASISTENTE IA VKA */}
       {isAiModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className="bg-white dark:bg-[#181922] w-full max-w-2xl rounded-3xl border border-purple-200 dark:border-gray-800 shadow-2xl p-6 sm:p-8 space-y-5 max-h-[90vh] overflow-y-auto">
@@ -718,10 +718,10 @@ export default function AdminBlogPage() {
                 </div>
                 <div>
                   <h3 className="font-serif font-black text-lg text-gray-900 dark:!text-white">
-                    Asistente IA Bonbon ✨
+                    Asistente IA VKA ✨
                   </h3>
                   <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-                    Generador automático de artículos optimizados para SEO floral con Google Gemini
+                    Generador automático de artículos informativos y comerciales con Google Gemini
                   </p>
                 </div>
               </div>

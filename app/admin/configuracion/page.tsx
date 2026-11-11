@@ -743,17 +743,17 @@ export default function AdminConfiguracionPage() {
                 <h2 className="font-serif font-black text-lg text-[#1A1C1C] dark:text-white">Imagen del Logo Principal</h2>
               </div>
               <SingleImageUploader
-                currentImage={config.logoUrl || "https://bonbonflowershouston.com/logo.png"}
-                label="Logo de Bonbon Flowers (Boutique Floral)"
+                currentImage={config.logoUrl || "/logo.png"}
+                label="Logo Principal VKA POS"
               />
-              <input type="hidden" name="logoUrl" value={config.logoUrl || "https://bonbonflowershouston.com/logo.png"} />
+              <input type="hidden" name="logoUrl" value={config.logoUrl || "/logo.png"} />
             </div>
 
             {/* Sección Lemas del Home & Footer */}
             <div className="bg-white dark:bg-[#12131A] p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 border-b pb-3 border-gray-100 dark:border-gray-800">
                 <Type size={20} className="text-[#FF97A4]" />
-                <h2 className="font-serif font-black text-lg text-[#1A1C1C] dark:text-white">Lemas y Encabezados de la Boutique</h2>
+                <h2 className="font-serif font-black text-lg text-[#1A1C1C] dark:text-white">Lemas y Encabezados del Sistema</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -761,7 +761,7 @@ export default function AdminConfiguracionPage() {
                   <label className="text-xs font-bold text-gray-700 dark:text-gray-300">Título Principal en Portada</label>
                   <input
                     name="heroTitle"
-                    defaultValue={config.heroTitle || "Bonbon Flowers Houston"}
+                    defaultValue={config.heroTitle || "VKA POS"}
                     className="p-3.5 border rounded-2xl text-sm font-bold dark:bg-gray-900 dark:text-white focus:ring-2 focus:ring-[#FF97A4]"
                     required
                   />
@@ -771,7 +771,7 @@ export default function AdminConfiguracionPage() {
                   <label className="text-xs font-bold text-gray-700 dark:text-gray-300">Lema Secundario de Cabecera</label>
                   <input
                     name="brandSlogan"
-                    defaultValue={config.brandSlogan || "Boutique Floral Digital • Houston, Texas"}
+                    defaultValue={config.brandSlogan || "Punto de Venta & Retail Omnicanal"}
                     className="p-3.5 border rounded-2xl text-sm font-medium dark:bg-gray-900 dark:text-white focus:ring-2 focus:ring-[#FF97A4]"
                   />
                 </div>
@@ -781,7 +781,7 @@ export default function AdminConfiguracionPage() {
                 <label className="text-xs font-bold text-gray-700 dark:text-gray-300">Eslogan del Home (Párrafo Hero)</label>
                 <textarea
                   name="heroSlogan"
-                  defaultValue={config.heroSlogan || "Arreglos florales exclusivos y detalles de lujo diseñados para sorprender a quien más amas."}
+                  defaultValue={config.heroSlogan || "Sistema integral de punto de venta, facturación rápida, inventario y retail con despacho local."}
                   className="p-3.5 border rounded-2xl text-xs h-20 dark:bg-gray-900 dark:text-white focus:ring-2 focus:ring-[#FF97A4]"
                   required
                 />
@@ -792,7 +792,7 @@ export default function AdminConfiguracionPage() {
                   <label className="text-xs font-bold text-gray-700 dark:text-gray-300">Texto del Botón Hero (CTA)</label>
                   <input
                     name="heroButtonText"
-                    defaultValue={config.heroButtonText || "Explorar Colección"}
+                    defaultValue={config.heroButtonText || "Explorar Productos"}
                     className="p-3.5 border rounded-2xl text-xs font-bold dark:bg-gray-900 dark:text-white focus:ring-2 focus:ring-[#FF97A4]"
                     required
                   />
@@ -802,7 +802,7 @@ export default function AdminConfiguracionPage() {
                   <label className="text-xs font-bold text-gray-700 dark:text-gray-300">Nombre en Pie de Página (Footer)</label>
                   <input
                     name="footerTitle"
-                    defaultValue={config.footerTitle || "Bonbon Flowers Houston"}
+                    defaultValue={config.footerTitle || "VKA POS"}
                     className="p-3.5 border rounded-2xl text-xs font-bold dark:bg-gray-900 dark:text-white focus:ring-2 focus:ring-[#FF97A4]"
                     required
                   />
@@ -813,7 +813,7 @@ export default function AdminConfiguracionPage() {
                 <label className="text-xs font-bold text-gray-700 dark:text-gray-300">Lema del Footer</label>
                 <input
                   name="footerSlogan"
-                  defaultValue={config.footerSlogan || "Boutique Digital de Alta Floristería • Houston, Texas"}
+                  defaultValue={config.footerSlogan || "Punto de Venta, Facturación & Retail"}
                   className="p-3.5 border rounded-2xl text-xs font-medium dark:bg-gray-900 dark:text-white focus:ring-2 focus:ring-[#FF97A4]"
                   required
                 />
@@ -823,7 +823,7 @@ export default function AdminConfiguracionPage() {
                 <label className="text-xs font-bold text-gray-700 dark:text-gray-300">Texto de Derechos Reservados (Copyright)</label>
                 <input
                   name="footerCopyright"
-                  defaultValue={config.footerCopyright || "© 2026 Bonbon Flowers Houston. Todos los derechos reservados."}
+                  defaultValue={config.footerCopyright || "© 2026 VKA POS. Todos los derechos reservados."}
                   className="p-3.5 border rounded-2xl text-xs font-medium dark:bg-gray-900 dark:text-white focus:ring-2 focus:ring-[#FF97A4]"
                   required
                 />
@@ -1313,8 +1313,8 @@ export default function AdminConfiguracionPage() {
                 </label>
                 <input
                   name="dialogflowChatTitle"
-                  defaultValue={config.dialogflowChatTitle || "Bonbon Flowers Virtual Assistant 🌸"}
-                  placeholder="Bonbon Flowers Virtual Assistant 🌸"
+                  defaultValue={config.dialogflowChatTitle || "Asistente Virtual • VKA POS 💼"}
+                  placeholder="Asistente Virtual • VKA POS 💼"
                   className="p-3.5 border rounded-xl text-xs font-bold dark:bg-gray-900 dark:text-white"
                 />
               </div>
