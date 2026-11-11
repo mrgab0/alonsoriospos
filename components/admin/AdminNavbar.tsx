@@ -18,6 +18,18 @@ interface AdminNavbarProps {
 
 const NAV_ITEMS = [
   {
+    href: "/admin/compras",
+    label: "Compras & Stock",
+    icon: "📥",
+    badgeColor: "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-950 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800/80 hover:bg-emerald-200"
+  },
+  {
+    href: "/admin/proveedores",
+    label: "Proveedores",
+    icon: "🏢",
+    badgeColor: "bg-blue-100 dark:bg-blue-950/80 text-blue-950 dark:text-blue-200 border-blue-300 dark:border-blue-800/80 hover:bg-blue-200"
+  },
+  {
     href: "/admin/ordenes",
     label: "Órdenes & Despacho",
     icon: "🛍️",

@@ -17,6 +17,8 @@ import {
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
+  Building2,
+  PackagePlus,
 } from "lucide-react";
 
 interface AdminModule {
@@ -35,6 +37,34 @@ interface AdminModule {
 }
 
 const ADMIN_MODULES: AdminModule[] = [
+  {
+    id: "compras",
+    title: "Compras & Recepción",
+    description: "Ingreso de facturas de proveedores y aumento automático de stock en Kardex.",
+    href: "/admin/compras",
+    badge: "Kardex",
+    badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+    actionText: "Recepcionar mercancía",
+    iconGradient: "from-emerald-500 to-teal-600",
+    iconShadow: "shadow-emerald-500/25",
+    borderColor: "border-emerald-500/20",
+    hoverBorder: "hover:border-emerald-500/60",
+    icon: PackagePlus,
+  },
+  {
+    id: "proveedores",
+    title: "Gestión de Proveedores",
+    description: "Empresas distribuidoras, días de crédito y saldos por pagar.",
+    href: "/admin/proveedores",
+    badge: "Directorio",
+    badgeColor: "bg-blue-500/20 text-blue-300 border-blue-500/30",
+    actionText: "Ver proveedores",
+    iconGradient: "from-blue-500 to-indigo-600",
+    iconShadow: "shadow-blue-500/25",
+    borderColor: "border-blue-500/20",
+    hoverBorder: "hover:border-blue-500/60",
+    icon: Building2,
+  },
   {
     id: "ordenes",
     title: "Gestor de Órdenes & Despacho",
