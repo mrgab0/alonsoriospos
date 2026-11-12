@@ -4,6 +4,8 @@ import dbConnect from '@/lib/db';
 import { Employee } from '@/lib/models/Employee';
 import { AttendanceRecord } from '@/lib/models/AttendanceRecord';
 import { PayrollPayment, PaymentMethodType } from '@/lib/models/PayrollPayment';
+import { EmployeeLoan } from '@/lib/models/EmployeeLoan';
+import { recordLoanPayment } from '@/lib/actions/employeeLoan';
 import { revalidatePath } from 'next/cache';
 
 export async function getPayrollDashboard(periodMonth?: string) {
@@ -14,7 +16,7 @@ export async function getPayrollDashboard(periodMonth?: string) {
     const now = new Date();
     const currentMonth = periodMonth || `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
 
-    const [employees, records, payments] = await Promise.all([
+    const [employees, records, payments, activeLoans] = await Promise.all([
       Employee.find({ isActive: true }).sort({ name: 1 }).lean(),
       AttendanceRecord.find({ date: { $regex: `^${currentMonth}` } }).lean(),
       PayrollPayment.find({
@@ -23,11 +25,13 @@ export async function getPayrollDashboard(periodMonth?: string) {
           $lte: new Date(`${currentMonth}-31T23:59:59.999Z`),
         },
       }).lean(),
+      EmployeeLoan.find({ status: 'activo' }).lean(),
     ]);
 
     const dashboard = employees.map((emp) => {
       const empRecords = records.filter((r) => r.employeeId.toString() === emp._id.toString());
       const empPayments = payments.filter((p) => p.employeeId.toString() === emp._id.toString());
+      const empLoan = activeLoans.find((l) => l.employeeId.toString() === emp._id.toString());
 
       const totalHours = empRecords.reduce((acc, r) => acc + (r.hoursWorked || 0), 0);
       const totalDaysPresent = empRecords.length;
@@ -59,6 +63,15 @@ export async function getPayrollDashboard(periodMonth?: string) {
         totalPaidThisMonth: Number(totalPaidThisMonth.toFixed(2)),
         pendingPay: Number(pendingPay.toFixed(2)),
         paymentsCount: empPayments.length,
+        activeLoan: empLoan
+          ? {
+              loanId: empLoan._id.toString(),
+              totalAmount: empLoan.amount,
+              remainingBalance: empLoan.remainingBalance,
+              installmentAmount: empLoan.installmentAmount,
+              installmentFrequency: empLoan.installmentFrequency,
+            }
+          : null,
       };
     });
 
@@ -95,6 +108,8 @@ export interface RegisterPaymentPayload {
   overtimeAmount?: number;
   bonusAmount?: number;
   deductionAmount?: number;
+  loanId?: string;
+  loanDeductionAmount?: number;
   netAmount: number;
   paymentMethod: PaymentMethodType;
   notes?: string;
@@ -134,6 +149,16 @@ export async function registerPayrollPayment(payload: RegisterPaymentPayload) {
       receiptNumber,
       notes: payload.notes?.trim() || '',
     });
+
+    // Si hubo deducción por crédito/préstamo de empleado, amortizar en el préstamo
+    if (payload.loanId && payload.loanDeductionAmount && payload.loanDeductionAmount > 0) {
+      await recordLoanPayment(
+        payload.loanId,
+        payload.loanDeductionAmount,
+        receiptNumber,
+        `Deducción en nómina ${receiptNumber}`
+      );
+    }
 
     revalidatePath('/admin/nomina');
     return { success: true, data: JSON.parse(JSON.stringify(payment)) };

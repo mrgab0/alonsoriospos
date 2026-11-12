@@ -48,6 +48,11 @@ export default function AdminPOSPage() {
   const [customerPhone, setCustomerPhone] = useState('');
   const [paymentRef, setPaymentRef] = useState('');
 
+  // Opciones de Financiamiento en Cuotas POS
+  const [isFinancing, setIsFinancing] = useState(false);
+  const [financingInstallments, setFinancingInstallments] = useState<number>(3);
+  const [financingFreq, setFinancingFreq] = useState<'semanal' | 'quincenal' | 'mensual'>('quincenal');
+
   // Proceso y Ticket
   const [processing, setProcessing] = useState(false);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
@@ -208,6 +213,15 @@ export default function AdminPOSPage() {
       paymentRef,
       customerName: customerName.trim() || 'Cliente Mostrador',
       customerPhone: customerPhone.trim() || 'N/A',
+      ...(paymentMethod === 'credito_fiado' && isFinancing
+        ? {
+            financingPlan: {
+              installmentsCount: financingInstallments,
+              frequency: financingFreq,
+              interestRate: 0,
+            },
+          }
+        : {}),
     });
     setProcessing(false);
 
@@ -628,6 +642,62 @@ export default function AdminPOSPage() {
                       placeholder="+1 555-0123"
                       className="p-2 rounded-xl border border-amber-300 dark:border-amber-800 bg-white dark:bg-gray-800 font-medium"
                     />
+                  </div>
+
+                  {/* Modalidad: Fiado Directo vs Financiar en Cuotas */}
+                  <div className="pt-2 border-t border-amber-200 dark:border-amber-800">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-bold text-[10px] uppercase text-amber-900 dark:text-amber-200">
+                        ¿Financiar en Cuotas?
+                      </span>
+                      <label className="relative inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={isFinancing}
+                          onChange={(e) => setIsFinancing(e.target.checked)}
+                          className="sr-only peer"
+                        />
+                        <div className="w-8 h-4 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-emerald-600"></div>
+                      </label>
+                    </div>
+
+                    {isFinancing && (
+                      <div className="space-y-2 p-2.5 rounded-xl bg-white/70 dark:bg-gray-900/60 border border-amber-300 dark:border-amber-800 animate-in fade-in">
+                        <div className="grid grid-cols-2 gap-2">
+                          <div>
+                            <label className="text-[9px] font-bold text-gray-500 block">Cuotas</label>
+                            <select
+                              value={financingInstallments}
+                              onChange={(e) => setFinancingInstallments(parseInt(e.target.value) || 2)}
+                              className="w-full p-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-xs font-bold"
+                            >
+                              {[2, 3, 4, 6].map((n) => (
+                                <option key={n} value={n}>
+                                  {n} cuotas
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                          <div>
+                            <label className="text-[9px] font-bold text-gray-500 block">Frecuencia</label>
+                            <select
+                              value={financingFreq}
+                              onChange={(e) => setFinancingFreq(e.target.value as any)}
+                              className="w-full p-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-xs font-bold"
+                            >
+                              <option value="quincenal">Quincenal</option>
+                              <option value="mensual">Mensual</option>
+                              <option value="semanal">Semanal</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div className="text-[10px] text-emerald-700 dark:text-emerald-300 font-bold flex justify-between pt-1 border-t border-dashed border-gray-200 dark:border-gray-700">
+                          <span>Monto por cuota:</span>
+                          <span>${(total / financingInstallments).toFixed(2)} / {financingFreq}</span>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

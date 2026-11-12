@@ -6,6 +6,7 @@ import { Order } from '@/lib/models/Order';
 import { StockMovement } from '@/lib/models/StockMovement';
 import { Customer } from '@/lib/models/Customer';
 import { CustomerCredit } from '@/lib/models/CustomerCredit';
+import { CustomerFinancing, FinancingFrequency, IFinancingInstallment } from '@/lib/models/CustomerFinancing';
 import { revalidatePath } from 'next/cache';
 
 export async function searchPOSProducts(query: string) {
@@ -60,6 +61,11 @@ export interface POSSalePayload {
   customerEmail?: string;
   notes?: string;
   cashierName?: string;
+  financingPlan?: {
+    installmentsCount: number;
+    frequency: FinancingFrequency;
+    interestRate?: number;
+  };
 }
 
 export async function processPOSSale(payload: POSSalePayload) {
@@ -159,9 +165,52 @@ export async function processPOSSale(payload: POSSalePayload) {
         newBalance: customerDoc.creditBalance || 0,
         orderId,
         paymentMethod: 'credito_fiado',
-        notes: `Venta Fiada POS #${orderId}`,
+        notes: payload.financingPlan
+          ? `Venta Financiada POS #${orderId} (${payload.financingPlan.installmentsCount} cuotas ${payload.financingPlan.frequency})`
+          : `Venta Fiada POS #${orderId}`,
         createdBy: payload.cashierName || 'cajero',
       });
+
+      // Si se seleccionó plan de cuotas / financiamiento
+      if (payload.financingPlan) {
+        const count = Math.max(1, payload.financingPlan.installmentsCount || 1);
+        const freq = payload.financingPlan.frequency || 'quincenal';
+        const installmentAmount = Number((payload.total / count).toFixed(2));
+        const intervalDays = freq === 'semanal' ? 7 : freq === 'quincenal' ? 15 : 30;
+        const installments: IFinancingInstallment[] = [];
+        const start = new Date();
+
+        for (let i = 1; i <= count; i++) {
+          const dueDate = new Date(start);
+          dueDate.setDate(dueDate.getDate() + i * intervalDays);
+          installments.push({
+            installmentNumber: i,
+            dueDate,
+            amount: installmentAmount,
+            paidAmount: 0,
+            status: 'pendiente',
+          });
+        }
+
+        await CustomerFinancing.create({
+          customerId: customerDoc._id,
+          customerName,
+          customerPhone,
+          orderId,
+          principalAmount: payload.total,
+          interestRate: payload.financingPlan.interestRate || 0,
+          totalAmount: payload.total,
+          installmentsCount: count,
+          frequency: freq,
+          installmentAmount,
+          remainingBalance: payload.total,
+          paidAmount: 0,
+          startDate: start,
+          status: 'activo',
+          notes: `Financiamiento generado en caja POS para orden #${orderId}`,
+          installments,
+        });
+      }
     }
 
     // 3. Descontar stock y registrar en Kardex para cada producto
