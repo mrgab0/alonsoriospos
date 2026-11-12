@@ -54,6 +54,18 @@ const NAV_ITEMS = [
     badgeColor: "bg-cyan-100 dark:bg-cyan-950/80 text-cyan-950 dark:text-cyan-200 border-cyan-300 dark:border-cyan-800/80 hover:bg-cyan-200"
   },
   {
+    href: "/admin/asistencia",
+    label: "Asistencia & PIN",
+    icon: "⏱️",
+    badgeColor: "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-950 dark:text-emerald-200 border-emerald-300 dark:border-emerald-800/80 hover:bg-emerald-200"
+  },
+  {
+    href: "/admin/nomina",
+    label: "Nómina & Sueldos",
+    icon: "💼",
+    badgeColor: "bg-blue-100 dark:bg-blue-950/80 text-blue-950 dark:text-blue-200 border-blue-300 dark:border-blue-800/80 hover:bg-blue-200"
+  },
+  {
     href: "/admin/ordenes",
     label: "Órdenes & Despacho",
     icon: "🛍️",

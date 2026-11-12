@@ -21,6 +21,8 @@ import {
   PackagePlus,
   Zap,
   Users,
+  Clock,
+  DollarSign,
 } from "lucide-react";
 
 interface AdminModule {
@@ -122,6 +124,34 @@ const ADMIN_MODULES: AdminModule[] = [
     borderColor: "border-cyan-500/20",
     hoverBorder: "hover:border-cyan-500/60",
     icon: Truck,
+  },
+  {
+    id: "asistencia",
+    title: "Reloj Checador & Asistencia",
+    description: "Kiosco táctil con PIN 4 dígitos, registro de entrada/salida y estado en vivo.",
+    href: "/admin/asistencia",
+    badge: "Personal ⏱️",
+    badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+    actionText: "Ver reloj checador",
+    iconGradient: "from-emerald-600 to-teal-700",
+    iconShadow: "shadow-emerald-600/25",
+    borderColor: "border-emerald-500/20",
+    hoverBorder: "hover:border-emerald-500/60",
+    icon: Clock,
+  },
+  {
+    id: "nomina",
+    title: "Nómina & Sueldos",
+    description: "Liquidación salarial por horas o días, anticipos, horas extra y recibos.",
+    href: "/admin/nomina",
+    badge: "Sueldos 💼",
+    badgeColor: "bg-blue-500/20 text-blue-300 border-blue-500/30",
+    actionText: "Calcular y liquidar pagos",
+    iconGradient: "from-blue-600 to-indigo-700",
+    iconShadow: "shadow-blue-600/25",
+    borderColor: "border-blue-500/20",
+    hoverBorder: "hover:border-blue-500/60",
+    icon: DollarSign,
   },
   {
     id: "ordenes",

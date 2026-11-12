@@ -55,6 +55,16 @@ export const ADMIN_NAV_ITEMS = [
     icon: "🛵",
   },
   {
+    href: "/admin/asistencia",
+    label: "Asistencia & PIN",
+    icon: "⏱️",
+  },
+  {
+    href: "/admin/nomina",
+    label: "Nómina & Sueldos",
+    icon: "💼",
+  },
+  {
     href: "/admin/ordenes",
     label: "Órdenes & Despacho",
     icon: "🛍️",
