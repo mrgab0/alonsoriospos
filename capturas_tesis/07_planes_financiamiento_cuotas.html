@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VKA POS - Financiamiento y Créditos en Cuotas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col justify-between p-4 flex-shrink-0">
+    <div class="space-y-6">
+      <div class="flex items-center gap-3 px-2">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center font-bold text-white shadow-lg shadow-emerald-500/20">
+          VKA
+        </div>
+        <div>
+          <h1 class="font-bold text-base tracking-wide text-white">VKA POS ERP</h1>
+          <p class="text-xs text-slate-400">Enterprise Cloud v2.5</p>
+        </div>
+      </div>
+
+      <nav class="space-y-1 text-sm font-medium">
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          Dashboard General
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          Terminal POS Caja
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          Compras & Kardex
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          Proveedores
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Cuentas por Pagar
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Cuentas por Cobrar
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">
+          <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Planes Financiamiento
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
+          Flota & Despacho
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Reloj Asistencia PIN
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          Nómina & Préstamos
+        </a>
+      </nav>
+    </div>
+
+    <div class="border-t border-slate-800 pt-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-300">
+          GR
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-white">Gabriel Rios</p>
+          <p class="text-[10px] text-emerald-400">Administrador General</p>
+        </div>
+      </div>
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+    <!-- Header -->
+    <header class="h-16 bg-slate-900/80 backdrop-blur border-b border-slate-800 px-8 flex items-center justify-between flex-shrink-0">
+      <div class="flex items-center gap-4">
+        <div>
+          <h2 class="text-lg font-bold text-white flex items-center gap-2">
+            Planes de Financiamiento y Crédito al Cliente
+            <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-mono">Tabla Amortización & Pagaré Legal</span>
+          </h2>
+          <p class="text-xs text-slate-400">Control de cuotas fijas, periodicidad (semanal/quincenal/mensual) y emisión de pagarés notariales</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs rounded-lg font-medium transition flex items-center gap-2">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Exportar Cartera Excel
+        </button>
+        <button class="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs rounded-lg font-semibold shadow-lg shadow-emerald-600/30 transition flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          Nuevo Plan de Financiamiento
+        </button>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-6">
+      <!-- KPI Row -->
+      <div class="grid grid-cols-4 gap-5">
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl"></div>
+          <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Total Cartera Financiada</p>
+          <p class="text-2xl font-bold text-white mt-2 font-mono">$18,450.00</p>
+          <div class="mt-2 text-xs text-emerald-400 flex items-center gap-1">
+            <span>● 14 Contratos activos</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-teal-500/10 rounded-full blur-xl"></div>
+          <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Capital Cobrado a la Fecha</p>
+          <p class="text-2xl font-bold text-teal-400 mt-2 font-mono">$9,820.00</p>
+          <div class="mt-2 text-xs text-slate-400 flex items-center gap-1">
+            <span>53.2% de recuperación global</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-blue-500/10 rounded-full blur-xl"></div>
+          <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Saldo Remanente por Cobrar</p>
+          <p class="text-2xl font-bold text-blue-400 mt-2 font-mono">$8,630.00</p>
+          <div class="mt-2 text-xs text-slate-400 flex items-center gap-1">
+            <span>48 cuotas futuras programadas</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-amber-500/10 rounded-full blur-xl"></div>
+          <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Cuotas en Mora (>15 días)</p>
+          <p class="text-2xl font-bold text-amber-400 mt-2 font-mono">$640.00</p>
+          <div class="mt-2 text-xs text-amber-400 flex items-center gap-1">
+            <span>2 clientes en seguimiento prejudicial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Layout: Left Contracts List, Right Amortization Detail & Pagaré -->
+      <div class="grid grid-cols-12 gap-6">
+        <!-- Contracts Table -->
+        <div class="col-span-7 bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+          <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+            <h3 class="font-bold text-white text-sm flex items-center gap-2">
+              <span>Contratos de Financiamiento Vigentes</span>
+              <span class="text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full font-mono">14 Registros</span>
+            </h3>
+            <div class="flex items-center gap-2">
+              <input type="text" placeholder="Buscar por cliente, cédula o contrato..." class="px-3 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-slate-200 focus:outline-none focus:border-emerald-500 w-64">
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-slate-950/70 text-slate-400 font-semibold border-b border-slate-800">
+                <tr>
+                  <th class="py-3 px-4">Contrato</th>
+                  <th class="py-3 px-4">Cliente / Identificación</th>
+                  <th class="py-3 px-4">Monto Financiado</th>
+                  <th class="py-3 px-4">Plazo / Frecuencia</th>
+                  <th class="py-3 px-4">Progreso</th>
+                  <th class="py-3 px-4">Estado</th>
+                  <th class="py-3 px-4 text-right">Acción</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 font-medium">
+                <!-- Selected Contract -->
+                <tr class="bg-emerald-500/10 border-l-4 border-emerald-500">
+                  <td class="py-3.5 px-4 font-mono font-semibold text-emerald-400">FIN-2026-004</td>
+                  <td class="py-3.5 px-4">
+                    <p class="font-bold text-white">Eventos & Banquetería S.A.</p>
+                    <p class="text-[11px] text-slate-400 font-mono">RIF: J-40892110-3</p>
+                  </td>
+                  <td class="py-3.5 px-4 font-mono font-bold text-white">$3,200.00</td>
+                  <td class="py-3.5 px-4">
+                    <p class="text-slate-200">6 Cuotas</p>
+                    <p class="text-[10px] text-slate-400">Quincenal (0% Interés)</p>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <div class="w-24 bg-slate-800 rounded-full h-2 mb-1 overflow-hidden">
+                      <div class="bg-emerald-500 h-2 rounded-full" style="width: 50%"></div>
+                    </div>
+                    <span class="text-[10px] text-slate-400">3 de 6 pagadas</span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                      Al Día
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right">
+                    <span class="text-xs text-emerald-400 font-semibold cursor-pointer">Ver Tabla →</span>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-800/30 transition">
+                  <td class="py-3.5 px-4 font-mono font-semibold text-slate-300">FIN-2026-003</td>
+                  <td class="py-3.5 px-4">
+                    <p class="font-bold text-white">Carolina Méndez</p>
+                    <p class="text-[11px] text-slate-400 font-mono">CI: 19.845.221</p>
+                  </td>
+                  <td class="py-3.5 px-4 font-mono font-bold text-white">$1,500.00</td>
+                  <td class="py-3.5 px-4">
+                    <p class="text-slate-200">4 Cuotas</p>
+                    <p class="text-[10px] text-slate-400">Mensual</p>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <div class="w-24 bg-slate-800 rounded-full h-2 mb-1 overflow-hidden">
+                      <div class="bg-emerald-500 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                    <span class="text-[10px] text-slate-400">3 de 4 pagadas</span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                      Al Día
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right">
+                    <span class="text-xs text-slate-400 hover:text-white cursor-pointer">Ver</span>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-800/30 transition">
+                  <td class="py-3.5 px-4 font-mono font-semibold text-slate-300">FIN-2026-002</td>
+                  <td class="py-3.5 px-4">
+                    <p class="font-bold text-white">Hotel Boutique Las Palmas</p>
+                    <p class="text-[11px] text-slate-400 font-mono">RIF: J-31998420-1</p>
+                  </td>
+                  <td class="py-3.5 px-4 font-mono font-bold text-white">$4,800.00</td>
+                  <td class="py-3.5 px-4">
+                    <p class="text-slate-200">8 Cuotas</p>
+                    <p class="text-[10px] text-slate-400">Quincenal</p>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <div class="w-24 bg-slate-800 rounded-full h-2 mb-1 overflow-hidden">
+                      <div class="bg-amber-500 h-2 rounded-full" style="width: 25%"></div>
+                    </div>
+                    <span class="text-[10px] text-amber-400 font-semibold">2 de 8 (1 en mora)</span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                      Mora 4d
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right">
+                    <span class="text-xs text-slate-400 hover:text-white cursor-pointer">Ver</span>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-800/30 transition">
+                  <td class="py-3.5 px-4 font-mono font-semibold text-slate-300">FIN-2026-001</td>
+                  <td class="py-3.5 px-4">
+                    <p class="font-bold text-white">Restaurante El Gourmet</p>
+                    <p class="text-[11px] text-slate-400 font-mono">RIF: J-29837119-0</p>
+                  </td>
+                  <td class="py-3.5 px-4 font-mono font-bold text-white">$2,400.00</td>
+                  <td class="py-3.5 px-4">
+                    <p class="text-slate-200">6 Cuotas</p>
+                    <p class="text-[10px] text-slate-400">Quincenal</p>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <div class="w-24 bg-slate-800 rounded-full h-2 mb-1 overflow-hidden">
+                      <div class="bg-emerald-500 h-2 rounded-full" style="width: 100%"></div>
+                    </div>
+                    <span class="text-[10px] text-emerald-400">Completado 6/6</span>
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">
+                      Liquidado
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 text-right">
+                    <span class="text-xs text-slate-400 hover:text-white cursor-pointer">Ver</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Amortization Schedule & Pagaré Preview -->
+        <div class="col-span-5 space-y-6">
+          <!-- Amortization Schedule Card -->
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+              <div>
+                <h4 class="font-bold text-white text-sm">Tabla de Amortización</h4>
+                <p class="text-xs text-emerald-400 font-mono">FIN-2026-004 · Eventos & Banquetería S.A.</p>
+              </div>
+              <button class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs rounded border border-slate-700 flex items-center gap-1 font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Imprimir Tabla
+              </button>
+            </div>
+
+            <div class="mt-4 space-y-2">
+              <div class="flex items-center justify-between text-xs bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">1</span>
+                  <div>
+                    <p class="font-semibold text-white">Cuota 1 de 6</p>
+                    <p class="text-[10px] text-slate-400">Vencimiento: 15 Ene 2026</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-mono font-bold text-white">$533.33</p>
+                  <span class="text-[10px] font-semibold text-emerald-400">Pagado (Dep. #7819)</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">2</span>
+                  <div>
+                    <p class="font-semibold text-white">Cuota 2 de 6</p>
+                    <p class="text-[10px] text-slate-400">Vencimiento: 30 Ene 2026</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-mono font-bold text-white">$533.33</p>
+                  <span class="text-[10px] font-semibold text-emerald-400">Pagado (Transferencia)</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">3</span>
+                  <div>
+                    <p class="font-semibold text-white">Cuota 3 de 6</p>
+                    <p class="text-[10px] text-slate-400">Vencimiento: 15 Feb 2026</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-mono font-bold text-white">$533.33</p>
+                  <span class="text-[10px] font-semibold text-emerald-400">Pagado (POS Caja)</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs bg-emerald-500/10 p-2.5 rounded-lg border border-emerald-500/30">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-bold text-[10px]">4</span>
+                  <div>
+                    <p class="font-bold text-emerald-300">Cuota 4 de 6 (Siguiente)</p>
+                    <p class="text-[10px] text-emerald-400/80">Vence: 28 Feb 2026 (En 5 días)</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-mono font-bold text-emerald-300">$533.33</p>
+                  <button class="mt-1 px-2 py-0.5 bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold rounded shadow transition">
+                    Abonar Cuota
+                  </button>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/80 opacity-75">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center font-bold text-[10px]">5</span>
+                  <div>
+                    <p class="font-medium text-slate-300">Cuota 5 de 6</p>
+                    <p class="text-[10px] text-slate-500">Vence: 15 Mar 2026</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-mono text-slate-400">$533.33</p>
+                  <span class="text-[10px] text-slate-500">Pendiente</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/80 opacity-75">
+                <div class="flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center font-bold text-[10px]">6</span>
+                  <div>
+                    <p class="font-medium text-slate-300">Cuota 6 de 6</p>
+                    <p class="text-[10px] text-slate-500">Vence: 30 Mar 2026</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="font-mono text-slate-400">$533.35</p>
+                  <span class="text-[10px] text-slate-500">Pendiente</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legal Promissory Note Preview Card (Pagaré) -->
+          <div class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-xl p-5 relative overflow-hidden">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Pagaré Notarial Vinculado
+              </span>
+              <span class="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded font-mono">PAG-2026-004</span>
+            </div>
+
+            <div class="mt-3 p-3 bg-slate-950/80 border border-slate-800 rounded-lg text-[11px] text-slate-300 leading-relaxed font-mono">
+              "Por este PAGARÉ mercantil, me obligo incondicionalmente a pagar a la orden de VKA POS / INVERSIONES VKA C.A., en su domicilio fiscal, la cantidad total de <span class="text-white font-bold">$3,200.00 USD</span> pagadera en 6 cuotas consecutivas de $533.33 USD..."
+            </div>
+
+            <div class="mt-4 flex items-center justify-between pt-2">
+              <div class="text-[11px] text-slate-400">
+                <span>Firma Digital: </span>
+                <span class="text-emerald-400 font-mono font-semibold">VALIDADA (Hash SHA-256)</span>
+              </div>
+              <button class="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold rounded shadow transition flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                Ver Pagaré Oficial PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

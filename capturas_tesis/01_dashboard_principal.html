@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>VKA POS - Dashboard Principal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { brand: { 500: '#10b981', 600: '#059669', 900: '#163422' } }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0f111a] text-gray-100 flex h-screen overflow-hidden font-sans">
+  <!-- SIDEBAR SHELL -->
+  <aside class="w-64 bg-[#141622] border-r border-gray-800 flex flex-col justify-between shrink-0">
+    <div>
+      <!-- Brand Logo -->
+      <div class="h-16 flex items-center px-6 border-b border-gray-800 gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center font-black text-white shadow-lg shadow-emerald-500/20">
+          V
+        </div>
+        <div>
+          <span class="font-black text-base tracking-wider text-white">VKA POS</span>
+          <span class="block text-[10px] text-emerald-400 font-semibold uppercase tracking-widest">Enterprise ERP</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-3 space-y-1 text-xs font-semibold">
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="text-base">📊</span> <span>Dashboard General</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">⚡</span> <span>Caja POS (Mostrador)</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">📥</span> <span>Compras & Kardex</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">🏢</span> <span>Proveedores</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">💳</span> <span>Cuentas por Pagar</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">👥</span> <span>Cuentas por Cobrar & Fiados</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">🛵</span> <span>Flota & Despacho</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">⏱️</span> <span>Reloj Checador (PIN)</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">💼</span> <span>Nómina & Préstamos</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50 hover:text-gray-200">
+          <span class="text-base">📦</span> <span>Catálogo de Productos</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- User Profile Footer -->
+    <div class="p-4 border-t border-gray-800 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs">
+          AR
+        </div>
+        <div>
+          <p class="text-xs font-bold text-white">Alonso Ríos</p>
+          <p class="text-[10px] text-gray-400">Admin General</p>
+        </div>
+      </div>
+      <span class="text-xs text-emerald-400 font-bold bg-emerald-950/60 border border-emerald-800 px-2 py-0.5 rounded-md">V2.4</span>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT -->
+  <main class="flex-1 flex flex-col overflow-y-auto">
+    <!-- Topbar -->
+    <header class="h-16 bg-[#141622]/80 backdrop-blur border-b border-gray-800 px-8 flex items-center justify-between shrink-0">
+      <div class="flex items-center gap-3">
+        <h2 class="text-lg font-bold text-white">Panel General de Control</h2>
+        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+          ● En línea • Base de Datos Sincronizada
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-gray-400">Viernes, 13 Nov 2026</span>
+        <div class="h-4 w-px bg-gray-800"></div>
+        <button class="px-3.5 py-1.5 text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl shadow-lg shadow-emerald-600/20">
+          + Abrir Turno Caja
+        </button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="p-8 space-y-6 max-w-7xl">
+      <!-- 4 High Level Stat Cards -->
+      <div class="grid grid-cols-4 gap-5">
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <div class="flex justify-between items-center text-xs font-semibold text-gray-400 uppercase">
+            <span>Ventas del Día (POS)</span>
+            <span class="text-emerald-400 font-bold">▲ +18.4%</span>
+          </div>
+          <div class="text-3xl font-black text-white mt-2">$2,845.50</div>
+          <p class="text-[11px] text-gray-400 mt-1">42 tickets emitidos hoy</p>
+        </div>
+
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <div class="flex justify-between items-center text-xs font-semibold text-gray-400 uppercase">
+            <span>Cartera por Cobrar (Fiado)</span>
+            <span class="text-amber-400 font-bold">12 activos</span>
+          </div>
+          <div class="text-3xl font-black text-amber-400 mt-2">$4,120.00</div>
+          <p class="text-[11px] text-gray-400 mt-1">3 cuotas vencidas esta semana</p>
+        </div>
+
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <div class="flex justify-between items-center text-xs font-semibold text-gray-400 uppercase">
+            <span>Cuentas por Pagar</span>
+            <span class="text-rose-400 font-bold">Proveedores</span>
+          </div>
+          <div class="text-3xl font-black text-rose-400 mt-2">$1,950.00</div>
+          <p class="text-[11px] text-gray-400 mt-1">Próximo vencimiento: en 4 días</p>
+        </div>
+
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <div class="flex justify-between items-center text-xs font-semibold text-gray-400 uppercase">
+            <span>Personal en Tienda</span>
+            <span class="text-emerald-400 font-bold">⏱️ 8 / 8</span>
+          </div>
+          <div class="text-3xl font-black text-emerald-400 mt-2">100%</div>
+          <p class="text-[11px] text-gray-400 mt-1">Todos ficharon con PIN a tiempo</p>
+        </div>
+      </div>
+
+      <!-- Quick Action Modules Grid -->
+      <div class="grid grid-cols-3 gap-5">
+        <!-- Terminal POS -->
+        <div class="p-6 bg-gradient-to-br from-[#171926] to-[#1a1d2e] rounded-3xl border border-emerald-500/20 shadow-xl relative overflow-hidden group">
+          <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 border border-emerald-500/30">
+            ⚡
+          </div>
+          <h3 class="text-lg font-bold text-white">Terminal Punto de Venta (POS)</h3>
+          <p class="text-xs text-gray-400 mt-1.5 leading-relaxed">
+            Venta ultrarrápida para mostrador, escáner de códigos de barras (lector USB y cámara), cobro en efectivo, tarjeta, transferencia y crédito fiado con ticket térmico.
+          </p>
+          <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center">
+            <span class="text-xs font-bold text-emerald-400">Estado: Caja Abierta</span>
+            <span class="text-xs font-bold text-gray-300">Abrir Terminal →</span>
+          </div>
+        </div>
+
+        <!-- Cuentas por Cobrar & Financiamiento -->
+        <div class="p-6 bg-gradient-to-br from-[#171926] to-[#1a1d2e] rounded-3xl border border-blue-500/20 shadow-xl relative overflow-hidden">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4 border border-blue-500/30">
+            👥
+          </div>
+          <h3 class="text-lg font-bold text-white">Financiamiento & Fiados</h3>
+          <p class="text-xs text-gray-400 mt-1.5 leading-relaxed">
+            Gestión de clientes deudores, cupos máximos de crédito, cronogramas de pago en cuotas (quincenal/mensual), control de mora y emisión de pagarés.
+          </p>
+          <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center">
+            <span class="text-xs font-bold text-blue-400">$4,120.00 en calle</span>
+            <span class="text-xs font-bold text-gray-300">Ver Cartera →</span>
+          </div>
+        </div>
+
+        <!-- Reloj Checador & Nómina -->
+        <div class="p-6 bg-gradient-to-br from-[#171926] to-[#1a1d2e] rounded-3xl border border-purple-500/20 shadow-xl relative overflow-hidden">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-4 border border-purple-500/30">
+            ⏱️
+          </div>
+          <h3 class="text-lg font-bold text-white">Asistencia & Sueldos</h3>
+          <p class="text-xs text-gray-400 mt-1.5 leading-relaxed">
+            Kiosco táctil con código PIN para check-in/out en mostrador, liquidación automática de nómina por horas/días laborados y préstamos con descuento por nómina.
+          </p>
+          <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center">
+            <span class="text-xs font-bold text-purple-400">8 empleados activos</span>
+            <span class="text-xs font-bold text-gray-300">Ver Asistencia →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Transactions Table & Fleet Status -->
+      <div class="grid grid-cols-3 gap-5">
+        <div class="col-span-2 bg-[#171926] rounded-2xl border border-gray-800 p-5 shadow-sm">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="font-bold text-sm text-white flex items-center gap-2">
+              <span>🧾</span> Últimas Ventas en Mostrador
+            </h4>
+            <span class="text-xs text-gray-400 font-medium">Actualizado en vivo</span>
+          </div>
+          <table class="w-full text-left text-xs">
+            <thead class="text-gray-400 uppercase border-b border-gray-800 text-[10px]">
+              <tr>
+                <th class="pb-2">Orden</th>
+                <th class="pb-2">Cliente</th>
+                <th class="pb-2">Método</th>
+                <th class="pb-2">Items</th>
+                <th class="pb-2 text-right">Total</th>
+                <th class="pb-2 text-right">Hora</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800/60 font-medium">
+              <tr>
+                <td class="py-2.5 font-mono text-emerald-400">#POS-98124</td>
+                <td class="py-2.5 text-white">Carlos Mendoza</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px]">Efectivo</span></td>
+                <td class="py-2.5 text-gray-400">3 artículos</td>
+                <td class="py-2.5 text-right font-bold text-white">$45.00</td>
+                <td class="py-2.5 text-right text-gray-500">12:14 PM</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-mono text-emerald-400">#POS-98123</td>
+                <td class="py-2.5 text-white">Elena Rojas</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-800 text-[10px]">Fiado (3 cuotas)</span></td>
+                <td class="py-2.5 text-gray-400">1 bulto mayorista</td>
+                <td class="py-2.5 text-right font-bold text-amber-400">$180.00</td>
+                <td class="py-2.5 text-right text-gray-500">11:50 AM</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-mono text-emerald-400">#POS-98122</td>
+                <td class="py-2.5 text-white">Distribuidora Sol</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-blue-950 text-blue-400 border border-blue-800 text-[10px]">Transferencia</span></td>
+                <td class="py-2.5 text-gray-400">12 cajas surtidas</td>
+                <td class="py-2.5 text-right font-bold text-white">$420.00</td>
+                <td class="py-2.5 text-right text-gray-500">11:22 AM</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-mono text-emerald-400">#POS-98121</td>
+                <td class="py-2.5 text-white">Mariana Silva</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-purple-950 text-purple-400 border border-purple-800 text-[10px]">Tarjeta Débito</span></td>
+                <td class="py-2.5 text-gray-400">2 artículos</td>
+                <td class="py-2.5 text-right font-bold text-white">$28.50</td>
+                <td class="py-2.5 text-right text-gray-500">10:45 AM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Flota Activa Summary -->
+        <div class="bg-[#171926] rounded-2xl border border-gray-800 p-5 shadow-sm flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm text-white flex items-center justify-between mb-3">
+              <span class="flex items-center gap-2"><span>🛵</span> Estado de Flota Local</span>
+              <span class="text-[10px] text-emerald-400 font-bold bg-emerald-950 px-2 py-0.5 rounded">4 En Ruta</span>
+            </h4>
+            <div class="space-y-2.5 text-xs">
+              <div class="p-2.5 rounded-xl bg-gray-900 border border-gray-800 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">🏍️</span>
+                  <div>
+                    <span class="font-bold text-white block">José Páez</span>
+                    <span class="text-[10px] text-gray-400">Moto • Despacho #POS-98120</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-bold text-emerald-400">En ruta (15 min)</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-gray-900 border border-gray-800 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">🚚</span>
+                  <div>
+                    <span class="font-bold text-white block">Andrés Bello</span>
+                    <span class="text-[10px] text-gray-400">Camioneta Flete • #ORD-441</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-bold text-blue-400">Entregando carga</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-gray-900 border border-gray-800 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <span class="text-base">🚲</span>
+                  <div>
+                    <span class="font-bold text-white block">Manuel Díaz</span>
+                    <span class="text-[10px] text-gray-400">Bicicleta Express • Casco central</span>
+                  </div>
+                </div>
+                <span class="text-[10px] font-bold text-amber-400">Disponible</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-gray-800 flex justify-between text-xs text-gray-400 font-semibold">
+            <span>Tarifa base calculada: $5.00</span>
+            <span class="text-emerald-400 font-bold">Ver despachos →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>VKA POS - Directorio de Proveedores</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { brand: { 500: '#10b981', 600: '#059669', 900: '#163422' } }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0f111a] text-gray-100 flex h-screen overflow-hidden font-sans">
+  <aside class="w-64 bg-[#141622] border-r border-gray-800 flex flex-col justify-between shrink-0">
+    <div>
+      <div class="h-16 flex items-center px-6 border-b border-gray-800 gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center font-black text-white shadow-lg shadow-emerald-500/20">V</div>
+        <div>
+          <span class="font-black text-base tracking-wider text-white">VKA POS</span>
+          <span class="block text-[10px] text-emerald-400 font-semibold uppercase tracking-widest">Enterprise ERP</span>
+        </div>
+      </div>
+      <nav class="p-3 space-y-1 text-xs font-semibold">
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>📊</span> <span>Dashboard General</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>⚡</span> <span>Caja POS (Mostrador)</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>📥</span> <span>Compras & Kardex</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"><span>🏢</span> <span>Proveedores</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>💳</span> <span>Cuentas por Pagar</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>👥</span> <span>Cuentas por Cobrar & Fiados</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>🛵</span> <span>Flota & Despacho</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>⏱️</span> <span>Reloj Checador (PIN)</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>💼</span> <span>Nómina & Préstamos</span></a>
+      </nav>
+    </div>
+    <div class="p-4 border-t border-gray-800 flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs">AR</div>
+      <div>
+        <p class="text-xs font-bold text-white">Alonso Ríos</p>
+        <p class="text-[10px] text-gray-400">Administrador</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="flex-1 flex flex-col overflow-y-auto">
+    <header class="h-16 bg-[#141622]/80 backdrop-blur border-b border-gray-800 px-8 flex items-center justify-between shrink-0">
+      <div>
+        <h2 class="text-lg font-bold text-white">Directorio de Empresas Proveedoras</h2>
+        <p class="text-xs text-gray-400">Gestión de distribuidores, líneas de crédito comercial y contratos de suministro</p>
+      </div>
+      <button class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/20 flex items-center gap-2">
+        <span>+</span> Registrar Nuevo Proveedor
+      </button>
+    </header>
+
+    <div class="p-8 space-y-6 max-w-7xl">
+      <!-- 4 Stats -->
+      <div class="grid grid-cols-4 gap-5">
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Proveedores Registrados</span>
+          <span class="text-3xl font-black text-white mt-1 block">18 empresas</span>
+          <span class="text-[10px] text-emerald-400 font-semibold block mt-1">100% activos con suministro</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Línea de Crédito Otorgada</span>
+          <span class="text-3xl font-black text-blue-400 mt-1 block">$15,000.00</span>
+          <span class="text-[10px] text-gray-400 font-semibold block mt-1">Límite comercial conjunto</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Deuda Activa con Proveedores</span>
+          <span class="text-3xl font-black text-rose-400 mt-1 block">$1,950.00</span>
+          <span class="text-[10px] text-rose-400 font-semibold block mt-1">13% de línea utilizada</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Plazo Promedio de Pago</span>
+          <span class="text-3xl font-black text-emerald-400 mt-1 block">22 días</span>
+          <span class="text-[10px] text-gray-400 font-semibold block mt-1">Excelente historial crediticio</span>
+        </div>
+      </div>
+
+      <!-- Suppliers Grid -->
+      <div class="grid grid-cols-3 gap-5">
+        <!-- Prov 1 -->
+        <div class="p-6 bg-[#171926] rounded-3xl border border-gray-800 hover:border-emerald-500/30 transition-all shadow-sm">
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <h3 class="font-bold text-sm text-white">Distribuidora Alimentos Polar C.A.</h3>
+              <span class="text-[10px] font-mono text-gray-400">RIF: J-00041372-9</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold">Activo</span>
+          </div>
+          <div class="space-y-1.5 text-xs text-gray-400 mt-4">
+            <div class="flex justify-between"><span>Contacto:</span> <span class="text-white font-medium">Ing. Rafael Méndez</span></div>
+            <div class="flex justify-between"><span>Teléfono:</span> <span class="text-white font-medium">+58 212-202-3111</span></div>
+            <div class="flex justify-between"><span>Email:</span> <span class="text-white font-medium">ventas@polar.com</span></div>
+            <div class="flex justify-between"><span>Condición Crédito:</span> <span class="text-blue-400 font-bold">30 Días</span></div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-gray-800/80 flex justify-between items-center">
+            <div>
+              <span class="text-[10px] text-gray-500 block uppercase font-bold">Saldo x Pagar:</span>
+              <span class="text-sm font-black text-rose-400 font-mono">$1,450.00</span>
+            </div>
+            <button class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-bold rounded-xl">Ver Facturas →</button>
+          </div>
+        </div>
+
+        <!-- Prov 2 -->
+        <div class="p-6 bg-[#171926] rounded-3xl border border-gray-800 hover:border-emerald-500/30 transition-all shadow-sm">
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <h3 class="font-bold text-sm text-white">Café Venezuela Tostaduría S.A.</h3>
+              <span class="text-[10px] font-mono text-gray-400">RIF: J-31294811-2</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold">Activo</span>
+          </div>
+          <div class="space-y-1.5 text-xs text-gray-400 mt-4">
+            <div class="flex justify-between"><span>Contacto:</span> <span class="text-white font-medium">María Teresa Gómez</span></div>
+            <div class="flex justify-between"><span>Teléfono:</span> <span class="text-white font-medium">+58 251-445-8900</span></div>
+            <div class="flex justify-between"><span>Email:</span> <span class="text-white font-medium">pedidos@cafevenezuela.com</span></div>
+            <div class="flex justify-between"><span>Condición Crédito:</span> <span class="text-emerald-400 font-bold">Contado (0 Días)</span></div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-gray-800/80 flex justify-between items-center">
+            <div>
+              <span class="text-[10px] text-gray-500 block uppercase font-bold">Saldo x Pagar:</span>
+              <span class="text-sm font-black text-emerald-400 font-mono">$0.00 (Al Día)</span>
+            </div>
+            <button class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-bold rounded-xl">Ver Facturas →</button>
+          </div>
+        </div>
+
+        <!-- Prov 3 -->
+        <div class="p-6 bg-[#171926] rounded-3xl border border-gray-800 hover:border-emerald-500/30 transition-all shadow-sm">
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <h3 class="font-bold text-sm text-white">Chocolatería El Rey S.A.</h3>
+              <span class="text-[10px] font-mono text-gray-400">RIF: J-00129844-5</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 text-[10px] font-bold">Activo</span>
+          </div>
+          <div class="space-y-1.5 text-xs text-gray-400 mt-4">
+            <div class="flex justify-between"><span>Contacto:</span> <span class="text-white font-medium">Dr. Eduardo Castillo</span></div>
+            <div class="flex justify-between"><span>Teléfono:</span> <span class="text-white font-medium">+58 212-706-5500</span></div>
+            <div class="flex justify-between"><span>Email:</span> <span class="text-white font-medium">distribucion@chocolateselrey.com</span></div>
+            <div class="flex justify-between"><span>Condición Crédito:</span> <span class="text-blue-400 font-bold">15 Días</span></div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-gray-800/80 flex justify-between items-center">
+            <div>
+              <span class="text-[10px] text-gray-500 block uppercase font-bold">Saldo x Pagar:</span>
+              <span class="text-sm font-black text-rose-400 font-mono">$262.50</span>
+            </div>
+            <button class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-bold rounded-xl">Ver Facturas →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

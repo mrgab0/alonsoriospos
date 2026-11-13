@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>VKA POS - Cuentas por Pagar & Tesorería</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: { brand: { 500: '#10b981', 600: '#059669', 900: '#163422' } }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0f111a] text-gray-100 flex h-screen overflow-hidden font-sans">
+  <aside class="w-64 bg-[#141622] border-r border-gray-800 flex flex-col justify-between shrink-0">
+    <div>
+      <div class="h-16 flex items-center px-6 border-b border-gray-800 gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center font-black text-white shadow-lg shadow-emerald-500/20">V</div>
+        <div>
+          <span class="font-black text-base tracking-wider text-white">VKA POS</span>
+          <span class="block text-[10px] text-emerald-400 font-semibold uppercase tracking-widest">Enterprise ERP</span>
+        </div>
+      </div>
+      <nav class="p-3 space-y-1 text-xs font-semibold">
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>📊</span> <span>Dashboard General</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>⚡</span> <span>Caja POS (Mostrador)</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>📥</span> <span>Compras & Kardex</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>🏢</span> <span>Proveedores</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"><span>💳</span> <span>Cuentas por Pagar</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>👥</span> <span>Cuentas por Cobrar & Fiados</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>🛵</span> <span>Flota & Despacho</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>⏱️</span> <span>Reloj Checador (PIN)</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>💼</span> <span>Nómina & Préstamos</span></a>
+      </nav>
+    </div>
+    <div class="p-4 border-t border-gray-800 flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs">AR</div>
+      <div>
+        <p class="text-xs font-bold text-white">Alonso Ríos</p>
+        <p class="text-[10px] text-gray-400">Administrador</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="flex-1 flex flex-col overflow-y-auto">
+    <header class="h-16 bg-[#141622]/80 backdrop-blur border-b border-gray-800 px-8 flex items-center justify-between shrink-0">
+      <div>
+        <h2 class="text-lg font-bold text-white">Cuentas por Pagar & Vencimiento a Proveedores</h2>
+        <p class="text-xs text-gray-400">Control de compromisos de pago comercial, facturas a crédito y registro de abonos</p>
+      </div>
+      <button class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/20 flex items-center gap-2">
+        <span>+</span> Registrar Abono a Proveedor
+      </button>
+    </header>
+
+    <div class="p-8 space-y-6 max-w-7xl">
+      <!-- 4 Stats -->
+      <div class="grid grid-cols-4 gap-5">
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Deuda Total por Pagar</span>
+          <span class="text-3xl font-black text-rose-400 mt-1 block">$1,950.00</span>
+          <span class="text-[10px] text-gray-400 font-semibold block mt-1">2 facturas comerciales activas</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Facturas Al Día</span>
+          <span class="text-3xl font-black text-emerald-400 mt-1 block">$1,687.50</span>
+          <span class="text-[10px] text-emerald-400 font-semibold block mt-1">Dentro del plazo de crédito</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Próximas a Vencer (7 días)</span>
+          <span class="text-3xl font-black text-amber-400 mt-1 block">$262.50</span>
+          <span class="text-[10px] text-amber-400 font-semibold block mt-1">Vence el 23/11/2026</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Abonos Realizados (Mes)</span>
+          <span class="text-3xl font-black text-blue-400 mt-1 block">$6,500.00</span>
+          <span class="text-[10px] text-gray-400 font-semibold block mt-1">Comprobantes bancarios emitidos</span>
+        </div>
+      </div>
+
+      <!-- Main Payables Table with Semáforo -->
+      <div class="bg-[#171926] rounded-2xl border border-gray-800 overflow-hidden shadow-sm">
+        <div class="p-5 border-b border-gray-800 flex justify-between items-center">
+          <h3 class="font-bold text-sm text-white flex items-center gap-2">
+            <span>🚦</span> Cartera de Facturas Pendientes (Semáforo de Vencimiento)
+          </h3>
+          <div class="flex gap-2 text-xs font-semibold">
+            <span class="px-2.5 py-1 bg-emerald-950 text-emerald-400 border border-emerald-800 rounded-lg">● Al día (Vence > 10d)</span>
+            <span class="px-2.5 py-1 bg-amber-950 text-amber-400 border border-amber-800 rounded-lg">▲ Por Vencer (&lt; 7d)</span>
+            <span class="px-2.5 py-1 bg-rose-950 text-rose-400 border border-rose-800 rounded-lg">✕ Vencida</span>
+          </div>
+        </div>
+
+        <table class="w-full text-left text-xs">
+          <thead class="bg-gray-900/60 text-gray-400 uppercase text-[10px] font-bold border-b border-gray-800">
+            <tr>
+              <th class="p-4">Factura</th>
+              <th class="p-4">Proveedor</th>
+              <th class="p-4">Fecha Emisión</th>
+              <th class="p-4">Fecha Vencimiento</th>
+              <th class="p-4">Monto Factura</th>
+              <th class="p-4">Abonado</th>
+              <th class="p-4">Saldo Pendiente</th>
+              <th class="p-4">Semáforo</th>
+              <th class="p-4 text-right">Acción</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800/80 font-medium">
+            <tr class="hover:bg-gray-800/30">
+              <td class="p-4 font-mono font-bold text-emerald-400">FAC-PROV-9012</td>
+              <td class="p-4 text-white font-bold">Distribuidora Alimentos Polar C.A.</td>
+              <td class="p-4 text-gray-400">12/11/2026</td>
+              <td class="p-4 text-white font-semibold">12/12/2026</td>
+              <td class="p-4 font-bold text-white">$1,450.00</td>
+              <td class="p-4 text-emerald-400 font-mono">$0.00</td>
+              <td class="p-4 font-black text-rose-400 text-sm font-mono">$1,450.00</td>
+              <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-800">Al día (29 días restantes)</span></td>
+              <td class="p-4 text-right">
+                <button class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold shadow-sm">Abonar / Pagar</button>
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-800/30">
+              <td class="p-4 font-mono font-bold text-emerald-400">FAC-PROV-9010</td>
+              <td class="p-4 text-white font-bold">Chocolatería El Rey S.A.</td>
+              <td class="p-4 text-gray-400">08/11/2026</td>
+              <td class="p-4 text-amber-400 font-bold">23/11/2026</td>
+              <td class="p-4 font-bold text-white">$500.00</td>
+              <td class="p-4 text-emerald-400 font-mono">$237.50</td>
+              <td class="p-4 font-black text-amber-400 text-sm font-mono">$262.50</td>
+              <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-950 text-amber-400 border border-amber-800">▲ Por Vencer (10 días)</span></td>
+              <td class="p-4 text-right">
+                <button class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold shadow-sm">Abonar / Pagar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Payment Receipt Modal Preview -->
+      <div class="p-6 bg-gradient-to-r from-gray-900 to-[#171926] rounded-2xl border border-gray-800 flex justify-between items-center">
+        <div>
+          <h4 class="font-bold text-white text-sm">¿Deseas liquidar abonos con comprobante bancario?</h4>
+          <p class="text-xs text-gray-400 mt-0.5">El sistema permite pagos parciales con transferencia, cheque o caja chica con comprobante PDF.</p>
+        </div>
+        <span class="text-xs text-emerald-400 font-bold font-mono">Último Pago: $1,200.00 a Embotelladora Central (10/11)</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

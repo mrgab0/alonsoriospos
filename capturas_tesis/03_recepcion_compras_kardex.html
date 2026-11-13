@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>VKA POS - Compras, Recepción de Mercancía & Kardex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: { brand: { 500: '#10b981', 600: '#059669', 900: '#163422' } }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0f111a] text-gray-100 flex h-screen overflow-hidden font-sans">
+  <!-- SIDEBAR -->
+  <aside class="w-64 bg-[#141622] border-r border-gray-800 flex flex-col justify-between shrink-0">
+    <div>
+      <div class="h-16 flex items-center px-6 border-b border-gray-800 gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center font-black text-white shadow-lg shadow-emerald-500/20">V</div>
+        <div>
+          <span class="font-black text-base tracking-wider text-white">VKA POS</span>
+          <span class="block text-[10px] text-emerald-400 font-semibold uppercase tracking-widest">Enterprise ERP</span>
+        </div>
+      </div>
+      <nav class="p-3 space-y-1 text-xs font-semibold">
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>📊</span> <span>Dashboard General</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>⚡</span> <span>Caja POS (Mostrador)</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"><span>📥</span> <span>Compras & Kardex</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>🏢</span> <span>Proveedores</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>💳</span> <span>Cuentas por Pagar</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>👥</span> <span>Cuentas por Cobrar & Fiados</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>🛵</span> <span>Flota & Despacho</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>⏱️</span> <span>Reloj Checador (PIN)</span></a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:bg-gray-800/50"><span>💼</span> <span>Nómina & Préstamos</span></a>
+      </nav>
+    </div>
+    <div class="p-4 border-t border-gray-800 flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs">AR</div>
+      <div>
+        <p class="text-xs font-bold text-white">Alonso Ríos</p>
+        <p class="text-[10px] text-gray-400">Jefe de Inventario</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 flex flex-col overflow-y-auto">
+    <header class="h-16 bg-[#141622]/80 backdrop-blur border-b border-gray-800 px-8 flex items-center justify-between shrink-0">
+      <div>
+        <h2 class="text-lg font-bold text-white">Recepción de Mercancía & Kardex en Tiempo Real</h2>
+        <p class="text-xs text-gray-400">Ingreso de facturas de proveedores y aumento automático de existencias</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-600/20 flex items-center gap-2">
+          <span>📥</span> Recepcionar Factura / Albarán
+        </button>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-6 max-w-7xl">
+      <!-- 4 Stats Cards -->
+      <div class="grid grid-cols-4 gap-5">
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Compras Noviembre</span>
+          <span class="text-3xl font-black text-white mt-1 block">$8,450.00</span>
+          <span class="text-[10px] text-emerald-400 font-semibold block mt-1">14 recepciones validadas</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Unidades Añadidas a Kardex</span>
+          <span class="text-3xl font-black text-emerald-400 mt-1 block">+1,420 uds</span>
+          <span class="text-[10px] text-gray-400 font-semibold block mt-1">Stock actualizado automáticamente</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Facturas a Crédito</span>
+          <span class="text-3xl font-black text-amber-400 mt-1 block">$1,950.00</span>
+          <span class="text-[10px] text-amber-400 font-semibold block mt-1">Pasadas a Cuentas por Pagar</span>
+        </div>
+        <div class="p-5 bg-[#171926] rounded-2xl border border-gray-800 shadow-sm">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Alertas de Stock Bajo</span>
+          <span class="text-3xl font-black text-rose-400 mt-1 block">2 productos</span>
+          <span class="text-[10px] text-gray-400 font-semibold block mt-1">Bajo mínimo configurado</span>
+        </div>
+      </div>
+
+      <!-- Recepciones Table -->
+      <div class="bg-[#171926] rounded-2xl border border-gray-800 overflow-hidden shadow-sm">
+        <div class="p-5 border-b border-gray-800 flex justify-between items-center">
+          <h3 class="font-bold text-sm text-white flex items-center gap-2">
+            <span>📋</span> Facturas de Compra & Recepción de Inventario
+          </h3>
+          <input type="text" placeholder="Filtrar por proveedor o N° de factura..." class="bg-[#1c1f2e] border border-gray-700 rounded-xl px-3 py-1.5 text-xs text-white placeholder-gray-400 focus:outline-none w-72">
+        </div>
+
+        <table class="w-full text-left text-xs">
+          <thead class="bg-gray-900/60 text-gray-400 uppercase text-[10px] font-bold border-b border-gray-800">
+            <tr>
+              <th class="p-4">N° Factura</th>
+              <th class="p-4">Proveedor</th>
+              <th class="p-4">Fecha Emisión</th>
+              <th class="p-4">Condición</th>
+              <th class="p-4">Items / Mercancía</th>
+              <th class="p-4">Monto Total</th>
+              <th class="p-4">Estado</th>
+              <th class="p-4 text-right">Kardex</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800/80 font-medium">
+            <tr class="hover:bg-gray-800/30">
+              <td class="p-4 font-mono font-bold text-emerald-400">FAC-PROV-9012</td>
+              <td class="p-4 text-white font-bold">Distribuidora Alimentos Polar C.A.</td>
+              <td class="p-4 text-gray-400">12/11/2026</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 font-semibold text-[10px]">Crédito 30 días</span></td>
+              <td class="p-4 text-gray-300">500 Harina de Maíz, 200 Aceite</td>
+              <td class="p-4 font-bold text-white text-sm">$1,450.00</td>
+              <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-950 text-amber-300 border border-amber-800">Por Pagar ($1,450.00)</span></td>
+              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-bold">✔ Stock Sumado</span></td>
+            </tr>
+            <tr class="hover:bg-gray-800/30">
+              <td class="p-4 font-mono font-bold text-emerald-400">FAC-PROV-9011</td>
+              <td class="p-4 text-white font-bold">Café Venezuela Tostaduría S.A.</td>
+              <td class="p-4 text-gray-400">10/11/2026</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-semibold text-[10px]">Contado (Transferencia)</span></td>
+              <td class="p-4 text-gray-300">100 Café Grano Tostado 500g</td>
+              <td class="p-4 font-bold text-white text-sm">$450.00</td>
+              <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">Pagada Completa</span></td>
+              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-bold">✔ Stock Sumado</span></td>
+            </tr>
+            <tr class="hover:bg-gray-800/30">
+              <td class="p-4 font-mono font-bold text-emerald-400">FAC-PROV-9010</td>
+              <td class="p-4 text-white font-bold">Chocolatería El Rey S.A.</td>
+              <td class="p-4 text-gray-400">08/11/2026</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 font-semibold text-[10px]">Crédito 15 días</span></td>
+              <td class="p-4 text-gray-300">150 Chocolate Negro 70% 100g</td>
+              <td class="p-4 font-bold text-white text-sm">$262.50</td>
+              <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-950 text-amber-300 border border-amber-800">Por Pagar ($262.50)</span></td>
+              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-bold">✔ Stock Sumado</span></td>
+            </tr>
+            <tr class="hover:bg-gray-800/30">
+              <td class="p-4 font-mono font-bold text-emerald-400">FAC-PROV-9009</td>
+              <td class="p-4 text-white font-bold">Distribuidora Bebidas del Centro</td>
+              <td class="p-4 text-gray-400">05/11/2026</td>
+              <td class="p-4"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-semibold text-[10px]">Contado</span></td>
+              <td class="p-4 text-gray-300">300 Refrescos Surtidos 2L</td>
+              <td class="p-4 font-bold text-white text-sm">$540.00</td>
+              <td class="p-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">Pagada Completa</span></td>
+              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-bold">✔ Stock Sumado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Kardex Live Activity Log -->
+      <div class="bg-[#171926] rounded-2xl border border-gray-800 p-5 shadow-sm">
+        <h4 class="font-bold text-sm text-white mb-3 flex items-center justify-between">
+          <span class="flex items-center gap-2"><span>📈</span> Movimientos Recientes de Kardex (Entradas y Salidas)</span>
+          <span class="text-xs text-gray-400">Auditoría Permanente</span>
+        </h4>
+        <div class="grid grid-cols-4 gap-3 text-xs">
+          <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+            <span class="text-emerald-400 font-bold block">ENTRADA (Compra)</span>
+            <p class="text-white font-bold mt-1">Harina de Maíz Precocida 1kg</p>
+            <p class="text-gray-400 text-[11px]">+500 uds • Costo: $0.95</p>
+            <span class="text-[10px] text-gray-500 block mt-1">Stock anterior: 40 → Nuevo: 540</span>
+          </div>
+          <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+            <span class="text-emerald-400 font-bold block">ENTRADA (Compra)</span>
+            <p class="text-white font-bold mt-1">Café Grano Tostado 500g</p>
+            <p class="text-gray-400 text-[11px]">+100 uds • Costo: $4.20</p>
+            <span class="text-[10px] text-gray-500 block mt-1">Stock anterior: 14 → Nuevo: 114</span>
+          </div>
+          <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+            <span class="text-rose-400 font-bold block">SALIDA (Venta POS #8890)</span>
+            <p class="text-white font-bold mt-1">Refresco Cola 2 Litros</p>
+            <p class="text-gray-400 text-[11px]">-2 uds • Venta: $2.50</p>
+            <span class="text-[10px] text-gray-500 block mt-1">Stock anterior: 20 → Nuevo: 18</span>
+          </div>
+          <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+            <span class="text-rose-400 font-bold block">SALIDA (Venta POS #8889)</span>
+            <p class="text-white font-bold mt-1">Chocolate Negro 70% 100g</p>
+            <p class="text-gray-400 text-[11px]">-4 uds • Venta: $2.75</p>
+            <span class="text-[10px] text-gray-500 block mt-1">Stock anterior: 52 → Nuevo: 48</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
